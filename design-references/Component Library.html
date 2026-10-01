@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>Component Library · RJ Design System</title><link rel="stylesheet" href="brand.css"><style>
+body{background:var(--rj-soft);color:var(--rj-text);font-family:var(--font-body);font-size:14px}
+.doc{max-width:1440px;margin:0 auto;padding:48px 48px 60px}
+.hd{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--rj-line);display:flex;justify-content:space-between;align-items:flex-start}
+.hd .l .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:8px}
+.hd h1{font-family:var(--font-head);font-weight:700;font-size:56px;color:var(--rj-navy);letter-spacing:-0.03em;margin:0;line-height:0.95}
+.hd h1 span{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hd .lead{font-family:var(--font-head);font-size:16px;color:var(--rj-muted-text);font-weight:500;line-height:1.5;margin-top:12px;max-width:720px}
+.hd .brand{display:flex;align-items:center;gap:10px}
+.hd .brand img{width:44px;height:44px;border-radius:11px}
+.hd .brand .n{font-family:var(--font-head);font-weight:700;color:var(--rj-navy);font-size:14px}
+.hd .brand .t{font-family:var(--font-mono);font-size:9px;color:var(--rj-blue);letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-top:2px}
+
+h2.sec{font-family:var(--font-head);font-weight:700;font-size:24px;color:var(--rj-navy);letter-spacing:-0.02em;margin:40px 0 6px 0;display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:6px;height:24px;background:linear-gradient(180deg,var(--rj-blue),var(--rj-sky));border-radius:3px}
+h2.sec span{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+p.sec-l{color:var(--rj-muted-text);font-size:13px;margin:0 0 20px 0;line-height:1.5}
+
+/* Playground grid */
+.play{background:#fff;border:1px solid var(--rj-line);border-radius:14px;padding:24px 28px;margin-bottom:14px}
+.play .head-p{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px dashed var(--rj-line)}
+.play .head-p h3{font-family:var(--font-head);font-weight:700;font-size:15px;color:var(--rj-navy);letter-spacing:-0.01em;margin:0}
+.play .head-p .meta{display:flex;gap:6px;font-family:var(--font-mono);font-size:9px;letter-spacing:0.05em}
+.play .head-p .meta span{padding:3px 8px;background:var(--rj-light);color:var(--rj-blue);border:1px solid var(--rj-border);border-radius:5px;font-weight:700;text-transform:uppercase}
+.play .demo{display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:60px}
+.play .code{margin-top:12px;padding:12px 16px;background:var(--rj-navy);border-radius:9px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#cbd5e1;line-height:1.6;letter-spacing:0.02em;overflow-x:auto}
+.play .code .tag{color:#93c5fd}
+.play .code .attr{color:#fbbf24}
+.play .code .val{color:#6ee7b7}
+.play .code .text{color:#fff}
+
+/* Buttons */
+.btn-p{padding:10px 18px;border-radius:9px;font-family:var(--font-head);font-weight:700;font-size:13px;text-decoration:none;letter-spacing:-0.01em;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all 200ms cubic-bezier(0.16,1,0.3,1)}
+.btn-p svg{width:14px;height:14px}
+.btn-p.primary{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;box-shadow:0 6px 14px rgba(37,99,235,0.35)}
+.btn-p.primary:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(37,99,235,0.45)}
+.btn-p.secondary{background:var(--rj-navy);color:#fff}
+.btn-p.ghost{background:#fff;color:var(--rj-navy);border:1px solid var(--rj-line)}
+.btn-p.ghost:hover{border-color:var(--rj-blue)}
+.btn-p.danger{background:linear-gradient(135deg,var(--rj-danger),#dc2626);color:#fff;box-shadow:0 6px 14px rgba(239,68,68,0.35)}
+.btn-p.success{background:linear-gradient(135deg,var(--rj-success),#059669);color:#fff;box-shadow:0 6px 14px rgba(16,185,129,0.35)}
+.btn-p.link{background:none;color:var(--rj-blue);padding:6px 8px;font-weight:700}
+.btn-p:disabled{opacity:0.4;cursor:not-allowed;box-shadow:none;transform:none}
+.btn-p.sm{padding:6px 12px;font-size:11px}
+.btn-p.lg{padding:14px 24px;font-size:15px}
+
+/* Inputs */
+.field-p{max-width:280px}
+.field-p label{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:6px}
+.field-p input{width:100%;padding:10px 14px;background:var(--rj-soft);border:1px solid var(--rj-line);border-radius:9px;font-family:var(--font-body);font-size:13px;color:var(--rj-text);font-weight:500;box-sizing:border-box}
+.field-p input.focus{border-color:var(--rj-blue);box-shadow:0 0 0 4px rgba(37,99,235,0.1);background:#fff;outline:none}
+.field-p input.err{border-color:var(--rj-danger);box-shadow:0 0 0 4px rgba(239,68,68,0.1)}
+.field-p .hint{margin-top:4px;font-size:11px;color:var(--rj-muted-text)}
+.field-p .err-msg{margin-top:5px;font-size:11px;color:var(--rj-danger);font-weight:500}
+
+.select-p{max-width:280px;position:relative}
+.select-p .sel{width:100%;padding:10px 32px 10px 14px;background:var(--rj-soft);border:1px solid var(--rj-line);border-radius:9px;font-family:var(--font-body);font-size:13px;color:var(--rj-text);font-weight:500;cursor:pointer;box-sizing:border-box;position:relative}
+.select-p::after{content:"▾";position:absolute;right:14px;top:38px;color:var(--rj-blue);font-family:var(--font-head);font-weight:700}
+.select-p label{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:6px}
+
+/* Badges */
+.badge-p{display:inline-block;padding:3px 9px;border-radius:5px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.badge-p.info{background:var(--rj-info-bg);color:var(--rj-info)}
+.badge-p.success{background:var(--rj-success-bg);color:var(--rj-success)}
+.badge-p.warning{background:var(--rj-warning-bg);color:var(--rj-warning)}
+.badge-p.danger{background:var(--rj-danger-bg);color:var(--rj-danger)}
+.badge-p.neutral{background:var(--rj-line);color:var(--rj-muted-text)}
+.badge-p.solid{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff}
+
+/* Cards */
+.card-p{background:#fff;border:1px solid var(--rj-line);border-radius:12px;padding:20px 22px;max-width:280px;transition:all 200ms cubic-bezier(0.16,1,0.3,1);cursor:pointer}
+.card-p:hover{border-color:var(--rj-blue);transform:translateY(-3px);box-shadow:0 15px 30px rgba(37,99,235,0.15)}
+.card-p .k-c{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:6px}
+.card-p h4{font-family:var(--font-head);font-weight:700;font-size:16px;color:var(--rj-navy);letter-spacing:-0.01em;margin:0 0 4px 0}
+.card-p p{font-family:var(--font-body);font-size:12px;color:var(--rj-muted-text);line-height:1.5;margin:0}
+
+.stat-c{background:#fff;border:1px solid var(--rj-line);border-radius:11px;padding:18px 22px;max-width:220px}
+.stat-c .k{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin-bottom:4px}
+.stat-c .v{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--rj-navy);letter-spacing:-0.02em;line-height:1}
+.stat-c .v span{font-family:var(--font-mono);font-size:14px;color:var(--rj-muted-text);font-weight:600}
+.stat-c .d{font-family:var(--font-mono);font-size:11px;color:var(--rj-success);font-weight:700;letter-spacing:0.05em;margin-top:4px}
+
+/* Tabs */
+.tabs-p{display:inline-flex;background:var(--rj-soft);border:1px solid var(--rj-line);border-radius:9px;padding:4px;gap:2px}
+.tabs-p .tab{padding:6px 14px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.05em;color:var(--rj-muted-text);text-transform:uppercase;border-radius:6px;cursor:pointer}
+.tabs-p .tab.on{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff}
+
+.chip-p{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--rj-light);border:1px solid var(--rj-border);border-radius:20px;font-family:var(--font-head);font-weight:600;font-size:12px;color:var(--rj-blue);cursor:pointer;letter-spacing:-0.01em}
+.chip-p.on{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;border-color:transparent}
+.chip-p .x{color:currentColor;opacity:0.6;font-size:11px}
+
+/* Tables */
+.table-p{width:100%;max-width:640px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--rj-line);border-radius:12px;overflow:hidden}
+.table-p th{padding:10px 14px;background:var(--rj-soft);text-align:left;font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;border-bottom:1px solid var(--rj-line)}
+.table-p td{padding:12px 14px;border-bottom:1px solid var(--rj-line);font-family:var(--font-body);font-size:12.5px;color:var(--rj-text)}
+.table-p tr:last-child td{border:none}
+.table-p tr:hover td{background:var(--rj-soft)}
+.table-p td.name{font-family:var(--font-head);font-weight:600;color:var(--rj-navy);letter-spacing:-0.01em}
+
+/* Alerts */
+.alert-p{padding:12px 16px;border-radius:10px;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;max-width:520px}
+.alert-p.info{background:var(--rj-info-bg);border:1px solid rgba(14,165,233,0.3);color:var(--rj-navy)}
+.alert-p.success{background:var(--rj-success-bg);border:1px solid rgba(16,185,129,0.3);color:var(--rj-navy)}
+.alert-p.warning{background:var(--rj-warning-bg);border:1px solid rgba(245,158,11,0.35);color:var(--rj-navy)}
+.alert-p.danger{background:var(--rj-danger-bg);border:1px solid rgba(239,68,68,0.35);color:var(--rj-navy)}
+.alert-p .ic{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alert-p svg{width:14px;height:14px}
+.alert-p.info .ic{background:rgba(14,165,233,0.2);color:var(--rj-info)}
+.alert-p.success .ic{background:rgba(16,185,129,0.2);color:var(--rj-success)}
+.alert-p.warning .ic{background:rgba(245,158,11,0.2);color:var(--rj-warning)}
+.alert-p.danger .ic{background:rgba(239,68,68,0.2);color:var(--rj-danger)}
+.alert-p p{font-family:var(--font-body);font-size:12.5px;line-height:1.5;margin:0}
+.alert-p p b{font-family:var(--font-head);font-weight:700}
+
+/* Avatars */
+.av-p{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:13px}
+.av-p.sq{border-radius:9px}
+.av-p.sm{width:24px;height:24px;font-size:10px}
+.av-p.lg{width:56px;height:56px;font-size:20px}
+.av-stack{display:flex}
+.av-stack .av-p{border:2px solid #fff;margin-left:-8px}
+.av-stack .av-p:first-child{margin-left:0}
+
+/* Progress */
+.prog-p{max-width:280px}
+.prog-p .lbl{display:flex;justify-content:space-between;margin-bottom:5px}
+.prog-p .lbl .n{font-family:var(--font-head);font-weight:600;font-size:12px;color:var(--rj-navy);letter-spacing:-0.01em}
+.prog-p .lbl .v{font-family:var(--font-mono);font-size:11px;color:var(--rj-blue);font-weight:700}
+.prog-p .bar{height:6px;background:var(--rj-line);border-radius:3px;overflow:hidden}
+.prog-p .fill{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky));border-radius:3px}
+</style></head><body>
+
+<div class="doc">
+<div class="hd">
+  <div class="l">
+    <div class="k">Section 00 · Design System</div>
+    <h1>Component <span>Library.</span></h1>
+    <p class="lead">Every primitive · every variant · every state · rendered live with the exact code that produces it. This is the source of truth for anyone building on top of the RJ Brand OS.</p>
+  </div>
+  <div class="brand"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div><div class="n">RJ Design System</div><div class="t">Components v1.0</div></div></div>
+</div>
+
+<!-- BUTTONS -->
+<h2 class="sec">Buttons · <span>6 variants · 3 sizes</span></h2>
+<p class="sec-l">Every action gets a button. Primary for the one primary action. Ghost for secondary. Danger/success only when semantic. Never more than one primary per view.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Standard buttons</h3><div class="meta"><span>Primary</span><span>Ghost</span><span>Danger</span></div></div>
+  <div class="demo">
+    <button class="btn-p primary">Take Action →</button>
+    <button class="btn-p secondary">Save Draft</button>
+    <button class="btn-p ghost">Cancel</button>
+    <button class="btn-p danger">Delete Dispute</button>
+    <button class="btn-p success">Approve &amp; Send</button>
+    <button class="btn-p link">Learn more →</button>
+    <button class="btn-p primary" disabled>Disabled</button>
+  </div>
+  <div class="code"><span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn-p primary"</span><span class="tag">&gt;</span><span class="text">Take Action →</span><span class="tag">&lt;/button&gt;</span></div>
+</div>
+
+<div class="play">
+  <div class="head-p"><h3>Size variants</h3><div class="meta"><span>sm 32px</span><span>md 40px</span><span>lg 48px</span></div></div>
+  <div class="demo">
+    <button class="btn-p primary sm">Small</button>
+    <button class="btn-p primary">Medium · default</button>
+    <button class="btn-p primary lg">Large · hero CTA</button>
+  </div>
+  <div class="code"><span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn-p primary lg"</span><span class="tag">&gt;</span><span class="text">Hero CTA</span><span class="tag">&lt;/button&gt;</span></div>
+</div>
+
+<!-- INPUTS -->
+<h2 class="sec">Inputs · <span>form fields</span></h2>
+<p class="sec-l">Every input has a label · optional hint · optional error. Never use placeholder as label. Focus state is 4px blue glow. Always accessible.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Text input · states</h3><div class="meta"><span>Default</span><span>Focus</span><span>Error</span></div></div>
+  <div class="demo" style="align-items:flex-start;gap:20px">
+    <div class="field-p"><label>Email address</label><input value="marcus@example.com"/><div class="hint">We'll never share your email</div></div>
+    <div class="field-p"><label>Full legal name</label><input class="focus" value="Marcus D. Johnson"/></div>
+    <div class="field-p"><label>SSN · last 4</label><input class="err" value="123"/><div class="err-msg">⚠ Must be 4 digits</div></div>
+    <div class="select-p"><label>State</label><div class="sel">New Mexico</div></div>
+  </div>
+</div>
+
+<!-- BADGES + CHIPS -->
+<h2 class="sec">Badges &amp; chips · <span>status &amp; taxonomy</span></h2>
+<p class="sec-l">Badges are read-only status. Chips are interactive taxonomy — clickable, dismissable. Never mix the two visually.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Badges · semantic states</h3><div class="meta"><span>5 semantic</span><span>1 solid</span></div></div>
+  <div class="demo">
+    <span class="badge-p info">● Informational</span>
+    <span class="badge-p success">✓ Verified</span>
+    <span class="badge-p warning">⚠ Warning</span>
+    <span class="badge-p danger">✗ Failed</span>
+    <span class="badge-p neutral">Draft</span>
+    <span class="badge-p solid">★ Featured</span>
+  </div>
+</div>
+
+<div class="play">
+  <div class="head-p"><h3>Filter chips · interactive</h3><div class="meta"><span>Multi-select</span></div></div>
+  <div class="demo">
+    <span class="chip-p on">All accounts <span class="x">×</span></span>
+    <span class="chip-p on">Round 2 <span class="x">×</span></span>
+    <span class="chip-p">Round 3</span>
+    <span class="chip-p">Verified</span>
+    <span class="chip-p">Deleted</span>
+    <span class="chip-p">+ Add filter</span>
+  </div>
+</div>
+
+<!-- CARDS -->
+<h2 class="sec">Cards · <span>content containers</span></h2>
+<p class="sec-l">Standard content card · KPI/stat card · hover elevation with token motion values. Always use the tokens · never invent shadows.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Content card</h3><div class="meta"><span>Hover for lift</span></div></div>
+  <div class="demo">
+    <a class="card-p" href="#">
+      <div class="k-c">● Signature</div>
+      <h4>Credit Command Center</h4>
+      <p>The unified home. Health Index · what changed · priority actions ranked by impact × effort.</p>
+    </a>
+    <div class="stat-c">
+      <div class="k">Score change · 30d</div>
+      <div class="v">+18<span>pts est.</span></div>
+      <div class="d">▲ Chase collection · Aug 22</div>
+    </div>
+    <div class="stat-c">
+      <div class="k">MRR</div>
+      <div class="v">$147<span>K</span></div>
+      <div class="d">▲ +12.4% MoM</div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<h2 class="sec">Tabs · <span>segmented control</span></h2>
+<p class="sec-l">Compact tab bar for 2-6 options. Always monospace uppercase labels. On state uses primary gradient. 3+ options can shift to dropdown at mobile.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Tab bar</h3></div>
+  <div class="demo">
+    <div class="tabs-p">
+      <div class="tab on">All</div>
+      <div class="tab">Unread</div>
+      <div class="tab">Actions</div>
+      <div class="tab">Security</div>
+    </div>
+    <div class="tabs-p">
+      <div class="tab">7d</div>
+      <div class="tab on">30d</div>
+      <div class="tab">90d</div>
+      <div class="tab">YTD</div>
+      <div class="tab">All</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALERTS -->
+<h2 class="sec">Alerts · <span>inline messaging</span></h2>
+<p class="sec-l">Inline banners for page-level context. Not for transient events — those are toasts. 4 semantic variants matching notification priorities.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Inline alerts</h3></div>
+  <div class="demo" style="flex-direction:column;align-items:stretch;gap:8px">
+    <div class="alert-p info"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-info"/></svg></div><p><b>Report refreshed.</b> Your 3-bureau data was updated 2 minutes ago.</p></div>
+    <div class="alert-p success"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div><p><b>Dispute sent.</b> Certified mail to Equifax · investigation clock starts on receipt.</p></div>
+    <div class="alert-p warning"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-warning"/></svg></div><p><b>Statement closes in 3 days.</b> Pay Chase Sapphire before Sept 22 to drop utilization to 8%.</p></div>
+    <div class="alert-p danger"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-x-circle"/></svg></div><p><b>Payment failed.</b> Card ending 4242 declined. Update payment method to keep your subscription active.</p></div>
+  </div>
+</div>
+
+<!-- AVATARS -->
+<h2 class="sec">Avatars · <span>identity</span></h2>
+<p class="sec-l">Circular by default (people) or squared (companies). Stacked for teams. Never more than 5 in a stack — 5 + overflow count.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Avatar sizes + stack</h3></div>
+  <div class="demo">
+    <div class="av-p sm">MJ</div>
+    <div class="av-p">MJ</div>
+    <div class="av-p lg">MJ</div>
+    <div class="av-p sq" style="background:linear-gradient(135deg,#0f172a,#1e3a8a)">CH</div>
+    <div class="av-stack">
+      <div class="av-p">MJ</div>
+      <div class="av-p" style="background:linear-gradient(135deg,#0ea5e9,#0284c7)">SR</div>
+      <div class="av-p" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)">DC</div>
+      <div class="av-p" style="background:linear-gradient(135deg,#64748b,#475569)">JT</div>
+      <div class="av-p" style="background:var(--rj-line);color:var(--rj-muted-text)">+3</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<h2 class="sec">Progress · <span>goal + task tracking</span></h2>
+<p class="sec-l">Linear progress bars using the primary gradient fill. Always label + value. Height token = 6px default. Never animated indefinitely unless truly loading.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Progress bars</h3></div>
+  <div class="demo" style="flex-direction:column;align-items:stretch;gap:14px">
+    <div class="prog-p"><div class="lbl"><span class="n">Mortgage Readiness Goal</span><span class="v">38% · 712→740</span></div><div class="bar"><div class="fill" style="width:38%"></div></div></div>
+    <div class="prog-p"><div class="lbl"><span class="n">Program month 2 of 6</span><span class="v">33%</span></div><div class="bar"><div class="fill" style="width:33%"></div></div></div>
+    <div class="prog-p"><div class="lbl"><span class="n">Onboarding</span><span class="v">Step 4 of 7 · 57%</span></div><div class="bar"><div class="fill" style="width:57%"></div></div></div>
+  </div>
+</div>
+
+<!-- TABLE -->
+<h2 class="sec">Tables · <span>data density</span></h2>
+<p class="sec-l">Standard 5-column data table. Header row uses monospace. Body uses Inter. Hover row highlight for interactivity cue.</p>
+
+<div class="play">
+  <div class="head-p"><h3>Data table</h3><div class="meta"><span>Zebra off</span><span>Row hover on</span></div></div>
+  <table class="table-p">
+    <thead><tr><th>Invoice</th><th>Client</th><th>Issued</th><th>Amount</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>RJ-2026-1247</td><td class="name">Marcus D. Johnson</td><td>Sept 5</td><td>$197.00</td><td><span class="badge-p success">Paid</span></td></tr>
+      <tr><td>RJ-2026-1246</td><td class="name">Sarah K. Reynolds</td><td>Sept 4</td><td>$147.00</td><td><span class="badge-p success">Paid</span></td></tr>
+      <tr><td>RJ-2026-1245</td><td class="name">Cascade Holdings</td><td>Sept 3</td><td>$2,400.00</td><td><span class="badge-p info">Pending</span></td></tr>
+      <tr><td>RJ-2026-1244</td><td class="name">James Whitaker</td><td>Sept 2</td><td>$197.00</td><td><span class="badge-p danger">Failed</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+</body></html>

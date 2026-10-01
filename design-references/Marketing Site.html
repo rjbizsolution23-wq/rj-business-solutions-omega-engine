@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>RJ Business Solutions · AI-powered credit + growth systems</title><link rel="stylesheet" href="brand.css"><style>
+body{background:#fff;font-size:15px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+/* NAV */
+nav{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--rj-line);z-index:100;padding:14px 40px}
+nav .row{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .brand{display:flex;align-items:center;gap:10px}
+nav .brand img{width:34px;height:34px;border-radius:8px}
+nav .brand .n{font-family:var(--font-head);font-weight:700;color:var(--rj-navy);font-size:15px;letter-spacing:-0.01em}
+nav .links{display:flex;gap:28px}
+nav .links a{color:var(--rj-navy);text-decoration:none;font-family:var(--font-body);font-size:13px;font-weight:600}
+nav .links a:hover{color:var(--rj-blue)}
+nav .cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:8px;font-family:var(--font-body);font-size:13px;font-weight:600;text-decoration:none;border:1px solid transparent}
+.btn svg{width:14px;height:14px}
+.btn.primary{background:var(--grad-primary);color:#fff;box-shadow:0 6px 14px rgba(37,99,235,0.35)}
+.btn.ghost{color:var(--rj-navy)}
+.btn.dark{background:var(--rj-navy);color:#fff}
+
+/* HERO */
+.hero{position:relative;padding:96px 0 120px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--rj-light) 100%)}
+.hero::before{content:"";position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,0.15),transparent 60%);filter:blur(50px)}
+.hero-c{position:relative;z-index:1;text-align:center;max-width:960px;margin:0 auto}
+.kicker-h{display:inline-block;padding:8px 18px;background:#fff;border:1px solid var(--rj-border);border-radius:999px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);margin-bottom:24px;font-weight:700}
+.hero h1{font-family:var(--font-head);font-size:96px;font-weight:700;letter-spacing:-0.04em;line-height:0.92;margin:0 0 28px 0;color:var(--rj-navy)}
+.hero h1 span{background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-family:var(--font-head);font-size:22px;color:var(--rj-muted-text);font-weight:500;line-height:1.5;max-width:720px;margin:0 auto 36px;letter-spacing:-0.01em}
+.hero .cta-row{display:flex;gap:12px;justify-content:center;margin-bottom:44px}
+.cta-lg{padding:15px 32px;font-size:15px;border-radius:12px;font-weight:700}
+.hero .proof{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;padding-top:44px;border-top:1px solid var(--rj-line)}
+.hero .proof .p-i{text-align:center}
+.hero .proof .k{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin-bottom:4px}
+.hero .proof .v{font-family:var(--font-head);font-weight:700;font-size:26px;color:var(--rj-navy);letter-spacing:-0.02em}
+.hero .proof .v span{background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* SECTION HEADS */
+.sec{padding:100px 0}
+.sec.dark{background:var(--rj-navy);color:#fff}
+.sec.blue{background:linear-gradient(180deg,#fff 0%,var(--rj-light) 100%)}
+.sec-head{text-align:center;max-width:800px;margin:0 auto 56px}
+.kicker{display:inline-block;padding:6px 14px;background:var(--rj-light);border:1px solid var(--rj-border);border-radius:999px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);margin-bottom:20px;font-weight:700}
+.sec.dark .kicker{background:rgba(14,165,233,0.15);border-color:rgba(14,165,233,0.3);color:var(--rj-sky)}
+h2{font-family:var(--font-head);font-size:56px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--rj-navy);margin:0 0 16px 0}
+.sec.dark h2{color:#fff}
+h2 span{background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec.dark h2 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-head .lead{font-family:var(--font-head);font-size:20px;color:var(--rj-muted-text);font-weight:500;line-height:1.5;letter-spacing:-0.01em}
+.sec.dark .sec-head .lead{color:#94a3b8}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pillar{background:#fff;border:1px solid var(--rj-line);border-radius:20px;padding:32px 28px;transition:all 0.2s}
+.pillar:hover{transform:translateY(-4px);border-color:var(--rj-blue);box-shadow:0 20px 40px rgba(37,99,235,0.12)}
+.pillar .ic-p{width:52px;height:52px;background:var(--grad-primary);color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 18px rgba(37,99,235,0.35)}
+.pillar .ic-p svg{width:24px;height:24px}
+.pillar h3{font-family:var(--font-head);font-weight:700;font-size:22px;color:var(--rj-navy);letter-spacing:-0.02em;margin:0 0 10px 0;line-height:1.15}
+.pillar p{font-size:14px;color:var(--rj-muted-text);line-height:1.6;margin:0}
+
+/* PROOF / STATS */
+.stat-block{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-b{text-align:center;padding:32px 20px}
+.stat-b .n{font-family:var(--font-head);font-weight:700;font-size:64px;color:#fff;letter-spacing:-0.03em;line-height:1}
+.stat-b .n span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-b .l{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-top:8px}
+.stat-b .d{font-family:var(--font-body);font-size:13px;color:#cbd5e1;margin-top:8px;line-height:1.4}
+
+/* PRICING */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1120px;margin:0 auto}
+.price-c{background:#fff;border:1px solid var(--rj-line);border-radius:20px;padding:36px 32px;position:relative;transition:all 0.2s}
+.price-c.featured{border:2px solid var(--rj-blue);transform:scale(1.03);box-shadow:0 25px 50px rgba(37,99,235,0.2)}
+.price-c.featured::before{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad-primary);color:#fff;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.14em;padding:5px 14px;border-radius:20px;box-shadow:0 6px 14px rgba(37,99,235,0.4)}
+.price-c .tier{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:8px}
+.price-c h3{font-family:var(--font-head);font-weight:700;font-size:28px;color:var(--rj-navy);letter-spacing:-0.02em;margin:0 0 12px 0}
+.price-c .amt{font-family:var(--font-head);font-weight:700;font-size:56px;color:var(--rj-navy);letter-spacing:-0.03em;line-height:1;margin-bottom:4px}
+.price-c .amt .u{font-size:16px;color:var(--rj-muted-text);font-weight:600}
+.price-c .amt.premium{background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
+.price-c .desc-p{font-size:13px;color:var(--rj-muted-text);line-height:1.6;margin:0 0 24px 0;padding-bottom:20px;border-bottom:1px solid var(--rj-line)}
+.price-c ul{list-style:none;padding:0;margin:0 0 24px}
+.price-c li{padding:8px 0;font-size:14px;color:var(--rj-text);line-height:1.4;display:flex;gap:10px;align-items:flex-start}
+.price-c li svg{width:16px;height:16px;color:var(--rj-success);flex-shrink:0;margin-top:2px}
+.price-c li b{color:var(--rj-navy);font-family:var(--font-head)}
+.price-c .cta-p{display:block;text-align:center;padding:14px;border-radius:10px;font-family:var(--font-head);font-weight:700;font-size:14px;text-decoration:none}
+.price-c .cta-p.primary{background:var(--grad-primary);color:#fff;box-shadow:0 8px 18px rgba(37,99,235,0.35)}
+.price-c .cta-p.ghost{background:var(--rj-soft);color:var(--rj-navy);border:1px solid var(--rj-line)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.about-photo{border-radius:24px;overflow:hidden;position:relative;height:520px;box-shadow:0 30px 60px rgba(15,23,42,0.25)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.about-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(to top,rgba(15,23,42,0.8),transparent)}
+.about-photo .quote{position:absolute;bottom:24px;left:24px;right:24px;color:#fff;font-family:'Space Grotesk',serif;font-style:italic;font-size:17px;font-weight:500;line-height:1.4;z-index:1}
+.about-photo .quote .attr{font-family:var(--font-mono);font-style:normal;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-top:8px}
+.about-content .kicker{margin-bottom:16px}
+.about-content h2{font-size:52px;margin-bottom:20px}
+.about-content p{font-size:16px;color:var(--rj-text);line-height:1.7;margin:0 0 14px 0}
+.about-content p b{font-family:var(--font-head);font-weight:600;color:var(--rj-navy)}
+
+/* CASE STUDIES */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case-c{background:#fff;border:1px solid var(--rj-line);border-radius:20px;padding:32px 28px;transition:all 0.2s}
+.case-c:hover{transform:translateY(-4px);border-color:var(--rj-blue)}
+.case-c .stat-c{font-family:var(--font-head);font-weight:700;font-size:56px;color:var(--rj-blue);letter-spacing:-0.03em;line-height:1;margin-bottom:12px}
+.case-c .stat-c .u{font-size:22px;color:var(--rj-muted-text);font-weight:600}
+.case-c h3{font-family:var(--font-head);font-weight:600;font-size:18px;color:var(--rj-navy);letter-spacing:-0.01em;margin:0 0 8px 0;line-height:1.3}
+.case-c p{font-size:13px;color:var(--rj-muted-text);line-height:1.6;margin:0 0 16px 0}
+.case-c .attribution{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid var(--rj-line)}
+.case-c .attribution .av{width:32px;height:32px;border-radius:50%;background:var(--grad-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:11px}
+.case-c .attribution .info .n{font-family:var(--font-head);font-weight:600;font-size:12px;color:var(--rj-navy)}
+.case-c .attribution .info .r{font-family:var(--font-mono);font-size:9px;letter-spacing:0.08em;color:var(--rj-muted-text);font-weight:600;text-transform:uppercase;margin-top:1px}
+
+/* CTA */
+.cta-block{background:var(--grad-dark);color:#fff;border-radius:28px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-block::after{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.35),transparent 60%);filter:blur(60px)}
+.cta-block h2{font-size:56px;color:#fff;position:relative;z-index:1}
+.cta-block h2 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta-block .sub-cta{font-family:var(--font-head);font-size:20px;color:#cbd5e1;margin:20px 0 36px;font-weight:500;position:relative;z-index:1;max-width:680px;margin-left:auto;margin-right:auto}
+.cta-block .cta-row-b{display:flex;gap:12px;justify-content:center;position:relative;z-index:1}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-info h3{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--rj-navy);letter-spacing:-0.02em;margin:0 0 20px 0}
+.contact-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--rj-line)}
+.contact-item:last-child{border:none}
+.contact-item .ic-c{width:44px;height:44px;background:var(--rj-light);color:var(--rj-blue);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item .ic-c svg{width:20px;height:20px}
+.contact-item .info h4{font-family:var(--font-head);font-weight:600;font-size:15px;color:var(--rj-navy);margin:0 0 3px 0}
+.contact-item .info p{font-size:13px;color:var(--rj-muted-text);margin:0;line-height:1.5}
+.contact-form{background:var(--rj-soft);border:1px solid var(--rj-line);border-radius:20px;padding:36px}
+.contact-form h4{font-family:var(--font-head);font-weight:700;font-size:22px;color:var(--rj-navy);letter-spacing:-0.01em;margin:0 0 20px 0}
+.cf-field{margin-bottom:14px}
+.cf-field label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin-bottom:5px;display:block}
+.cf-field .fld{background:#fff;border:1px solid var(--rj-border);border-radius:8px;padding:12px 14px;font-family:var(--font-body);font-size:14px;color:var(--rj-navy)}
+
+/* FOOTER */
+footer{background:var(--rj-navy);color:#94a3b8;padding:60px 40px 32px}
+footer .row-f{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+footer .col h5{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin:0 0 14px 0}
+footer .col a{color:#94a3b8;text-decoration:none;font-size:13px;display:block;padding:5px 0}
+footer .col a:hover{color:#fff}
+footer .brand-f{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+footer .brand-f img{width:36px;height:36px;border-radius:8px}
+footer .brand-f .n{font-family:var(--font-head);font-weight:600;color:#fff;font-size:15px}
+footer .desc-f{font-size:13px;line-height:1.6;margin:0 0 14px 0;max-width:340px}
+footer .bottom{max-width:1280px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;font-weight:600;color:#64748b}
+</style></head><body>
+
+<!-- NAV -->
+<nav>
+  <div class="row">
+    <div class="brand"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div class="n">RJ Business Solutions</div></div>
+    <div class="links"><a href="#platform">Platform</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#cases">Wins</a><a href="#contact">Contact</a></div>
+    <div class="cta"><a href="#" class="btn ghost">Sign in</a><a href="Onboarding Flow.html" class="btn primary">Get started →</a></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-c">
+      <div class="kicker-h">● Built by Rick Jefferson · Trusted by 847+ clients</div>
+      <h1>AI-powered systems for <span>businesses ready to scale.</span></h1>
+      <div class="sub">RJ Business Solutions builds AI-powered automation, credit technology, funnels, client portals, and growth infrastructure — for businesses ready to stop leaking money in the follow-up.</div>
+      <div class="cta-row">
+        <a href="Onboarding Flow.html" class="btn primary cta-lg">Start free trial →</a>
+        <a href="#pricing" class="btn ghost cta-lg" style="border:1px solid var(--rj-line);background:#fff">See pricing</a>
+      </div>
+      <div class="proof">
+        <div class="p-i"><div class="k">Active clients</div><div class="v"><span>847+</span></div></div>
+        <div class="p-i"><div class="k">Removal rate</div><div class="v"><span>68%</span></div></div>
+        <div class="p-i"><div class="k">Avg score lift</div><div class="v"><span>+72</span></div></div>
+        <div class="p-i"><div class="k">NPS score</div><div class="v"><span>72</span></div></div>
+        <div class="p-i"><div class="k">MRR</div><div class="v"><span>$147K</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM PILLARS -->
+<section class="sec" id="platform">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">● The Platform</div>
+      <h2>The stack behind <span>real results.</span></h2>
+      <div class="lead">Four pillars. All wired together. Nothing bolted on. Everything designed backwards from the outcome: clients get real, measurable credit results — and businesses get the infrastructure to deliver them.</div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="ic-p"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-gauge"/></svg></div><h3>Credit Analysis</h3><p>Deep-dive dashboards. 3-bureau tracking with score factors, forecasts, and real-time alerts.</p></div>
+      <div class="pillar"><div class="ic-p"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg></div><h3>Dispute Engine</h3><p>Automated Round-1 → Round-4 workflow. Kanban command center. Bureau response tracking.</p></div>
+      <div class="pillar"><div class="ic-p"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-ai"/></svg></div><h3>AI Agents</h3><p>13-agent system for score projection, dispute drafting, and client coaching. Human-in-the-loop.</p></div>
+      <div class="pillar"><div class="ic-p"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-shield-check"/></svg></div><h3>Compliance</h3><p>GLBA + FCRA + CROA compliant by default. Every action logged. 7-year audit retention.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">● The Numbers</div>
+      <h2>What <span>results</span> actually look like.</h2>
+      <div class="lead">These are aggregated across every active client in the RJ Business Solutions program. Updated weekly. Not marketing figures — operating metrics.</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-b"><div class="n"><span>1,247</span></div><div class="l">Items removed · 30d</div><div class="d">Across TU, EQ, and EX bureaus</div></div>
+      <div class="stat-b"><div class="n"><span>+72</span></div><div class="l">Avg score lift · 6mo</div><div class="d">Weighted mean across active cohorts</div></div>
+      <div class="stat-b"><div class="n"><span>68<sup style="font-size:32px">%</sup></span></div><div class="l">Round-1 success rate</div><div class="d">Vs. 55% industry benchmark</div></div>
+      <div class="stat-b"><div class="n"><span>4.2m</span></div><div class="l">Avg response time</div><div class="d">Client message → team reply</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec blue" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">● Pricing</div>
+      <h2>Three tiers. <span>Zero setup fees.</span></h2>
+      <div class="lead">All plans include full 3-bureau tracking, dispute automation, and the mobile app. Pick the tier that matches your goal. Cancel anytime.</div>
+    </div>
+    <div class="pricing">
+      <div class="price-c">
+        <div class="tier">Starter</div>
+        <h3>Self-service</h3>
+        <div class="amt">$97<span class="u">/mo</span></div>
+        <p class="desc-p">Perfect for tracking + monthly disputes. You drive the process; we handle the letters.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>3-bureau tracking · updated monthly</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Monthly dispute rounds · 5 items/mo</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Score simulator + utilization tool</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Mobile PWA · document upload</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Email support · 24h response</li>
+        </ul>
+        <a href="Onboarding Flow.html" class="cta-p ghost">Start Starter →</a>
+      </div>
+      <div class="price-c featured">
+        <div class="tier">Pro · Most popular</div>
+        <h3>Full-service</h3>
+        <div class="amt premium">$197<span class="u">/mo</span></div>
+        <p class="desc-p">The tier 82% of our MRR runs on. Weekly disputes, direct chat, and personalized score coaching.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg><b>Everything in Starter</b>, plus:</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Weekly dispute rounds · unlimited</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Direct chat with your specialist</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Score coaching · pay-down plans</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Monthly progress reports · print-ready</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Priority support · 4-hour response</li>
+        </ul>
+        <a href="Onboarding Flow.html" class="cta-p primary">Start Pro trial →</a>
+      </div>
+      <div class="price-c">
+        <div class="tier">Enterprise</div>
+        <h3>White-glove</h3>
+        <div class="amt">$997<span class="u">/mo</span></div>
+        <p class="desc-p">For businesses, high-net-worth, and funding prep. Dedicated specialist, custom SLA, and full white-glove.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg><b>Everything in Pro</b>, plus:</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Dedicated senior specialist</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Business + personal credit combined</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Funding preparation + intros</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Direct line to Rick + team leads</li>
+          <li><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check"/></svg>Custom SLA · 1-hour response</li>
+        </ul>
+        <a href="Onboarding Flow.html" class="cta-p ghost">Talk to us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="photos/rick-signing.jpg" alt="Rick Jefferson"/>
+        <div class="quote">"Systems that ship. Not slogans that don't. That's the whole company in one line."<div class="attr">Rick Jefferson · Founder</div></div>
+      </div>
+      <div class="about-content">
+        <div class="kicker">● The founder</div>
+        <h2>Built by an <span>operator</span>, not a marketer.</h2>
+        <p>Rick Jefferson is a <b>credit technology architect</b> and business automation strategist. His work sits at the intersection of credit expertise, fintech infrastructure, enterprise software, and real-world business growth.</p>
+        <p>Through RJ Business Solutions, Rick builds the systems behind modern growth: AI-powered credit repair platforms, credit monitoring APIs, automated client communication, payment and subscription infrastructure, client portals, and white-label fintech platforms.</p>
+        <p>His public profile positions him as a builder of <b>AI-powered credit repair systems, credit monitoring APIs, conversational AI credit agents, payment infrastructure, and compliance-focused automation systems.</b></p>
+        <p style="margin-top:20px"><a href="Meet Rick.html" class="btn dark">Meet Rick →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="sec blue" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">● Real Wins</div>
+      <h2>Real clients. <span>Real numbers.</span></h2>
+      <div class="lead">No hype without infrastructure. These are three of the wins from the last 90 days. Named clients (with permission). Named results.</div>
+    </div>
+    <div class="case-grid">
+      <div class="case-c">
+        <div class="stat-c">+147 <span class="u">pts</span></div>
+        <h3>580 → 727 in 5 months</h3>
+        <p>Marcus J. came in with 4 open collections, 82% utilization, and a mortgage denial. We ran 3 dispute rounds, coached the pay-down plan, added a seasoned tradeline. Closed on a home Aug 2026.</p>
+        <div class="attribution"><div class="av">MJ</div><div class="info"><div class="n">Marcus Johnson</div><div class="r">Pro · Homebuyer</div></div></div>
+      </div>
+      <div class="case-c">
+        <div class="stat-c">+204 <span class="u">pts</span></div>
+        <h3>521 → 725 in 8 months</h3>
+        <p>Lisa W. had 3 charge-offs, a bankruptcy (discharged), and needed business funding. Full derog cleanup, business credit builds, then $85K SBA funding for a new food truck.</p>
+        <div class="attribution"><div class="av" style="background:linear-gradient(135deg,#0ea5e9,#0284c7)">LW</div><div class="info"><div class="n">Lisa Washington</div><div class="r">Enterprise · Founder</div></div></div>
+      </div>
+      <div class="case-c">
+        <div class="stat-c">+95 <span class="u">pts</span></div>
+        <h3>640 → 735 in 4 months</h3>
+        <p>Chris W. was denied auto financing at 640. We removed 2 unauthorized inquiries, one incorrect late, and coached his utilization plan. Approved for a Tesla Model Y at 4.2% APR two months later.</p>
+        <div class="attribution"><div class="av" style="background:linear-gradient(135deg,#1e3a8a,#0f172a)">CW</div><div class="info"><div class="n">Chris Wright</div><div class="r">Enterprise · Executive</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-block">
+      <h2>Your credit shouldn't <span>hold you back.</span></h2>
+      <div class="sub-cta">Start with the 7-day free trial. No card required. Cancel anytime. See what your score looks like in 30 days with the full stack behind you.</div>
+      <div class="cta-row-b">
+        <a href="Onboarding Flow.html" class="btn primary cta-lg" style="background:#fff;color:var(--rj-navy)">Start free trial →</a>
+        <a href="#contact" class="btn ghost cta-lg" style="color:#fff;border:1px solid rgba(255,255,255,0.3)">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec blue" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">● Contact</div>
+      <h2>Get in <span>touch.</span></h2>
+      <div class="lead">Support · sales · partnerships · press. We respond within 4 hours on Pro+ tiers.</div>
+    </div>
+    <div class="contact">
+      <div class="contact-info">
+        <h3>Reach the team</h3>
+        <div class="contact-item"><div class="ic-c"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-mail"/></svg></div><div class="info"><h4>Email</h4><p>support@rjbusinesssolutions.org · avg reply 4hr</p></div></div>
+        <div class="contact-item"><div class="ic-c"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg></div><div class="info"><h4>In-app chat</h4><p>Pro + Enterprise get direct-chat with their specialist</p></div></div>
+        <div class="contact-item"><div class="ic-c"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-building"/></svg></div><div class="info"><h4>HQ</h4><p>1342 NM 333, Tijeras, New Mexico 87059</p></div></div>
+        <div class="contact-item"><div class="ic-c"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-globe"/></svg></div><div class="info"><h4>Web</h4><p>rjbusinesssolutions.org</p></div></div>
+      </div>
+      <div class="contact-form">
+        <h4>Send us a note</h4>
+        <div class="cf-field"><label>Name</label><div class="fld">Your full name</div></div>
+        <div class="cf-field"><label>Email</label><div class="fld">you@company.com</div></div>
+        <div class="cf-field"><label>How can we help?</label><div class="fld" style="height:100px;display:flex;align-items:flex-start;padding-top:12px;color:var(--rj-muted-text)">Tell us what you're building...</div></div>
+        <a href="#" class="btn primary" style="width:100%;justify-content:center;padding:14px">Send message →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="row-f">
+    <div class="col">
+      <div class="brand-f"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div class="n">RJ Business Solutions</div></div>
+      <p class="desc-f">AI-powered systems, automation, and growth infrastructure for businesses ready to scale.</p>
+      <p style="font-size:12px;font-family:var(--font-mono);letter-spacing:0.06em;font-weight:600">1342 NM 333 · Tijeras, NM 87059</p>
+    </div>
+    <div class="col"><h5>Platform</h5><a href="#platform">Credit Analysis</a><a href="#platform">Dispute Engine</a><a href="#platform">AI Agents</a><a href="#platform">Compliance</a></div>
+    <div class="col"><h5>Company</h5><a href="#about">About Rick</a><a href="#cases">Case Studies</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+    <div class="col"><h5>Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">FCRA Rights</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 RJ Business Solutions · All rights reserved</div>
+    <div>Built by Rick · Systems that ship.</div>
+  </div>
+</footer>
+
+</body></html>

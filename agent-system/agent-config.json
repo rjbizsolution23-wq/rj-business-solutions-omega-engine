@@ -1,0 +1,127 @@
+{
+  "$schema": "rj-agent-config-v1",
+  "system": "RJ Business Solutions · Agent System",
+  "version": "26.0",
+  "generated": "2026-09-07",
+  "principal": {
+    "name": "Rick Jefferson",
+    "role": "Founder · Credit Technology Architect",
+    "email": "rick@rjbusinesssolutions.org",
+    "linkedIn": "https://www.linkedin.com/in/rick-jefferson-314998235"
+  },
+  "company": {
+    "name": "RJ Business Solutions",
+    "founded": 2023,
+    "address": "1342 NM 333, Tijeras, New Mexico 87059",
+    "website": "https://rjbusinesssolutions.org",
+    "support": "support@rjbusinesssolutions.org",
+    "logo": "https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg",
+    "positioning": "AI-powered systems, automation, and growth infrastructure for businesses ready to scale.",
+    "verticals": ["credit technology", "business automation", "fintech", "CRM systems", "white-label SaaS"]
+  },
+  "brand": {
+    "colors": {
+      "primary": "#2563eb",
+      "secondary": "#0ea5e9",
+      "deep": "#1e3a8a",
+      "navy": "#0f172a",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "danger": "#ef4444"
+    },
+    "typography": {
+      "headings": "Space Grotesk",
+      "body": "Inter",
+      "mono": "Space Grotesk"
+    },
+    "primaryGradient": "linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)",
+    "styleTokens": {
+      "borderRadius": ["4px", "8px", "12px", "16px", "20px", "24px"],
+      "shadow": "0 8px 18px rgba(37, 99, 235, 0.35)",
+      "motionBase": "200ms",
+      "motionEasing": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  "voice": {
+    "traits": ["direct", "premium but practical", "founder-led", "compliance-native", "systems-thinking", "anti-generic"],
+    "signaturePhrases": [
+      "We do not sell templates. We build systems.",
+      "Your leads should not disappear in DMs.",
+      "Growth is not more noise. Growth is better infrastructure.",
+      "If your business depends on follow-up, your follow-up cannot depend on memory.",
+      "Automation only works when the strategy is clean."
+    ]
+  },
+  "compliance": {
+    "regulations": ["FCRA", "CROA", "TCPA", "GLBA", "CFPB"],
+    "guardrails": {
+      "creditScore": "Never guarantee specific point increases. Always label as 'est.' or 'estimated'.",
+      "disputes": "Never encourage disputing accurate information. FCRA §611 violations carry penalties.",
+      "smsCommunication": "TCPA requires documented double-opt-in consent. Include STOP-to-cancel.",
+      "pii": "Mask by default. Elevated session + logged reason to unmask.",
+      "monitoring": "Granular per-consent opt-in with provider disclosed (Array, SEON, SpyCloud, Optery, HIBP, Melissa)."
+    }
+  },
+  "assetInventory": {
+    "totalAssets": 170,
+    "totalSections": 29,
+    "flagshipScreens": {
+      "creditIntelligence": 21,
+      "adminConsole": 8,
+      "mobile": 3,
+      "brandSystem": 6,
+      "crm": 4,
+      "analytics": 1,
+      "blog": 21
+    },
+    "designTokens": {
+      "json": "assets/tokens.json",
+      "css": "assets/tokens.css"
+    }
+  },
+  "referenceFiles": {
+    "brandContract": "RJ-MASTER.md",
+    "quickStart": "RJ-QUICKSTART.md",
+    "governance": "RJ Complete Brand Library/00 · Brand System/Governance Manual.html",
+    "componentLibrary": "RJ Complete Brand Library/00 · Brand System/Component Library.html",
+    "styleGuide": "RJ Complete Brand Library/00 · Brand System/AI Style Guide.html",
+    "coverageDashboard": "RJ Complete Brand Library/60 · Registry/Brand Universe Coverage.html",
+    "assetManifest": "manifest.json"
+  },
+  "qualityGate": {
+    "minimumScore": 85,
+    "criteria": [
+      { "name": "Brand fit", "weight": 10 },
+      { "name": "Originality", "weight": 10 },
+      { "name": "Composition", "weight": 9 },
+      { "name": "Clarity", "weight": 9 },
+      { "name": "Craft", "weight": 9 },
+      { "name": "Scalability", "weight": 8 },
+      { "name": "Accessibility WCAG 2.1 AA", "weight": 9 },
+      { "name": "Production ready", "weight": 9 },
+      { "name": "Cross-channel consistency", "weight": 8 },
+      { "name": "Anti-generic test", "weight": "pass/fail" }
+    ]
+  },
+  "photoLibrary": {
+    "rickHero": "01 · Photos of Rick/rick-hero.jpg",
+    "rickPortrait": "01 · Photos of Rick/rick-portrait.jpg",
+    "rickVision": "01 · Photos of Rick/rick-vision.jpg",
+    "rickVault": "01 · Photos of Rick/rick-vault.jpg",
+    "rickSigning": "01 · Photos of Rick/rick-signing.jpg",
+    "rickCircuit": "01 · Photos of Rick/rick-circuit.jpg"
+  },
+  "buildProtocol": {
+    "steps": [
+      "1. Read this folder end-to-end",
+      "2. Check 06-asset-index.md for existing similar asset",
+      "3. Load closest sibling asset as reference",
+      "4. Build using scaffold from 03-html-scaffold.md",
+      "5. Reference only --rj-* design tokens",
+      "6. Validate against 08-quality-gate.md",
+      "7. Register in manifest.json",
+      "8. Add to master library index",
+      "9. Version as 1.0 with status 'approved'"
+    ]
+  }
+}

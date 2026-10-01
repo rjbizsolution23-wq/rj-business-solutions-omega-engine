@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>Sales Pipeline · RJ CRM</title><link rel="stylesheet" href="brand.css"><style>
+body{background:#0b1220;color:#e2e8f0;font-family:var(--font-body);font-size:14px}
+.app{max-width:1440px;margin:0 auto;padding:24px 32px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.top .l h1{font-family:var(--font-head);font-weight:700;font-size:32px;color:#fff;letter-spacing:-0.02em;margin:0}
+.top .l h1 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top .l .g{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:4px}
+.actions{display:flex;gap:8px}
+.btn{padding:9px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#e2e8f0;border-radius:8px;font-family:var(--font-body);font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer}
+.btn svg{width:14px;height:14px}
+.btn.p{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));border-color:transparent;box-shadow:0 6px 14px rgba(37,99,235,0.35)}
+
+/* KPI row */
+.kpi{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
+.k-c{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px 18px}
+.k-c .k{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700}
+.k-c .v{font-family:var(--font-head);font-weight:700;font-size:24px;color:#fff;letter-spacing:-0.02em;line-height:1;margin-top:4px}
+.k-c .v .u{font-family:var(--font-mono);font-size:11px;color:#94a3b8;font-weight:600}
+.k-c .d{font-family:var(--font-mono);font-size:10px;font-weight:700;margin-top:4px;letter-spacing:0.05em;color:#6ee7b7}
+
+/* Kanban */
+.kanban{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:20px}
+.col{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:16px}
+.col .hd-c{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:12px}
+.col .hd-c .lbl{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.col .hd-c .lbl::before{content:"";width:6px;height:6px;border-radius:50%}
+.col.disc .lbl{color:#94a3b8}
+.col.disc .lbl::before{background:#94a3b8}
+.col.qual .lbl{color:var(--rj-sky)}
+.col.qual .lbl::before{background:var(--rj-sky)}
+.col.prop .lbl{color:#a5b4fc}
+.col.prop .lbl::before{background:#a5b4fc}
+.col.neg .lbl{color:#fbbf24}
+.col.neg .lbl::before{background:#fbbf24;animation:pulse 1.5s infinite}
+.col.won .lbl{color:#6ee7b7}
+.col.won .lbl::before{background:#6ee7b7}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.col .hd-c .stats-h{text-align:right}
+.col .hd-c .n-h{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;letter-spacing:-0.01em}
+.col .hd-c .v-h{font-family:var(--font-mono);font-size:10px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;margin-top:1px}
+
+.deal{padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:all 0.15s}
+.deal:hover{border-color:rgba(14,165,233,0.35);transform:translateY(-1px)}
+.deal.hot{border-left:3px solid #fca5a5}
+.deal.warm{border-left:3px solid #fbbf24}
+.deal.cool{border-left:3px solid var(--rj-sky)}
+.deal h4{font-family:var(--font-head);font-weight:600;font-size:12.5px;color:#fff;margin:0 0 4px 0;letter-spacing:-0.01em;line-height:1.2}
+.deal .co{font-family:var(--font-body);font-size:11px;color:#cbd5e1;margin:0 0 6px 0;line-height:1.3}
+.deal .foot-d{display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px solid rgba(255,255,255,0.04)}
+.deal .amt{font-family:var(--font-head);font-weight:700;font-size:13px;color:#6ee7b7;letter-spacing:-0.01em}
+.deal .foot-d .r-side{display:flex;gap:6px;align-items:center;font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.05em;font-weight:700}
+.deal .av-s{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;font-size:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700}
+.deal .prog-p{margin-top:6px;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.deal .prog-p .fill{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky));border-radius:2px}
+
+/* Bottom grid */
+.bot{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.card{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:22px 24px}
+.card h2{font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;letter-spacing:-0.02em;margin:0 0 4px 0;display:flex;align-items:center;gap:8px}
+.card h2 svg{width:16px;height:16px;color:var(--rj-sky)}
+.card .sub{font-size:12px;color:#94a3b8;margin-bottom:16px;line-height:1.5}
+
+/* Forecast rows */
+.fc-row{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center}
+.fc-row:last-child{border:none;padding-top:14px;margin-top:6px;border-top:2px solid rgba(14,165,233,0.3);font-family:var(--font-head)}
+.fc-row .lbl-fc{font-family:var(--font-head);font-weight:600;font-size:13px;color:#fff;letter-spacing:-0.01em}
+.fc-row .lbl-fc .sub-fc{font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;margin-top:2px}
+.fc-row .n-fc{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;letter-spacing:-0.01em;text-align:right}
+.fc-row .amt-fc{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#6ee7b7;font-weight:700;text-align:right}
+.fc-row:last-child .amt-fc{color:#fff;font-size:18px}
+.fc-row:last-child .lbl-fc{font-weight:700;font-size:15px}
+
+/* Velocity */
+.vel-row{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.vel-row:last-child{border:none}
+.vel-row .top-v{display:flex;justify-content:space-between;margin-bottom:5px}
+.vel-row .n-v{font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff;letter-spacing:-0.01em}
+.vel-row .d-v{font-family:var(--font-mono);font-size:11px;color:#6ee7b7;font-weight:700}
+.vel-row .bar-v{height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.vel-row .fill-v{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky));border-radius:3px}
+</style></head><body>
+
+<div class="app">
+<div class="top">
+  <div class="l"><div class="g">Sales Pipeline · Section 20 · Wave 24</div><h1>My <span>Pipeline</span></h1></div>
+  <div class="actions">
+    <a href="CRM Contact 360.html" class="btn"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user"/></svg>Contacts</a>
+    <button class="btn"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-download"/></svg>Export</button>
+    <button class="btn p"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-plus"/></svg>New Deal</button>
+  </div>
+</div>
+
+<!-- KPIs -->
+<div class="kpi">
+  <div class="k-c"><div class="k">Pipeline value</div><div class="v">$487<span class="u">K</span></div><div class="d">▲ +18% MoM</div></div>
+  <div class="k-c"><div class="k">Weighted forecast</div><div class="v">$142<span class="u">K</span></div><div class="d">▲ Q4 pace</div></div>
+  <div class="k-c"><div class="k">Deals · open</div><div class="v">47</div><div class="d">▲ +8 · 7d</div></div>
+  <div class="k-c"><div class="k">Win rate · 90d</div><div class="v">34<span class="u">%</span></div><div class="d">▲ Above target</div></div>
+  <div class="k-c"><div class="k">Avg sales cycle</div><div class="v">18<span class="u"> d</span></div><div class="d">▼ -3d faster</div></div>
+</div>
+
+<!-- KANBAN -->
+<div class="kanban">
+  <div class="col disc">
+    <div class="hd-c">
+      <div class="lbl">Discovery · 12</div>
+      <div class="stats-h"><div class="n-h">$124K</div><div class="v-h">Total</div></div>
+    </div>
+
+    <div class="deal cool"><h4>Cascade upgrade</h4><p class="co">Marcus D. Johnson · Enterprise ARR</p><div class="prog-p"><div class="fill" style="width:20%"></div></div><div class="foot-d"><span class="amt">$9,564</span><span class="r-side"><div class="av-s">M</div>3d</span></div></div>
+    <div class="deal cool"><h4>Sunrise Realty · dealer</h4><p class="co">White-label credit + funding</p><div class="prog-p"><div class="fill" style="width:15%"></div></div><div class="foot-d"><span class="amt">$28,800</span><span class="r-side"><div class="av-s">A</div>5d</span></div></div>
+    <div class="deal cool"><h4>Elena Vasquez · upgrade</h4><p class="co">Starter → Pro C+F</p><div class="prog-p"><div class="fill" style="width:18%"></div></div><div class="foot-d"><span class="amt">$1,800</span><span class="r-side"><div class="av-s">M</div>7d</span></div></div>
+    <div class="deal cool"><h4>Nova Group · consulting</h4><p class="co">Fleet infrastructure</p><div class="prog-p"><div class="fill" style="width:12%"></div></div><div class="foot-d"><span class="amt">$14,200</span><span class="r-side"><div class="av-s">R</div>1d</span></div></div>
+  </div>
+
+  <div class="col qual">
+    <div class="hd-c">
+      <div class="lbl">Qualified · 14</div>
+      <div class="stats-h"><div class="n-h">$168K</div><div class="v-h">Total</div></div>
+    </div>
+
+    <div class="deal warm"><h4>Whitaker Financial</h4><p class="co">15-user Enterprise deal</p><div class="prog-p"><div class="fill" style="width:40%"></div></div><div class="foot-d"><span class="amt">$18,000</span><span class="r-side"><div class="av-s">M</div>12d</span></div></div>
+    <div class="deal cool"><h4>James Whitaker · upsell</h4><p class="co">Add funding module</p><div class="prog-p"><div class="fill" style="width:35%"></div></div><div class="foot-d"><span class="amt">$1,200</span><span class="r-side"><div class="av-s">M</div>4d</span></div></div>
+    <div class="deal warm"><h4>Petrov Homes · pilot</h4><p class="co">50 clients · agency package</p><div class="prog-p"><div class="fill" style="width:42%"></div></div><div class="foot-d"><span class="amt">$36,000</span><span class="r-side"><div class="av-s">A</div>9d</span></div></div>
+    <div class="deal cool"><h4>Silver Sage renewal</h4><p class="co">Annual · re-eval terms</p><div class="prog-p"><div class="fill" style="width:38%"></div></div><div class="foot-d"><span class="amt">$21,600</span><span class="r-side"><div class="av-s">R</div>18d</span></div></div>
+  </div>
+
+  <div class="col prop">
+    <div class="hd-c">
+      <div class="lbl">Proposal · 9</div>
+      <div class="stats-h"><div class="n-h">$96K</div><div class="v-h">Total</div></div>
+    </div>
+
+    <div class="deal warm"><h4>Reynolds Consulting</h4><p class="co">Q4 launch partner</p><div class="prog-p"><div class="fill" style="width:65%"></div></div><div class="foot-d"><span class="amt">$32,400</span><span class="r-side"><div class="av-s">R</div>2d</span></div></div>
+    <div class="deal warm"><h4>Fielding Credit Co</h4><p class="co">White-label · Q4</p><div class="prog-p"><div class="fill" style="width:60%"></div></div><div class="foot-d"><span class="amt">$14,400</span><span class="r-side"><div class="av-s">M</div>6d</span></div></div>
+    <div class="deal cool"><h4>Marlow Wealth · pilot</h4><p class="co">10 clients starter deal</p><div class="prog-p"><div class="fill" style="width:55%"></div></div><div class="foot-d"><span class="amt">$4,800</span><span class="r-side"><div class="av-s">A</div>3d</span></div></div>
+  </div>
+
+  <div class="col neg">
+    <div class="hd-c">
+      <div class="lbl">Negotiation · 6</div>
+      <div class="stats-h"><div class="n-h">$74K</div><div class="v-h">Total</div></div>
+    </div>
+
+    <div class="deal hot"><h4>Cascade renewal · 3yr</h4><p class="co">Multi-year contract lock</p><div class="prog-p"><div class="fill" style="width:80%"></div></div><div class="foot-d"><span class="amt">$32,400</span><span class="r-side"><div class="av-s">R</div>0d</span></div></div>
+    <div class="deal hot"><h4>Anna Petrov · Enterprise</h4><p class="co">Contract signed pending</p><div class="prog-p"><div class="fill" style="width:85%"></div></div><div class="foot-d"><span class="amt">$14,200</span><span class="r-side"><div class="av-s">M</div>1d</span></div></div>
+    <div class="deal warm"><h4>Fielding · terms revision</h4><p class="co">Payment schedule adjust</p><div class="prog-p"><div class="fill" style="width:78%"></div></div><div class="foot-d"><span class="amt">$8,400</span><span class="r-side"><div class="av-s">M</div>4d</span></div></div>
+  </div>
+
+  <div class="col won">
+    <div class="hd-c">
+      <div class="lbl">Won · 30d · 8</div>
+      <div class="stats-h"><div class="n-h">$47K</div><div class="v-h">Closed</div></div>
+    </div>
+
+    <div class="deal"><h4>Cascade Holdings expansion ✓</h4><p class="co">+5 dealer seats</p><div class="foot-d"><span class="amt">$12,000</span><span class="r-side">Aug 28</span></div></div>
+    <div class="deal"><h4>Reynolds monthly · Pro ✓</h4><p class="co">Solo → Pro upgrade</p><div class="foot-d"><span class="amt">$1,764</span><span class="r-side">Aug 25</span></div></div>
+    <div class="deal"><h4>Torres Family · Pro ✓</h4><p class="co">2 new subscriptions</p><div class="foot-d"><span class="amt">$4,728</span><span class="r-side">Aug 22</span></div></div>
+    <div class="deal"><h4>Nova pilot converted ✓</h4><p class="co">3-month pilot → annual</p><div class="foot-d"><span class="amt">$8,400</span><span class="r-side">Aug 19</span></div></div>
+  </div>
+</div>
+
+<!-- Bottom -->
+<div class="bot">
+  <div class="card">
+    <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-target"/></svg>Q4 forecast · weighted by stage probability</h2>
+    <div class="sub">Weighted forecast = sum(deal value × stage probability). Estimates only — never committed until closed-won.</div>
+
+    <div class="fc-row"><div class="lbl-fc">Discovery · 20% prob<div class="sub-fc">12 deals · $124K raw</div></div><div class="n-fc">×20%</div><div class="amt-fc">$24,800 est.</div></div>
+    <div class="fc-row"><div class="lbl-fc">Qualified · 40% prob<div class="sub-fc">14 deals · $168K raw</div></div><div class="n-fc">×40%</div><div class="amt-fc">$67,200 est.</div></div>
+    <div class="fc-row"><div class="lbl-fc">Proposal · 60% prob<div class="sub-fc">9 deals · $96K raw</div></div><div class="n-fc">×60%</div><div class="amt-fc">$57,600 est.</div></div>
+    <div class="fc-row"><div class="lbl-fc">Negotiation · 80% prob<div class="sub-fc">6 deals · $74K raw</div></div><div class="n-fc">×80%</div><div class="amt-fc">$59,200 est.</div></div>
+    <div class="fc-row"><div class="lbl-fc">Weighted forecast · Q4</div><div class="n-fc"></div><div class="amt-fc">$208,800 est.</div></div>
+  </div>
+
+  <div class="card">
+    <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-zap"/></svg>Deal velocity · avg days per stage</h2>
+    <div class="sub">How quickly deals move stage-to-stage. Green = faster than 90d baseline.</div>
+
+    <div class="vel-row"><div class="top-v"><span class="n-v">Discovery → Qualified</span><span class="d-v">4.2 days ▼ -0.8d</span></div><div class="bar-v"><div class="fill-v" style="width:25%"></div></div></div>
+    <div class="vel-row"><div class="top-v"><span class="n-v">Qualified → Proposal</span><span class="d-v">5.1 days ▼ -1.2d</span></div><div class="bar-v"><div class="fill-v" style="width:35%"></div></div></div>
+    <div class="vel-row"><div class="top-v"><span class="n-v">Proposal → Negotiation</span><span class="d-v">4.8 days ▼ -0.4d</span></div><div class="bar-v"><div class="fill-v" style="width:32%"></div></div></div>
+    <div class="vel-row"><div class="top-v"><span class="n-v">Negotiation → Won</span><span class="d-v">3.9 days ▼ -0.6d</span></div><div class="bar-v"><div class="fill-v" style="width:28%"></div></div></div>
+    <div class="vel-row"><div class="top-v"><span class="n-v"><b style="color:var(--rj-sky);font-family:var(--font-head)">Total cycle · avg</b></span><span class="d-v">18 days ▼ -3d</span></div><div class="bar-v"><div class="fill-v" style="width:60%"></div></div></div>
+  </div>
+</div>
+
+</div>
+</body></html>

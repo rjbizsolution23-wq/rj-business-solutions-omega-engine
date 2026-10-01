@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>CRM · Contact 360 · RJ Business Solutions</title><link rel="stylesheet" href="brand.css"><style>
+body{background:#0b1220;color:#e2e8f0;font-size:14px;font-family:var(--font-body)}
+.app{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.sb{background:#0f172a;border-right:1px solid rgba(255,255,255,0.06);padding:24px 20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb .brand{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:18px}
+.sb .brand img{width:34px;height:34px;border-radius:8px}
+.sb .brand .n{font-family:var(--font-head);font-weight:700;color:#fff;font-size:13px}
+.sb .brand .t{font-family:var(--font-mono);font-size:9px;color:var(--rj-sky);letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-top:2px}
+.sec-l{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;font-weight:700;padding:14px 12px 6px}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:#cbd5e1;text-decoration:none;font-family:var(--font-body);font-size:13px;font-weight:500}
+.nav a svg{width:16px;height:16px;flex-shrink:0}
+.nav a:hover{background:rgba(255,255,255,0.04);color:#fff}
+.nav a.a{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;box-shadow:0 6px 14px rgba(37,99,235,0.35)}
+.nav a .b{margin-left:auto;background:rgba(14,165,233,0.15);color:var(--rj-sky);font-family:var(--font-mono);font-size:9px;padding:1px 6px;border-radius:4px;font-weight:700}
+
+.main{padding:24px 32px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.crumb{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700}
+.crumb a{color:var(--rj-sky);text-decoration:none}
+.crumb b{color:#fff;font-family:var(--font-head);text-transform:none;letter-spacing:-0.01em;font-size:13px;display:block;margin-top:2px}
+.actions{display:flex;gap:8px}
+.btn{padding:9px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#e2e8f0;border-radius:8px;font-family:var(--font-body);font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer}
+.btn svg{width:14px;height:14px}
+.btn.p{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));border-color:transparent;box-shadow:0 6px 14px rgba(37,99,235,0.35)}
+
+/* Contact hero */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#2563eb 100%);border:1px solid rgba(14,165,233,0.3);border-radius:20px;padding:32px 40px;margin-bottom:20px;position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.hero::after{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.35),transparent 60%);filter:blur(60px)}
+.av-big{width:96px;height:96px;border-radius:24px;background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:36px;position:relative;z-index:1;box-shadow:0 20px 40px rgba(37,99,235,0.4)}
+.info-h{position:relative;z-index:1}
+.info-h .name{font-family:var(--font-head);font-weight:700;font-size:34px;color:#fff;letter-spacing:-0.02em;line-height:1;margin:0 0 4px 0}
+.info-h .name .verified{color:#6ee7b7;font-size:20px;margin-left:8px;vertical-align:middle}
+.info-h .role{font-family:var(--font-head);font-size:15px;color:#cbd5e1;font-weight:500;margin-bottom:8px}
+.info-h .tags{display:flex;gap:6px;flex-wrap:wrap}
+.info-h .tag{padding:3px 10px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.3);border-radius:5px;font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rj-sky);font-weight:700}
+.info-h .tag.pro{background:rgba(96,165,250,0.15);border-color:rgba(96,165,250,0.35);color:#60a5fa}
+.info-h .tag.hot{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.35);color:#fca5a5}
+.stats-h{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,auto);gap:24px;align-items:center}
+.stat-h{text-align:right}
+.stat-h .k{font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.stat-h .v{font-family:var(--font-head);font-weight:700;font-size:22px;color:#fff;letter-spacing:-0.02em;line-height:1}
+.stat-h .v.pos{color:#6ee7b7}
+
+/* Score bar */
+.score-strip{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px 24px;margin-bottom:20px;display:grid;grid-template-columns:auto 1fr auto auto auto;gap:24px;align-items:center}
+.score-strip .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700}
+.score-strip .lbl b{color:#fff;font-family:var(--font-head);letter-spacing:-0.01em;font-size:14px;display:block;margin-top:2px;text-transform:none}
+.score-strip .bar{height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;position:relative;flex:1}
+.score-strip .fill{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky),#6ee7b7);border-radius:4px;width:84%;position:relative}
+.score-strip .thumb{position:absolute;right:-6px;top:-4px;bottom:-4px;width:16px;background:#fff;border:3px solid var(--rj-sky);border-radius:50%;box-shadow:0 4px 10px rgba(14,165,233,0.4)}
+.score-strip .val{font-family:var(--font-head);font-weight:700;font-size:26px;color:#6ee7b7;letter-spacing:-0.02em;line-height:1}
+.score-strip .val .u{font-family:var(--font-mono);font-size:11px;color:#94a3b8;font-weight:600}
+.score-strip .nba{padding:9px 16px;background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;border-radius:8px;font-family:var(--font-head);font-weight:700;font-size:12px;text-decoration:none;letter-spacing:-0.01em;display:inline-flex;align-items:center;gap:6px;box-shadow:0 6px 14px rgba(37,99,235,0.35)}
+.score-strip .nba svg{width:12px;height:12px}
+
+/* 3-col */
+.grid-c{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:16px;margin-bottom:20px}
+.card{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px 22px}
+.card h2{font-family:var(--font-head);font-weight:700;font-size:15px;color:#fff;letter-spacing:-0.02em;margin:0 0 4px 0;display:flex;align-items:center;gap:8px}
+.card h2 svg{width:16px;height:16px;color:var(--rj-sky)}
+.card .sub-c{font-size:11px;color:#94a3b8;margin-bottom:14px}
+
+/* Left: contact facts */
+.fact-r{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+.fact-r:last-child{border:none}
+.fact-r .ic{width:26px;height:26px;background:rgba(14,165,233,0.1);color:var(--rj-sky);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fact-r .ic svg{width:12px;height:12px}
+.fact-r .k-f{font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.1em;font-weight:700;text-transform:uppercase}
+.fact-r .v-f{font-family:var(--font-body);font-size:12px;color:#fff;font-weight:500;line-height:1.3}
+.fact-r .v-f .lock{color:#fbbf24;font-size:9px;margin-left:4px}
+
+/* Middle: timeline */
+.tl{display:flex;flex-direction:column;gap:0}
+.tl-i{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);position:relative;align-items:flex-start}
+.tl-i:last-child{border:none}
+.tl-i .dot{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tl-i .dot svg{width:14px;height:14px}
+.tl-i.event .dot{background:rgba(14,165,233,0.15);color:var(--rj-sky)}
+.tl-i.email .dot{background:rgba(96,165,250,0.15);color:#60a5fa}
+.tl-i.call .dot{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.tl-i.deal .dot{background:rgba(37,99,235,0.15);color:var(--rj-blue)}
+.tl-i.payment .dot{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.tl-i.note .dot{background:rgba(255,255,255,0.05);color:#94a3b8}
+.tl-i.dispute .dot{background:rgba(245,158,11,0.15);color:#fbbf24}
+.tl-i .body-t h4{font-family:var(--font-head);font-weight:600;font-size:12.5px;color:#fff;margin:0 0 2px 0;letter-spacing:-0.01em;line-height:1.2}
+.tl-i .body-t .m{font-family:var(--font-body);font-size:11px;color:#cbd5e1;line-height:1.4;margin:0}
+.tl-i .body-t .m b{color:#fff;font-family:var(--font-head);font-weight:600}
+.tl-i .body-t .by{font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;margin-top:3px}
+.tl-i .t-r{font-family:var(--font-mono);font-size:10px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;white-space:nowrap;text-align:right}
+
+/* Right: rail */
+.deal-c{background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(14,165,233,0.05));border:1px solid rgba(14,165,233,0.25);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.deal-c .k{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-bottom:4px}
+.deal-c h4{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;margin:0 0 8px 0;letter-spacing:-0.01em}
+.deal-c .amt{font-family:var(--font-head);font-weight:700;font-size:26px;color:#6ee7b7;letter-spacing:-0.02em;line-height:1}
+.deal-c .amt .u{font-family:var(--font-mono);font-size:11px;color:#94a3b8;font-weight:600;letter-spacing:0.05em}
+.deal-c .prog{margin-top:10px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden}
+.deal-c .fill{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky));width:60%;border-radius:3px}
+.deal-c .stage{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.05em;font-weight:700;margin-top:6px}
+.deal-c .stage b{color:#fff;font-family:var(--font-head);letter-spacing:-0.01em}
+
+.nba-c{padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--rj-sky);border-radius:10px;margin-bottom:8px}
+.nba-c h5{font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff;margin:0 0 3px 0;letter-spacing:-0.01em;line-height:1.2}
+.nba-c .m-n{font-size:11px;color:#94a3b8;line-height:1.4;margin:0 0 6px 0}
+.nba-c .foot-n{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:9px;letter-spacing:0.06em;font-weight:700}
+.nba-c .conf{color:#6ee7b7;text-transform:uppercase}
+.nba-c a{color:var(--rj-sky);text-decoration:none;text-transform:uppercase}
+
+/* Bottom: pipeline + attachments strip */
+.bottom{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:6px}
+.pipe .st{padding:10px 8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-align:center;font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;color:#94a3b8;font-weight:700;text-transform:uppercase;position:relative}
+.pipe .st.done{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(6,182,166,0.05));border-color:rgba(16,185,129,0.3);color:#6ee7b7}
+.pipe .st.done::after{content:"✓";position:absolute;top:4px;right:6px}
+.pipe .st.now{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(14,165,233,0.05));border-color:rgba(14,165,233,0.4);color:var(--rj-sky)}
+.pipe .st.now::after{content:"●";position:absolute;top:4px;right:6px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.pipe .st .d-st{font-family:var(--font-head);font-weight:600;color:#fff;font-size:12px;letter-spacing:-0.01em;text-transform:none;margin-top:4px}
+
+.att-list{display:flex;flex-direction:column;gap:6px}
+.att-i{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px}
+.att-i .ic-a{width:28px;height:28px;background:rgba(14,165,233,0.1);color:var(--rj-sky);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.att-i .ic-a svg{width:13px;height:13px}
+.att-i .in h5{font-family:var(--font-head);font-weight:600;font-size:11px;color:#fff;margin:0;letter-spacing:-0.01em}
+.att-i .in .m{font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;margin-top:1px}
+.att-i .sz{font-family:var(--font-mono);font-size:10px;color:#94a3b8;font-weight:700;letter-spacing:0.05em}
+</style></head><body>
+
+<div class="app">
+<aside class="sb">
+  <div class="brand"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div><div class="n">RJ CRM</div><div class="t">Section 20 · v1</div></div></div>
+  <div class="sec-l">CRM</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg>Home</a>
+    <a class="a" href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user"/></svg>Contacts<span class="b">2.8K</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-building"/></svg>Companies<span class="b">412</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-target"/></svg>Leads<span class="b">247</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dollar"/></svg>Deals<span class="b">47</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg>Tasks</a>
+  </div>
+  <div class="sec-l">Communications</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-mail"/></svg>Inbox<span class="b">14</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-sms"/></svg>SMS</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-phone"/></svg>Calls</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-calendar"/></svg>Calendar</a>
+  </div>
+  <div class="sec-l">Automation</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-zap"/></svg>Workflows</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-send"/></svg>Sequences</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-ai"/></svg>AI Agents</a>
+  </div>
+  <div class="sec-l">Marketing</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-flag"/></svg>Campaigns</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-users"/></svg>Segments</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chart-up"/></svg>Analytics</a>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="topbar">
+    <div class="crumb"><a href="#">CRM</a> · <a href="#">Contacts</a> · <b>Marcus D. Johnson · Contact 360</b></div>
+    <div class="actions">
+      <button class="btn"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-history"/></svg>History</button>
+      <button class="btn"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-edit"/></svg>Edit</button>
+      <button class="btn p"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-send"/></svg>New Activity</button>
+    </div>
+  </div>
+
+  <!-- CONTACT HERO -->
+  <div class="hero">
+    <div class="av-big">MJ</div>
+    <div class="info-h">
+      <div class="name">Marcus D. Johnson <span class="verified">✓</span></div>
+      <div class="role">Homebuyer · Enrolled Jul 12, 2026 · Client ID RJ-2026-00847</div>
+      <div class="tags">
+        <div class="tag pro">Pro Tier</div>
+        <div class="tag">Credit + Funding</div>
+        <div class="tag">Mortgage Prep</div>
+        <div class="tag hot">Hot Lead</div>
+        <div class="tag">Referral · Cascade Holdings</div>
+      </div>
+    </div>
+    <div class="stats-h">
+      <div class="stat-h"><div class="k">LTV</div><div class="v">$2,847</div></div>
+      <div class="stat-h"><div class="k">Score Δ</div><div class="v pos">+58</div></div>
+      <div class="stat-h"><div class="k">Program</div><div class="v">Mo 2/6</div></div>
+      <div class="stat-h"><div class="k">Last activity</div><div class="v">8m</div></div>
+    </div>
+  </div>
+
+  <!-- Lead Score + NBA strip -->
+  <div class="score-strip">
+    <div class="lbl">Lead Score<b>Very high · buying signals detected</b></div>
+    <div class="bar"><div class="fill"><div class="thumb"></div></div></div>
+    <div class="val">84<span class="u">/100</span></div>
+    <div class="lbl" style="text-align:right">Next Best Action<b style="color:var(--rj-sky)">Book upgrade call</b></div>
+    <a href="#" class="nba"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-zap"/></svg>Take Action</a>
+  </div>
+
+  <!-- 3-col main -->
+  <div class="grid-c">
+    <!-- LEFT: Contact facts -->
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user-check"/></svg>Contact information</h2>
+      <div class="sub-c">Verified · encrypted at rest</div>
+
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-mail"/></svg></div><div><div class="k-f">Primary email</div><div class="v-f">m•••••@gmail.com <span class="lock">🔒</span></div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-phone"/></svg></div><div><div class="k-f">Mobile</div><div class="v-f">+1 (505) •••-0193 <span class="lock">🔒</span></div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-building"/></svg></div><div><div class="k-f">Address</div><div class="v-f">Albuquerque, NM 87110</div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-calendar"/></svg></div><div><div class="k-f">Date of birth</div><div class="v-f">March 1987 <span class="lock">🔒</span></div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-fingerprint"/></svg></div><div><div class="k-f">SSN</div><div class="v-f">•••-••-3421 <span class="lock">🔒</span></div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-briefcase"/></svg></div><div><div class="k-f">Employer</div><div class="v-f">Tech company · SW Engineer</div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dollar"/></svg></div><div><div class="k-f">Income (self-reported)</div><div class="v-f">$118K annual</div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-users"/></svg></div><div><div class="k-f">Referred by</div><div class="v-f">Cascade Holdings LLC</div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user"/></svg></div><div><div class="k-f">Assigned specialist</div><div class="v-f">Maya Chen · Sr. Credit</div></div></div>
+      <div class="fact-r"><div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-signature"/></svg></div><div><div class="k-f">Consent status</div><div class="v-f">FCRA §604 · signed Jul 12 · valid</div></div></div>
+    </div>
+
+    <!-- MIDDLE: Activity Timeline -->
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-timeline"/></svg>Activity timeline</h2>
+      <div class="sub-c">Every interaction · newest first</div>
+
+      <div class="tl">
+        <div class="tl-i event">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div>
+          <div class="body-t"><h4>Chase collection removed · all 3 bureaus</h4><p class="m">Round 1 dispute closed loop confirmed · <b>+18 pts avg score impact</b></p><div class="by">Auto-detected · monitoring agent</div></div>
+          <div class="t-r">8m ago</div>
+        </div>
+        <div class="tl-i email">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-mail"/></svg></div>
+          <div class="body-t"><h4>Email replied · dispute question</h4><p class="m">"Any way to see what specifically caused the +18?" → Sent Change Explainer link</p><div class="by">Maya Chen replied · 14:19</div></div>
+          <div class="t-r">14m ago</div>
+        </div>
+        <div class="tl-i note">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-doc"/></svg></div>
+          <div class="body-t"><h4>Internal note added</h4><p class="m">Client showing strong engagement. Good candidate for Enterprise upgrade after mortgage close.</p><div class="by">Maya Chen · private</div></div>
+          <div class="t-r">27m ago</div>
+        </div>
+        <div class="tl-i dispute">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-send"/></svg></div>
+          <div class="body-t"><h4>Round 2 dispute letters sent</h4><p class="m">3 items · certified mail · Midland · LVNV · Discover · <b>bureau response due Sept 23-27</b></p><div class="by">Auto-generated · rick approved</div></div>
+          <div class="t-r">Aug 30</div>
+        </div>
+        <div class="tl-i call">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-phone"/></svg></div>
+          <div class="body-t"><h4>Call · Round 2 strategy review</h4><p class="m">32-min call · went over dispute escalation strategy · client wants to add funding readiness track</p><div class="by">Maya Chen · recorded</div></div>
+          <div class="t-r">Aug 28</div>
+        </div>
+        <div class="tl-i payment">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-payment"/></svg></div>
+          <div class="body-t"><h4>Monthly payment · $197 Pro</h4><p class="m">Stripe · card ending 4242 · month 2 of 6</p><div class="by">Auto-charged · succeeded</div></div>
+          <div class="t-r">Aug 12</div>
+        </div>
+        <div class="tl-i deal">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-flag"/></svg></div>
+          <div class="body-t"><h4>Goal set · Mortgage Readiness</h4><p class="m">Target 740+ FICO by Mar 2027 · pre-approval prep track</p><div class="by">Client onboarding · Jul 12</div></div>
+          <div class="t-r">Jul 12</div>
+        </div>
+        <div class="tl-i event">
+          <div class="dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user-add"/></svg></div>
+          <div class="body-t"><h4>Enrolled · Pro tier · Credit + Funding</h4><p class="m">Signed 3-bureau FCRA authorization · onboarding completed in 4m 22s</p><div class="by">Onboarding flow</div></div>
+          <div class="t-r">Jul 12</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Deal + NBA + attachments -->
+    <div>
+      <div class="deal-c">
+        <div class="k">● Active deal</div>
+        <h4>Enterprise upgrade opportunity</h4>
+        <div class="amt">$9,564<span class="u"> ARR</span></div>
+        <div class="stage"><span>Stage <b>Discovery</b></span><span>Prob <b>60%</b></span></div>
+        <div class="prog"><div class="fill"></div></div>
+      </div>
+
+      <h2 style="margin:16px 0 8px 0;font-size:14px"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-zap"/></svg>Next best actions</h2>
+
+      <div class="nba-c">
+        <h5>Book upgrade call this week</h5>
+        <p class="m-n">High-engagement signals · asked about funding · payment succeeded on time · replied to 3 emails.</p>
+        <div class="foot-n"><span class="conf">▲ 84% conf</span><a href="#">Book →</a></div>
+      </div>
+      <div class="nba-c">
+        <h5>Send Round 2 tracker update</h5>
+        <p class="m-n">Bureau responses due Sept 23-27 · proactive comms drive retention.</p>
+        <div class="foot-n"><span class="conf">▲ 72% conf</span><a href="#">Send →</a></div>
+      </div>
+      <div class="nba-c">
+        <h5>Share Homebuyer readiness playbook</h5>
+        <p class="m-n">Aligned with Mortgage goal · content-personalization match.</p>
+        <div class="foot-n"><span class="conf">▲ 68% conf</span><a href="#">Share →</a></div>
+      </div>
+
+      <h2 style="margin:16px 0 8px 0;font-size:14px"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-doc"/></svg>Attachments · 8</h2>
+      <div class="att-list">
+        <div class="att-i"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-signature"/></svg></div><div class="in"><h5>FCRA Authorization</h5><div class="m">Signed · Jul 12</div></div><div class="sz">147KB</div></div>
+        <div class="att-i"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-report"/></svg></div><div class="in"><h5>Baseline 3-bureau pull</h5><div class="m">Jul 12 · encrypted</div></div><div class="sz">2.4MB</div></div>
+        <div class="att-i"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-letter"/></svg></div><div class="in"><h5>Round 1 dispute letter</h5><div class="m">Chase · sent Aug 12</div></div><div class="sz">340KB</div></div>
+        <div class="att-i"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user-check"/></svg></div><div class="in"><h5>Driver license verification</h5><div class="m">Jul 12 · verified</div></div><div class="sz">1.8MB</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pipeline bottom -->
+  <div class="bottom">
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-target"/></svg>Customer lifecycle pipeline</h2>
+      <div class="sub-c">Where this contact sits in the full journey</div>
+      <div class="pipe">
+        <div class="st done">Discovery<div class="d-st">Jul 8</div></div>
+        <div class="st done">Interest<div class="d-st">Jul 12</div></div>
+        <div class="st done">Conversion<div class="d-st">Jul 12</div></div>
+        <div class="st done">Onboarded<div class="d-st">Jul 12</div></div>
+        <div class="st now">Active Use<div class="d-st">Now</div></div>
+        <div class="st">Expansion<div class="d-st">Pending</div></div>
+      </div>
+
+      <h2 style="margin-top:20px"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chart-up"/></svg>Engagement 30d</h2>
+      <div class="sub-c">Health score · touches · logins</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700">App logins · 30d</div><div style="font-family:var(--font-head);font-weight:700;font-size:22px;color:#fff;letter-spacing:-0.02em;line-height:1;margin-top:4px">18</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:4px">▲ 3× above avg</div></div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700">Team touches</div><div style="font-family:var(--font-head);font-weight:700;font-size:22px;color:#fff;letter-spacing:-0.02em;line-height:1;margin-top:4px">9</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:4px">▲ Healthy cadence</div></div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700">Response rate</div><div style="font-family:var(--font-head);font-weight:700;font-size:22px;color:#fff;letter-spacing:-0.02em;line-height:1;margin-top:4px">100%</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:4px">Perfect</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-shield-check"/></svg>Compliance flags</h2>
+      <div class="sub-c">Regulatory posture for this contact</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:7px"><div style="font-family:var(--font-head);font-weight:600;font-size:11px;color:#fff">FCRA §604 · permissible purpose</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700">✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:7px"><div style="font-family:var(--font-head);font-weight:600;font-size:11px;color:#fff">TCPA · SMS + call consent</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700">✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:7px"><div style="font-family:var(--font-head);font-weight:600;font-size:11px;color:#fff">GLBA · encryption + MFA</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700">✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:7px"><div style="font-family:var(--font-head);font-weight:600;font-size:11px;color:#fff">CROA · 3-day cancel served</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700">✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:7px"><div style="font-family:var(--font-head);font-weight:600;font-size:11px;color:#fff">DSAR history</div><div style="font-family:var(--font-mono);font-size:9px;color:#94a3b8;font-weight:700">0 requests</div></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+</body></html>

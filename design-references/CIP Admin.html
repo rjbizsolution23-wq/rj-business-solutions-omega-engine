@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>CIP Admin · RJ Credit Intelligence</title><link rel="stylesheet" href="brand.css"><style>
+body{background:#0b1220;color:#e2e8f0;font-size:14px;font-family:var(--font-body)}
+.app{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.sb{background:#0f172a;border-right:1px solid rgba(255,255,255,0.05);padding:24px 20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb .brand{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:18px}
+.sb .brand img{width:34px;height:34px;border-radius:8px}
+.sb .brand .n{font-family:var(--font-head);font-weight:700;color:#fff;font-size:13px;line-height:1.1}
+.sb .brand .t{font-family:var(--font-mono);font-size:9px;color:#fca5a5;letter-spacing:0.14em;text-transform:uppercase;margin-top:2px;font-weight:700}
+.sec-l{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;font-weight:700;padding:14px 12px 6px}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:#cbd5e1;text-decoration:none;font-family:var(--font-body);font-size:13px;font-weight:500}
+.nav a svg{width:16px;height:16px;flex-shrink:0}
+.nav a:hover{background:rgba(255,255,255,0.04);color:#fff}
+.nav a.active{background:linear-gradient(135deg,var(--rj-danger),#dc2626);color:#fff;box-shadow:0 6px 14px rgba(239,68,68,0.35)}
+.nav a .badge{margin-left:auto;background:#fca5a5;color:#7f1d1d;font-family:var(--font-mono);font-size:9px;padding:1px 6px;border-radius:4px;font-weight:700;letter-spacing:0.05em}
+.op-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;margin-top:20px}
+.op-card .av-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.op-card .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--rj-danger),#dc2626);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:12px}
+.op-card .info .n{font-family:var(--font-head);font-weight:600;color:#fff;font-size:12px;line-height:1}
+.op-card .info .r{font-family:var(--font-mono);font-size:9px;color:#fca5a5;font-weight:700;text-transform:uppercase;margin-top:2px;letter-spacing:0.08em}
+.op-card .clearance{font-family:var(--font-mono);font-size:9px;color:#94a3b8;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);letter-spacing:0.05em;font-weight:600}
+.op-card .clearance b{color:#fbbf24;font-family:var(--font-head)}
+
+.main{padding:28px 40px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.topbar .greet{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:4px}
+.topbar h1{font-family:var(--font-head);font-weight:700;font-size:30px;color:#fff;letter-spacing:-0.02em;margin:0}
+.topbar h1 span{background:linear-gradient(135deg,#fca5a5,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+.topbar .actions{display:flex;gap:8px}
+.btn-t{padding:9px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#e2e8f0;border-radius:8px;font-family:var(--font-body);font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.btn-t svg{width:14px;height:14px}
+.btn-t.danger{background:linear-gradient(135deg,var(--rj-danger),#dc2626);border-color:transparent}
+
+.alert-strip{background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(220,38,38,0.08));border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:16px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.alert-strip .ic{width:40px;height:40px;background:rgba(239,68,68,0.2);color:#fca5a5;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.alert-strip .ic svg{width:20px;height:20px}
+.alert-strip .msg{flex:1}
+.alert-strip .msg h4{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;margin:0;letter-spacing:-0.01em}
+.alert-strip .msg .s{font-family:var(--font-mono);font-size:11px;color:#fca5a5;letter-spacing:0.05em;font-weight:600;margin-top:2px}
+.alert-strip .act{background:#fff;color:var(--rj-navy);padding:8px 16px;border-radius:8px;font-family:var(--font-head);font-weight:700;font-size:12px;text-decoration:none;letter-spacing:-0.01em}
+
+/* KPI row */
+.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px 18px}
+.kpi .k{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:4px}
+.kpi .v{font-family:var(--font-head);font-weight:700;font-size:22px;color:#fff;letter-spacing:-0.02em;line-height:1}
+.kpi .v .u{font-family:var(--font-mono);font-size:11px;color:#94a3b8;font-weight:600;letter-spacing:0.05em}
+.kpi .d{font-family:var(--font-mono);font-size:10px;font-weight:700;margin-top:5px;letter-spacing:0.05em}
+.kpi .d.pos{color:#6ee7b7}
+.kpi .d.neg{color:#fca5a5}
+
+/* Grid main */
+.grid-a{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-bottom:20px}
+.card{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:22px 26px}
+.card h2{font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;letter-spacing:-0.02em;margin:0 0 4px 0;display:flex;align-items:center;gap:8px}
+.card h2 svg{width:18px;height:18px;color:#fca5a5}
+.card .sub-c{font-size:12px;color:#94a3b8;margin-bottom:16px;line-height:1.5}
+
+/* Consumer feed */
+.evt-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.evt-row:last-child{border:none}
+.evt-row .ic-e{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.evt-row .ic-e svg{width:16px;height:16px}
+.evt-row.new .ic-e{background:rgba(14,165,233,0.15);color:var(--rj-sky)}
+.evt-row.pull .ic-e{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.evt-row.alert .ic-e{background:rgba(245,158,11,0.15);color:#fbbf24}
+.evt-row.dispute .ic-e{background:rgba(239,68,68,0.15);color:#fca5a5}
+.evt-row .info-e h4{font-family:var(--font-head);font-weight:600;font-size:13px;color:#fff;margin:0;letter-spacing:-0.01em;line-height:1.2}
+.evt-row .info-e .m-e{font-family:var(--font-mono);font-size:10px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;margin-top:2px}
+.evt-row .info-e .m-e .masked{color:#fca5a5;font-weight:700}
+.evt-row .status-e{padding:3px 8px;border-radius:5px;font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.evt-row .status-e.ok{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.evt-row .status-e.new{background:rgba(14,165,233,0.15);color:var(--rj-sky)}
+.evt-row .status-e.pend{background:rgba(245,158,11,0.15);color:#fbbf24}
+.evt-row .status-e.review{background:rgba(239,68,68,0.15);color:#fca5a5}
+.evt-row .time-e{font-family:var(--font-mono);font-size:10px;color:#94a3b8;letter-spacing:0.05em;font-weight:600}
+
+/* Right rail cards */
+.mini-c{display:flex;flex-direction:column;gap:14px}
+.hlth-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.hlth-row:last-child{border:none}
+.hlth-row .dot-h{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hlth-row .dot-h.ok{background:var(--rj-success);box-shadow:0 0 8px var(--rj-success)}
+.hlth-row .dot-h.warn{background:var(--rj-warning)}
+.hlth-row .lbl-h{font-family:var(--font-body);font-size:12px;color:#e2e8f0;font-weight:500;flex:1}
+.hlth-row .val-h{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.05em}
+.hlth-row .val-h.ok{color:#6ee7b7}
+.hlth-row .val-h.warn{color:#fbbf24}
+
+.audit-row{display:grid;grid-template-columns:auto 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-family:ui-monospace,Menlo,monospace;font-size:11px}
+.audit-row:last-child{border:none}
+.audit-row .t-a{color:#94a3b8;letter-spacing:0.03em}
+.audit-row .msg-a{color:#e2e8f0;line-height:1.3}
+.audit-row .msg-a b{color:var(--rj-sky);font-family:var(--font-head);letter-spacing:-0.01em}
+.audit-row .msg-a .m{color:#fca5a5;font-weight:700}
+
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+</style></head><body>
+
+<div class="app">
+<aside class="sb">
+  <div class="brand"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div><div class="n">CIP Admin</div><div class="t">RESTRICTED · Internal</div></div></div>
+  <div class="sec-l">Overview</div>
+  <div class="nav">
+    <a class="active" href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg>Admin Home</a>
+    <a href="CIP Provider Health.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-cloud"/></svg>Provider Health<span class="badge">2</span></a>
+    <a href="CIP Support Workspace.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user-check"/></svg>Support Queue<span class="badge">14</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-users"/></svg>Users</a>
+  </div>
+  <div class="sec-l">Operations</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-bell"/></svg>Alert Config</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-eye"/></svg>Monitoring</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-ai"/></svg>AI Agents</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-database"/></svg>Data Pipeline</a>
+  </div>
+  <div class="sec-l">Compliance</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-scale"/></svg>Audit Logs</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-signature"/></svg>Consent Registry</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-lock"/></svg>Access Control</a>
+  </div>
+  <div class="op-card">
+    <div class="av-row"><div class="av">RJ</div><div class="info"><div class="n">Rick Jefferson</div><div class="r">Founder · Root</div></div></div>
+    <div class="clearance">Clearance: <b>L5 · Full</b><br/>Session: <b style="color:#6ee7b7">MFA ✓</b> · rotates 15m</div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="topbar">
+    <div><div class="greet">Sept 7, 2026 · Elevated session</div><h1>Credit Intelligence <span>Admin</span></h1></div>
+    <div class="actions">
+      <button class="btn-t"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-refresh"/></svg>Refresh</button>
+      <button class="btn-t"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-history"/></svg>Audit trail</button>
+      <button class="btn-t danger"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-warning"/></svg>Halt Fleet</button>
+    </div>
+  </div>
+
+  <div class="alert-strip">
+    <div class="ic"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-warning"/></svg></div>
+    <div class="msg"><h4>Equifax provider latency elevated · p95 at 4.2s (target &lt;2s)</h4><div class="s">Auto-fallback ACTIVE · Array Credit rerouting to redundant endpoint · 47 pulls affected · zero data loss</div></div>
+    <a href="CIP Provider Health.html" class="act">Investigate</a>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="k">Active members</div><div class="v">2,847</div><div class="d pos">▲ +47 · 7d</div></div>
+    <div class="kpi"><div class="k">Reports pulled · 24h</div><div class="v">1,204</div><div class="d pos">▲ +8.2%</div></div>
+    <div class="kpi"><div class="k">Alerts sent · 24h</div><div class="v">847</div><div class="d">Normal range</div></div>
+    <div class="kpi"><div class="k">Provider p95</div><div class="v">1.8<span class="u">s</span></div><div class="d pos">Under target</div></div>
+    <div class="kpi"><div class="k">Support queue</div><div class="v">14</div><div class="d">Avg 4h response</div></div>
+    <div class="kpi"><div class="k">Uptime · 30d</div><div class="v">99.98<span class="u">%</span></div><div class="d pos">3 min downtime</div></div>
+  </div>
+
+  <div class="grid-a">
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-eye"/></svg>Recent consumer events · masked view</h2>
+      <div class="sub-c">Live event stream. All PII masked by default. Elevated permissions required to unmask.</div>
+
+      <div class="evt-row pull">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-bureau"/></svg></div>
+        <div class="info-e"><h4>3-bureau pull completed</h4><div class="m-e">Member <span class="masked">u_28a4•••</span> · 3 files retrieved · normalized 892ms</div></div>
+        <div class="status-e ok">Success</div>
+        <div class="time-e">14s ago</div>
+      </div>
+      <div class="evt-row new">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user-add"/></svg></div>
+        <div class="info-e"><h4>New member signup completed onboarding</h4><div class="m-e">Member <span class="masked">u_9f21•••</span> · 7 steps · consent tracked · goal: Mortgage Readiness</div></div>
+        <div class="status-e new">New</div>
+        <div class="time-e">2m ago</div>
+      </div>
+      <div class="evt-row alert">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-warning"/></svg></div>
+        <div class="info-e"><h4>Anomaly · unusual login pattern</h4><div class="m-e">Member <span class="masked">u_51bc•••</span> · new device · new city · MFA challenge sent successfully</div></div>
+        <div class="status-e review">Review</div>
+        <div class="time-e">4m ago</div>
+      </div>
+      <div class="evt-row dispute">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg></div>
+        <div class="info-e"><h4>Consumer authorized dispute submission</h4><div class="m-e">Member <span class="masked">u_28a4•••</span> · Round 2 · 3 items · sent Equifax via certified</div></div>
+        <div class="status-e ok">Authorized</div>
+        <div class="time-e">7m ago</div>
+      </div>
+      <div class="evt-row alert">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-fingerprint"/></svg></div>
+        <div class="info-e"><h4>SSN Watch · new account attempt</h4><div class="m-e">Member <span class="masked">u_7c33•••</span> · SEON alert · unrecognized institution · consumer notified</div></div>
+        <div class="status-e pend">Pending review</div>
+        <div class="time-e">12m ago</div>
+      </div>
+      <div class="evt-row pull">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div>
+        <div class="info-e"><h4>Change Explainer generated · +18 pts TU</h4><div class="m-e">Member <span class="masked">u_28a4•••</span> · 3 contributors identified · confidence high</div></div>
+        <div class="status-e ok">Success</div>
+        <div class="time-e">14m ago</div>
+      </div>
+      <div class="evt-row alert">
+        <div class="ic-e"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-refresh"/></svg></div>
+        <div class="info-e"><h4>Consent revoked · Data Broker Removal</h4><div class="m-e">Member <span class="masked">u_44ee•••</span> · Optery integration disabled · retention window: 30d</div></div>
+        <div class="status-e pend">Compliance</div>
+        <div class="time-e">18m ago</div>
+      </div>
+    </div>
+
+    <div class="mini-c">
+      <div class="card">
+        <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-cloud"/></svg>Provider health</h2>
+        <div class="sub-c">All monitoring integrations</div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">Array Credit · 3-bureau</div><div class="val-h ok">Nominal</div></div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">Array · TU direct</div><div class="val-h ok">Nominal</div></div>
+        <div class="hlth-row"><div class="dot-h warn"></div><div class="lbl-h">Array · EQ direct</div><div class="val-h warn">4.2s p95</div></div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">Array · EX direct</div><div class="val-h ok">Nominal</div></div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">SEON · SSN monitoring</div><div class="val-h ok">Nominal</div></div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">SpyCloud · dark web</div><div class="val-h ok">Nominal</div></div>
+        <div class="hlth-row"><div class="dot-h warn"></div><div class="lbl-h">Optery · data broker</div><div class="val-h warn">Queue depth 47</div></div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">Stripe · payments</div><div class="val-h ok">Nominal</div></div>
+        <div class="hlth-row"><div class="dot-h ok"></div><div class="lbl-h">Anthropic · Claude API</div><div class="val-h ok">Nominal</div></div>
+      </div>
+
+      <div class="card">
+        <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-history"/></svg>Audit trail · past 5 min</h2>
+        <div class="sub-c">Every admin action logged</div>
+        <div class="audit-row"><div class="t-a">14:23:41</div><div class="msg-a"><b>rick.jefferson</b> viewed member profile <span class="m">u_28a4•••</span> · masked</div></div>
+        <div class="audit-row"><div class="t-a">14:22:18</div><div class="msg-a"><b>maya.chen</b> unmasked SSN <span class="m">u_9f21•••</span> · reason: L2 support ticket #4482</div></div>
+        <div class="audit-row"><div class="t-a">14:21:05</div><div class="msg-a"><b>andre.torres</b> approved dispute batch #x9K2 (3 items)</div></div>
+        <div class="audit-row"><div class="t-a">14:19:52</div><div class="msg-a"><b>system.provider</b> auto-failover EQ direct → Array</div></div>
+        <div class="audit-row"><div class="t-a">14:18:33</div><div class="msg-a"><b>rick.jefferson</b> MFA re-auth · elevated session start</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-ai"/></svg>AI agents · runs · 24h</h2>
+      <div class="sub-c">10-agent orchestration health</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:9px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:3px">Credit Intelligence</div><div style="font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff">2,847 runs</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:3px">99.4% success · $47.28</div></div>
+        <div style="padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:9px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:3px">Monitoring</div><div style="font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff">14,204 runs</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:3px">99.9% · $12.14</div></div>
+        <div style="padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:9px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:3px">Recommendation</div><div style="font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff">1,204 runs</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:3px">98.7% · $28.42</div></div>
+        <div style="padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:9px"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:3px">Compliance ⚔</div><div style="font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff">3,214 checks</div><div style="font-family:var(--font-mono);font-size:9px;color:#6ee7b7;font-weight:700;margin-top:3px">100% pass · 0 vetoes</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><svg viewBox="0 0 24 24"><use href="icons.svg#ic-scale"/></svg>Compliance status · rolling 90d</h2>
+      <div class="sub-c">Regulatory posture across all monitored obligations</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px"><div style="font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff">FCRA §604 · permissible purpose logged</div><div style="font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700">100% ✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px"><div style="font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff">FCRA §611 · 30-day dispute SLA</div><div style="font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700">100% ✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px"><div style="font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff">GLBA · encryption + MFA</div><div style="font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700">100% ✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px"><div style="font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff">TCPA · 10-day revocation SLA</div><div style="font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700">100% ✓</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:8px"><div style="font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff">SOC 2 Type II audit</div><div style="font-family:var(--font-mono);font-size:10px;color:#fbbf24;font-weight:700">6mo observation · 18% complete</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px"><div style="font-family:var(--font-head);font-weight:600;font-size:12px;color:#fff">DSAR · access + delete · 30d SLA</div><div style="font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700">100% · 47 processed</div></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+</body></html>

@@ -1,0 +1,2619 @@
+{
+  "$schema": "https://rjbusinesssolutions.org/schemas/asset-manifest-v1.json",
+  "version": "25.0",
+  "generated": "2026-09-07",
+  "project": "RJ Complete Brand Library",
+  "principal": "Rick Jefferson",
+  "company": "RJ Business Solutions",
+  "brand": {
+    "logo": "https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg",
+    "colors": {
+      "primary": "#2563eb",
+      "sky": "#0ea5e9",
+      "deep": "#1e3a8a",
+      "navy": "#0f172a",
+      "white": "#ffffff",
+      "soft": "#f8fafc",
+      "light": "#eff6ff",
+      "border": "#bfdbfe",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "danger": "#ef4444"
+    },
+    "gradients": {
+      "primary": "linear-gradient(135deg,#2563eb 0%,#0ea5e9 100%)",
+      "dark": "linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#2563eb 100%)"
+    },
+    "fonts": {
+      "heading": "Space Grotesk",
+      "body": "Inter",
+      "mono": "Space Grotesk"
+    },
+    "css_token_file": "assets/brand.css",
+    "css_import": "<link rel=\"stylesheet\" href=\"assets/brand.css\">"
+  },
+  "usage_rules": {
+    "colors": "ONLY use tokens from --rj-* CSS variables. Semantic reds (#991b1b on #fee2e2) allowed for negative-state indicators. NEVER introduce purple/pink/teal/orange/lime/indigo.",
+    "typography": "Space Grotesk for headings and mono, Inter for body. Never Arial, Roboto, system-ui as primary.",
+    "logo": "Always use the GCS URL. Never re-generate or crop.",
+    "layout": "Assume 1280px design width for docs, mobile-first for forms.",
+    "voice": "Straight-shooting · builder-brained · premium · execution-ready. No hype without infrastructure.",
+    "when_building_new": "Always import assets/brand.css. Always follow the closest existing asset in the same category as a pattern. NEVER invent a new color palette."
+  },
+  "categories": {
+    "brand_system": {
+      "description": "Design tokens · voice · governance · foundation"
+    },
+    "photos": {
+      "path": "RJ Complete Brand Library/01 · Photos of Rick",
+      "purpose": "Official founder photography.",
+      "use_when": "Need a photo of Rick for social, decks, hero sections, media."
+    },
+    "stationery": {
+      "path": "RJ Complete Brand Library/02 · Stationery & Print",
+      "purpose": "Print-ready office correspondence.",
+      "use_when": "Building letterhead, invoices, business cards, envelopes, folders."
+    },
+    "email": {
+      "path": "RJ Complete Brand Library/03 · Email",
+      "purpose": "Email templates and headers.",
+      "use_when": "Building email sequences, newsletters, transactional emails, signatures."
+    },
+    "social": {
+      "path": "RJ Complete Brand Library/04 · Social",
+      "purpose": "All social platform assets.",
+      "use_when": "Building LinkedIn, IG, X, TikTok, YouTube, or podcast promo content."
+    },
+    "sales": {
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs",
+      "purpose": "Everything used to pitch and close.",
+      "use_when": "Building pitch decks, proposals, quotes, case studies, testimonial cards."
+    },
+    "legal": {
+      "path": "RJ Complete Brand Library/06 · Legal & Contracts",
+      "purpose": "Legal document templates.",
+      "use_when": "Building contracts, NDAs, partner agreements, dispute letters. NOT legal advice."
+    },
+    "product": {
+      "path": "RJ Complete Brand Library/07 · Product & Web",
+      "purpose": "Full pages, dashboards, and web system mockups.",
+      "use_when": "Building landing pages, product UIs, team pages, founder pages, PWAs, utility pages."
+    },
+    "ads": {
+      "path": "RJ Complete Brand Library/08 · Ads & Paid Media",
+      "purpose": "Paid media creatives.",
+      "use_when": "Building FB/IG/LinkedIn ads, feature launches, app store screenshots."
+    },
+    "video": {
+      "path": "RJ Complete Brand Library/09 · Video & Podcast",
+      "purpose": "Video and podcast production assets.",
+      "use_when": "Building YouTube thumbnails, podcast cards, video overlays, Zoom backgrounds."
+    },
+    "physical": {
+      "path": "RJ Complete Brand Library/10 · Physical & Merch",
+      "purpose": "Physical materials — merch, mailers, event.",
+      "use_when": "Building merch mockups, swag boxes, stickers, event booths, gift cards, holiday cards."
+    },
+    "credit_tech": {
+      "path": "RJ Complete Brand Library/11 · Credit Technology",
+      "purpose": "Full credit-technology stack — analysis dashboards, simulators, optimizers, dispute workflow, tradeline management, client reporting, plus icon library.",
+      "use_when": "Building any credit-industry UI · running dispute rounds · showing clients their progress · comparing bureau files · optimizing utilization · projecting scores."
+    },
+    "client_ops": {
+      "path": "RJ Complete Brand Library/12 · Client Ops",
+      "purpose": "Post-signup client experience assets.",
+      "use_when": "Building onboarding, receipts, SMS templates, worksheets."
+    },
+    "investor": {
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate",
+      "purpose": "Investor and founder-facing corporate docs.",
+      "use_when": "Building annual reports, whitepapers, media kits, cap tables, term sheets, financial models."
+    },
+    "forms": {
+      "path": "RJ Complete Brand Library/14 · Forms & Intake",
+      "purpose": "Interactive multi-step forms with autosave.",
+      "use_when": "Building any lead-capture, qualification, application, or intake form."
+    },
+    "engineering": {
+      "path": "RJ Complete Brand Library/15 · Engineering Blueprints",
+      "purpose": "System architecture blueprints.",
+      "use_when": "Building or referencing the Interactive Form Foundry system architecture."
+    },
+    "mobile": {
+      "path": "RJ Complete Brand Library/16 · Mobile & Client Portal",
+      "purpose": "Mobile-native client experience — PWA-installable app screens for score, disputes, uploads, and chat.",
+      "use_when": "Building any client-facing mobile UI · designing PWA installable app · mobile-first flows."
+    },
+    "admin": {
+      "path": "RJ Complete Brand Library/17 · Admin Console",
+      "purpose": "Internal team-facing operator tools — dashboard, client management, revenue analytics, AI agent monitoring.",
+      "use_when": "Building any internal team-facing dashboard · admin CRM · operator command centers · AI ops."
+    },
+    "compliance": {
+      "path": "RJ Complete Brand Library/18 · Compliance",
+      "purpose": "Regulatory compliance toolkit — CROA, FCRA, GLBA, state licensing, audit trails, required disclosures.",
+      "use_when": "Building any credit-industry compliance surface · regulator packets · audit responses · state license tracking."
+    },
+    "public_pages": {
+      "path": "RJ Complete Brand Library/19 · Public Pages",
+      "purpose": "Public-facing transparency pages — roadmap, trust center, live system status.",
+      "use_when": "Building public trust surfaces · security disclosures · uptime pages · public roadmaps."
+    }
+  },
+  "assets": [
+    {
+      "id": "brand-kit",
+      "category": "brand_system",
+      "path": "RJ Complete Brand Library/00 · Brand System/Brand Kit.html",
+      "purpose": "Master brand system reference — colors, type, logo, voice, tone.",
+      "tags": [
+        "brand",
+        "reference",
+        "tokens",
+        "colors",
+        "typography"
+      ]
+    },
+    {
+      "id": "asset-pack",
+      "category": "brand_system",
+      "path": "RJ Complete Brand Library/00 · Brand System/Asset Pack.html",
+      "purpose": "Visual index of every asset with tile grid.",
+      "tags": [
+        "index",
+        "navigation",
+        "catalog"
+      ]
+    },
+    {
+      "id": "rick-hero",
+      "category": "photos",
+      "path": "RJ Complete Brand Library/01 · Photos of Rick/rick-hero.jpg",
+      "purpose": "Full-width hero shot of Rick Jefferson.",
+      "tags": [
+        "photo",
+        "founder",
+        "hero",
+        "landscape"
+      ],
+      "use_for": [
+        "landing page hero",
+        "LinkedIn banner",
+        "pitch deck cover"
+      ]
+    },
+    {
+      "id": "rick-portrait",
+      "category": "photos",
+      "path": "RJ Complete Brand Library/01 · Photos of Rick/rick-portrait.jpg",
+      "purpose": "Professional headshot.",
+      "tags": [
+        "photo",
+        "founder",
+        "portrait",
+        "square"
+      ],
+      "use_for": [
+        "avatar",
+        "about page",
+        "media bio"
+      ]
+    },
+    {
+      "id": "rick-vision",
+      "category": "photos",
+      "path": "RJ Complete Brand Library/01 · Photos of Rick/rick-vision.jpg",
+      "purpose": "Forward-looking pose.",
+      "tags": [
+        "photo",
+        "founder",
+        "vision"
+      ],
+      "use_for": [
+        "quote cards",
+        "vision statements",
+        "big-idea slides"
+      ]
+    },
+    {
+      "id": "rick-vault",
+      "category": "photos",
+      "path": "RJ Complete Brand Library/01 · Photos of Rick/rick-vault.jpg",
+      "purpose": "Systems-builder shot.",
+      "tags": [
+        "photo",
+        "founder",
+        "technical"
+      ],
+      "use_for": [
+        "engineering",
+        "systems",
+        "operator context"
+      ]
+    },
+    {
+      "id": "rick-signing",
+      "category": "photos",
+      "path": "RJ Complete Brand Library/01 · Photos of Rick/rick-signing.jpg",
+      "purpose": "Deal-closing shot.",
+      "tags": [
+        "photo",
+        "founder",
+        "sales"
+      ],
+      "use_for": [
+        "contracts",
+        "deals",
+        "signing moments"
+      ]
+    },
+    {
+      "id": "rick-circuit",
+      "category": "photos",
+      "path": "RJ Complete Brand Library/01 · Photos of Rick/rick-circuit.jpg",
+      "purpose": "Tech-forward portrait.",
+      "tags": [
+        "photo",
+        "founder",
+        "tech"
+      ],
+      "use_for": [
+        "AI content",
+        "technology posts",
+        "product launches"
+      ]
+    },
+    {
+      "id": "letterhead",
+      "category": "stationery",
+      "path": "RJ Complete Brand Library/02 · Stationery & Print/Letterhead.html",
+      "purpose": "A4 print-ready letterhead template.",
+      "tags": [
+        "print",
+        "letterhead",
+        "stationery",
+        "a4"
+      ],
+      "use_for": [
+        "formal letters",
+        "official correspondence"
+      ]
+    },
+    {
+      "id": "invoice",
+      "category": "stationery",
+      "path": "RJ Complete Brand Library/02 · Stationery & Print/Invoice.html",
+      "purpose": "Invoice template with line items, totals, terms.",
+      "tags": [
+        "billing",
+        "invoice",
+        "print"
+      ],
+      "use_for": [
+        "client billing",
+        "payment collection"
+      ]
+    },
+    {
+      "id": "business-cards",
+      "category": "stationery",
+      "path": "RJ Complete Brand Library/02 · Stationery & Print/Business Cards.html",
+      "purpose": "3.5×2in business card front + back.",
+      "tags": [
+        "print",
+        "cards",
+        "networking"
+      ],
+      "use_for": [
+        "events",
+        "in-person meetings",
+        "networking"
+      ]
+    },
+    {
+      "id": "envelope",
+      "category": "stationery",
+      "path": "RJ Complete Brand Library/02 · Stationery & Print/Envelope.html",
+      "purpose": "#10 and A7 envelope designs.",
+      "tags": [
+        "print",
+        "envelope",
+        "mail"
+      ],
+      "use_for": [
+        "direct mail",
+        "physical delivery"
+      ]
+    },
+    {
+      "id": "folder",
+      "category": "stationery",
+      "path": "RJ Complete Brand Library/02 · Stationery & Print/Folder.html",
+      "purpose": "Client presentation folder cover.",
+      "tags": [
+        "print",
+        "folder",
+        "presentation"
+      ],
+      "use_for": [
+        "client onboarding",
+        "proposal delivery"
+      ]
+    },
+    {
+      "id": "email-header",
+      "category": "email",
+      "path": "RJ Complete Brand Library/03 · Email/Email Header.html",
+      "purpose": "600px email banner header.",
+      "tags": [
+        "email",
+        "header",
+        "banner"
+      ],
+      "use_for": [
+        "newsletter top",
+        "transactional email header"
+      ]
+    },
+    {
+      "id": "email-signature",
+      "category": "email",
+      "path": "RJ Complete Brand Library/03 · Email/Email Signature.html",
+      "purpose": "HTML email signature block.",
+      "tags": [
+        "email",
+        "signature"
+      ],
+      "use_for": [
+        "outbound emails",
+        "sales replies"
+      ]
+    },
+    {
+      "id": "email-newsletter",
+      "category": "email",
+      "path": "RJ Complete Brand Library/03 · Email/Email Newsletter.html",
+      "purpose": "Full HTML newsletter template.",
+      "tags": [
+        "email",
+        "newsletter",
+        "marketing"
+      ],
+      "use_for": [
+        "weekly newsletter",
+        "product updates",
+        "company news"
+      ]
+    },
+    {
+      "id": "email-drip",
+      "category": "email",
+      "path": "RJ Complete Brand Library/03 · Email/Email Drip.html",
+      "purpose": "7-day welcome email sequence.",
+      "tags": [
+        "email",
+        "drip",
+        "automation",
+        "onboarding"
+      ],
+      "use_for": [
+        "new signup welcome",
+        "lead nurture"
+      ]
+    },
+    {
+      "id": "linkedin-kit",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/LinkedIn Kit.html",
+      "purpose": "LinkedIn hero banner + carousel + posts.",
+      "tags": [
+        "social",
+        "linkedin",
+        "professional"
+      ],
+      "use_for": [
+        "LinkedIn presence",
+        "B2B content"
+      ]
+    },
+    {
+      "id": "ig-feed-series",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/IG Feed Series.html",
+      "purpose": "5-post Instagram feed quote series.",
+      "tags": [
+        "social",
+        "instagram",
+        "quotes"
+      ],
+      "use_for": [
+        "IG feed posts",
+        "quote graphics"
+      ]
+    },
+    {
+      "id": "ig-story-series",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/IG Story Series.html",
+      "purpose": "5-frame Instagram story launch series.",
+      "tags": [
+        "social",
+        "instagram",
+        "stories",
+        "vertical"
+      ],
+      "use_for": [
+        "IG stories",
+        "product launches"
+      ]
+    },
+    {
+      "id": "x-tiktok-kit",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/X + TikTok Kit.html",
+      "purpose": "X/Twitter + TikTok posts, covers, frames.",
+      "tags": [
+        "social",
+        "x",
+        "twitter",
+        "tiktok"
+      ],
+      "use_for": [
+        "short-form content",
+        "viral formats"
+      ]
+    },
+    {
+      "id": "youtube-podcast-kit",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/YouTube + Podcast Kit.html",
+      "purpose": "YouTube + podcast thumbnails with Rick.",
+      "tags": [
+        "social",
+        "youtube",
+        "podcast",
+        "thumbnails"
+      ],
+      "use_for": [
+        "video thumbnails",
+        "podcast promo"
+      ]
+    },
+    {
+      "id": "social-banners",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/Social Banners.html",
+      "purpose": "LinkedIn 1584×396 + X 1500×500 + FB headers.",
+      "tags": [
+        "social",
+        "banner",
+        "header"
+      ],
+      "use_for": [
+        "profile headers",
+        "cover images"
+      ]
+    },
+    {
+      "id": "avatars-favicons",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/Avatars + Favicons.html",
+      "purpose": "Profile avatars + favicon export strip.",
+      "tags": [
+        "social",
+        "avatar",
+        "favicon",
+        "icon"
+      ],
+      "use_for": [
+        "profile pics",
+        "browser tabs",
+        "PWA icons"
+      ]
+    },
+    {
+      "id": "backgrounds",
+      "category": "social",
+      "path": "RJ Complete Brand Library/04 · Social/Backgrounds.html",
+      "purpose": "Repeatable brand pattern pack.",
+      "tags": [
+        "social",
+        "pattern",
+        "background"
+      ],
+      "use_for": [
+        "slide backgrounds",
+        "content backgrounds",
+        "texture"
+      ]
+    },
+    {
+      "id": "pitch-deck",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Pitch Deck.html",
+      "purpose": "10-slide full investor pitch deck.",
+      "tags": [
+        "sales",
+        "deck",
+        "investor",
+        "fundraise"
+      ],
+      "use_for": [
+        "investor pitches",
+        "fundraising meetings"
+      ]
+    },
+    {
+      "id": "sales-deck",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Sales Deck.html",
+      "purpose": "Short sales/discovery deck.",
+      "tags": [
+        "sales",
+        "deck",
+        "discovery"
+      ],
+      "use_for": [
+        "sales calls",
+        "discovery meetings"
+      ]
+    },
+    {
+      "id": "one-pager",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/One Pager.html",
+      "purpose": "PDF one-pager lead magnet.",
+      "tags": [
+        "sales",
+        "one-pager",
+        "lead-magnet"
+      ],
+      "use_for": [
+        "lead capture",
+        "quick handoffs"
+      ]
+    },
+    {
+      "id": "proposal",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Proposal.html",
+      "purpose": "Full client proposal with scope and pricing.",
+      "tags": [
+        "sales",
+        "proposal",
+        "scope"
+      ],
+      "use_for": [
+        "formal proposals",
+        "project scoping"
+      ]
+    },
+    {
+      "id": "quote-estimate",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Quote Estimate.html",
+      "purpose": "Fixed-bid quote / estimate line items.",
+      "tags": [
+        "sales",
+        "quote",
+        "pricing"
+      ],
+      "use_for": [
+        "quick quotes",
+        "fixed-bid estimates"
+      ]
+    },
+    {
+      "id": "rate-card",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Rate Card.html",
+      "purpose": "Services + tier pricing card.",
+      "tags": [
+        "sales",
+        "pricing",
+        "tiers"
+      ],
+      "use_for": [
+        "public pricing",
+        "tier comparison"
+      ]
+    },
+    {
+      "id": "case-study",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Case Study.html",
+      "purpose": "Client win case study template.",
+      "tags": [
+        "sales",
+        "case-study",
+        "proof"
+      ],
+      "use_for": [
+        "social proof",
+        "closed-deal writeups"
+      ]
+    },
+    {
+      "id": "testimonial-cards",
+      "category": "sales",
+      "path": "RJ Complete Brand Library/05 · Sales Decks & Docs/Testimonial Cards.html",
+      "purpose": "Quote cards for social media.",
+      "tags": [
+        "sales",
+        "testimonial",
+        "social-proof"
+      ],
+      "use_for": [
+        "social posts",
+        "landing page proof"
+      ]
+    },
+    {
+      "id": "contract-cover",
+      "category": "legal",
+      "path": "RJ Complete Brand Library/06 · Legal & Contracts/Contract Cover.html",
+      "purpose": "Elegant contract front page.",
+      "tags": [
+        "legal",
+        "contract",
+        "cover"
+      ],
+      "use_for": [
+        "contract wrapper",
+        "doc packaging"
+      ]
+    },
+    {
+      "id": "nda",
+      "category": "legal",
+      "path": "RJ Complete Brand Library/06 · Legal & Contracts/NDA.html",
+      "purpose": "Standalone one-page mutual NDA.",
+      "tags": [
+        "legal",
+        "nda",
+        "confidentiality"
+      ],
+      "use_for": [
+        "pre-discovery NDAs",
+        "partner meetings"
+      ]
+    },
+    {
+      "id": "contract-addendums",
+      "category": "legal",
+      "path": "RJ Complete Brand Library/06 · Legal & Contracts/Contract Addendums.html",
+      "purpose": "Change Order + NDA + SOW addendums.",
+      "tags": [
+        "legal",
+        "addendum",
+        "change-order",
+        "sow"
+      ],
+      "use_for": [
+        "scope changes",
+        "additional work"
+      ]
+    },
+    {
+      "id": "referral-partner-agreement",
+      "category": "legal",
+      "path": "RJ Complete Brand Library/06 · Legal & Contracts/Referral Partner Agreement.html",
+      "purpose": "Partner agreement with 25–35% commission.",
+      "tags": [
+        "legal",
+        "partner",
+        "referral",
+        "commission"
+      ],
+      "use_for": [
+        "affiliate signup",
+        "referral partners"
+      ]
+    },
+    {
+      "id": "dispute-letter",
+      "category": "legal",
+      "path": "RJ Complete Brand Library/06 · Legal & Contracts/Dispute Letter.html",
+      "purpose": "Credit bureau dispute template.",
+      "tags": [
+        "legal",
+        "credit",
+        "dispute",
+        "fcra"
+      ],
+      "use_for": [
+        "client dispute letters",
+        "credit repair"
+      ]
+    },
+    {
+      "id": "landing-page",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Landing Page.html",
+      "purpose": "Full-length marketing landing page.",
+      "tags": [
+        "web",
+        "landing",
+        "conversion",
+        "marketing"
+      ],
+      "use_for": [
+        "campaign landing",
+        "hero pages"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Dashboard.html",
+      "purpose": "Client portal / product dashboard mockup.",
+      "tags": [
+        "web",
+        "product",
+        "dashboard",
+        "portal"
+      ],
+      "use_for": [
+        "portal UI",
+        "product mockups"
+      ]
+    },
+    {
+      "id": "meet-rick",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Meet Rick.html",
+      "purpose": "Founder media page.",
+      "tags": [
+        "web",
+        "founder",
+        "about",
+        "media"
+      ],
+      "use_for": [
+        "about page",
+        "press page"
+      ]
+    },
+    {
+      "id": "team-careers",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Team + Careers.html",
+      "purpose": "Org chart and open roles page.",
+      "tags": [
+        "web",
+        "team",
+        "careers",
+        "hiring"
+      ],
+      "use_for": [
+        "careers page",
+        "team page"
+      ]
+    },
+    {
+      "id": "digital-card",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Digital Card.html",
+      "purpose": "iPhone-style digital business card.",
+      "tags": [
+        "web",
+        "mobile",
+        "vcard",
+        "digital"
+      ],
+      "use_for": [
+        "mobile handoff",
+        "digital networking"
+      ]
+    },
+    {
+      "id": "pwa-manifest",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/PWA Manifest.html",
+      "purpose": "PWA icons + manifest.json export.",
+      "tags": [
+        "web",
+        "pwa",
+        "icons",
+        "manifest"
+      ],
+      "use_for": [
+        "PWA setup",
+        "icon export"
+      ]
+    },
+    {
+      "id": "utility-pages",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Utility Pages.html",
+      "purpose": "404 · Loading · Coming Soon templates.",
+      "tags": [
+        "web",
+        "404",
+        "loading",
+        "utility"
+      ],
+      "use_for": [
+        "error pages",
+        "loading states"
+      ]
+    },
+    {
+      "id": "ad-creatives",
+      "category": "ads",
+      "path": "RJ Complete Brand Library/08 · Ads & Paid Media/Ad Creatives.html",
+      "purpose": "FB / IG / LinkedIn ad creatives.",
+      "tags": [
+        "ads",
+        "paid",
+        "fb",
+        "ig",
+        "linkedin"
+      ],
+      "use_for": [
+        "paid campaigns",
+        "retargeting"
+      ]
+    },
+    {
+      "id": "feature-launch",
+      "category": "ads",
+      "path": "RJ Complete Brand Library/08 · Ads & Paid Media/Feature Launch.html",
+      "purpose": "Product feature launch card series.",
+      "tags": [
+        "ads",
+        "launch",
+        "product"
+      ],
+      "use_for": [
+        "feature announcements",
+        "product launches"
+      ]
+    },
+    {
+      "id": "app-store-screenshots",
+      "category": "ads",
+      "path": "RJ Complete Brand Library/08 · Ads & Paid Media/App Store Screenshots.html",
+      "purpose": "iOS + Android app store marketing screenshots.",
+      "tags": [
+        "ads",
+        "app-store",
+        "mobile"
+      ],
+      "use_for": [
+        "app store listings",
+        "mobile marketing"
+      ]
+    },
+    {
+      "id": "video-thumbnails",
+      "category": "video",
+      "path": "RJ Complete Brand Library/09 · Video & Podcast/Video Thumbnails.html",
+      "purpose": "YouTube video thumbnail templates.",
+      "tags": [
+        "video",
+        "youtube",
+        "thumbnail"
+      ],
+      "use_for": [
+        "YouTube uploads",
+        "video promotion"
+      ]
+    },
+    {
+      "id": "podcast-cards",
+      "category": "video",
+      "path": "RJ Complete Brand Library/09 · Video & Podcast/Podcast Cards.html",
+      "purpose": "Podcast promo cards.",
+      "tags": [
+        "video",
+        "podcast",
+        "audio"
+      ],
+      "use_for": [
+        "podcast episodes",
+        "audio promotion"
+      ]
+    },
+    {
+      "id": "testimonial-video",
+      "category": "video",
+      "path": "RJ Complete Brand Library/09 · Video & Podcast/Testimonial Video.html",
+      "purpose": "Testimonial video card overlays.",
+      "tags": [
+        "video",
+        "testimonial",
+        "overlay"
+      ],
+      "use_for": [
+        "client testimonials",
+        "video proof"
+      ]
+    },
+    {
+      "id": "zoom-backgrounds",
+      "category": "video",
+      "path": "RJ Complete Brand Library/09 · Video & Podcast/Zoom Backgrounds.html",
+      "purpose": "Virtual meeting backgrounds.",
+      "tags": [
+        "video",
+        "zoom",
+        "backgrounds"
+      ],
+      "use_for": [
+        "Zoom calls",
+        "virtual meetings"
+      ]
+    },
+    {
+      "id": "merch-mockups",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Merch Mockups.html",
+      "purpose": "T-shirt · hat · mug mockups.",
+      "tags": [
+        "physical",
+        "merch",
+        "apparel"
+      ],
+      "use_for": [
+        "merch design",
+        "apparel"
+      ]
+    },
+    {
+      "id": "swag-box",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Swag Box.html",
+      "purpose": "Client welcome swag box design.",
+      "tags": [
+        "physical",
+        "swag",
+        "unboxing",
+        "onboarding"
+      ],
+      "use_for": [
+        "client welcome",
+        "enterprise onboarding"
+      ]
+    },
+    {
+      "id": "stickers-tags",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Stickers + Tags.html",
+      "purpose": "Sticker sheet + merch tags.",
+      "tags": [
+        "physical",
+        "stickers",
+        "tags"
+      ],
+      "use_for": [
+        "swag",
+        "packaging tags"
+      ]
+    },
+    {
+      "id": "wrapping-paper",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Wrapping Paper.html",
+      "purpose": "Repeating brand pattern sheet.",
+      "tags": [
+        "physical",
+        "pattern",
+        "wrapping"
+      ],
+      "use_for": [
+        "packaging",
+        "gift wrap",
+        "branded materials"
+      ]
+    },
+    {
+      "id": "popup-display",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Popup Display.html",
+      "purpose": "Trade show pull-up banner.",
+      "tags": [
+        "physical",
+        "event",
+        "display",
+        "banner"
+      ],
+      "use_for": [
+        "trade shows",
+        "events"
+      ]
+    },
+    {
+      "id": "event-booth",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Event Booth.html",
+      "purpose": "Event booth + tablecloth + badge.",
+      "tags": [
+        "physical",
+        "event",
+        "booth"
+      ],
+      "use_for": [
+        "event presence",
+        "conference booths"
+      ]
+    },
+    {
+      "id": "phone-wallpapers",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Phone Wallpapers.html",
+      "purpose": "Mobile lock screens + wallpapers.",
+      "tags": [
+        "physical",
+        "mobile",
+        "wallpaper"
+      ],
+      "use_for": [
+        "team wallpapers",
+        "brand consistency"
+      ]
+    },
+    {
+      "id": "holiday-cards",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Holiday Cards.html",
+      "purpose": "Holiday · birthday · thanks card series.",
+      "tags": [
+        "physical",
+        "holiday",
+        "card"
+      ],
+      "use_for": [
+        "seasonal outreach",
+        "client appreciation"
+      ]
+    },
+    {
+      "id": "gift-card",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Gift Card.html",
+      "purpose": "Physical gift card design.",
+      "tags": [
+        "physical",
+        "gift",
+        "retail"
+      ],
+      "use_for": [
+        "client gifts",
+        "promotions"
+      ]
+    },
+    {
+      "id": "referral-card",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Referral Card.html",
+      "purpose": "Palm-sized referral card.",
+      "tags": [
+        "physical",
+        "referral",
+        "card"
+      ],
+      "use_for": [
+        "referral programs",
+        "word-of-mouth"
+      ]
+    },
+    {
+      "id": "certificate",
+      "category": "physical",
+      "path": "RJ Complete Brand Library/10 · Physical & Merch/Certificate.html",
+      "purpose": "Partner / completion certificate.",
+      "tags": [
+        "physical",
+        "certificate",
+        "award"
+      ],
+      "use_for": [
+        "partner awards",
+        "completion certs"
+      ]
+    },
+    {
+      "id": "onboarding-welcome",
+      "category": "client_ops",
+      "path": "RJ Complete Brand Library/12 · Client Ops/Onboarding Welcome.html",
+      "purpose": "Day 1 client welcome kit.",
+      "tags": [
+        "client",
+        "onboarding",
+        "welcome"
+      ],
+      "use_for": [
+        "new client welcome",
+        "first-touch experience"
+      ]
+    },
+    {
+      "id": "receipt-thank-you",
+      "category": "client_ops",
+      "path": "RJ Complete Brand Library/12 · Client Ops/Receipt Thank You.html",
+      "purpose": "Receipt + thank-you card.",
+      "tags": [
+        "client",
+        "receipt",
+        "thanks",
+        "post-sale"
+      ],
+      "use_for": [
+        "post-purchase",
+        "transaction receipts"
+      ]
+    },
+    {
+      "id": "sms-templates",
+      "category": "client_ops",
+      "path": "RJ Complete Brand Library/12 · Client Ops/SMS Templates.html",
+      "purpose": "Text message templates for client communication.",
+      "tags": [
+        "client",
+        "sms",
+        "text",
+        "messaging"
+      ],
+      "use_for": [
+        "client texting",
+        "reminders",
+        "follow-ups"
+      ]
+    },
+    {
+      "id": "systems-worksheets",
+      "category": "client_ops",
+      "path": "RJ Complete Brand Library/12 · Client Ops/Systems Worksheets.html",
+      "purpose": "Rick's build-a-system worksheet pack.",
+      "tags": [
+        "client",
+        "worksheet",
+        "workshop",
+        "systems"
+      ],
+      "use_for": [
+        "workshops",
+        "strategy sessions"
+      ]
+    },
+    {
+      "id": "growth-playbook",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Growth Playbook.html",
+      "purpose": "Multi-chapter growth ebook.",
+      "tags": [
+        "investor",
+        "ebook",
+        "playbook"
+      ],
+      "use_for": [
+        "lead magnet",
+        "authority building"
+      ]
+    },
+    {
+      "id": "annual-report",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Annual Report.html",
+      "purpose": "Year-in-review corporate report.",
+      "tags": [
+        "investor",
+        "annual",
+        "report"
+      ],
+      "use_for": [
+        "shareholder updates",
+        "yearly reviews"
+      ]
+    },
+    {
+      "id": "investor-one-pager",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Investor One Pager.html",
+      "purpose": "Metrics + ask + terms one-pager.",
+      "tags": [
+        "investor",
+        "fundraise",
+        "metrics"
+      ],
+      "use_for": [
+        "fundraise outreach",
+        "investor summaries"
+      ]
+    },
+    {
+      "id": "whitepaper",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Whitepaper.html",
+      "purpose": "Deep-dive technical whitepaper.",
+      "tags": [
+        "investor",
+        "technical",
+        "whitepaper"
+      ],
+      "use_for": [
+        "technical marketing",
+        "authority pieces"
+      ]
+    },
+    {
+      "id": "media-kit",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Media Kit.html",
+      "purpose": "Press assets + bios kit.",
+      "tags": [
+        "investor",
+        "press",
+        "media"
+      ],
+      "use_for": [
+        "press outreach",
+        "PR"
+      ]
+    },
+    {
+      "id": "employee-handbook",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Employee Handbook.html",
+      "purpose": "Handbook cover + table of contents.",
+      "tags": [
+        "investor",
+        "hr",
+        "handbook"
+      ],
+      "use_for": [
+        "employee onboarding",
+        "HR"
+      ]
+    },
+    {
+      "id": "cap-table",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Cap Table.html",
+      "purpose": "Company cap table / ownership structure.",
+      "tags": [
+        "investor",
+        "founder",
+        "cap-table"
+      ],
+      "use_for": [
+        "fundraise",
+        "ownership tracking"
+      ]
+    },
+    {
+      "id": "valuation-summary",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Valuation Summary.html",
+      "purpose": "Company valuation summary.",
+      "tags": [
+        "investor",
+        "founder",
+        "valuation"
+      ],
+      "use_for": [
+        "fundraise",
+        "valuation reference"
+      ]
+    },
+    {
+      "id": "term-sheet",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Term Sheet.html",
+      "purpose": "Investment term sheet.",
+      "tags": [
+        "investor",
+        "founder",
+        "term-sheet"
+      ],
+      "use_for": [
+        "investor negotiations",
+        "deal terms"
+      ]
+    },
+    {
+      "id": "operating-agreement",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Operating Agreement.html",
+      "purpose": "LLC operating agreement.",
+      "tags": [
+        "investor",
+        "founder",
+        "legal",
+        "llc"
+      ],
+      "use_for": [
+        "company formation",
+        "legal structure"
+      ]
+    },
+    {
+      "id": "financial-model",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Financial Model.html",
+      "purpose": "3-year financial projections.",
+      "tags": [
+        "investor",
+        "founder",
+        "financials"
+      ],
+      "use_for": [
+        "fundraise",
+        "financial planning"
+      ]
+    },
+    {
+      "id": "vesting-agreement",
+      "category": "investor",
+      "path": "RJ Complete Brand Library/13 · Investor & Corporate/Vesting Agreement.html",
+      "purpose": "Founder + employee vesting agreement.",
+      "tags": [
+        "investor",
+        "founder",
+        "legal",
+        "vesting"
+      ],
+      "use_for": [
+        "team equity",
+        "founder vesting"
+      ]
+    },
+    {
+      "id": "forms-hub",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Forms Hub.html",
+      "purpose": "Master directory of all interactive forms.",
+      "tags": [
+        "forms",
+        "index",
+        "navigation"
+      ],
+      "use_for": [
+        "forms overview",
+        "form directory"
+      ]
+    },
+    {
+      "id": "credit-qualify",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Credit Qualify.html",
+      "purpose": "4-step credit intake with FCRA compliance.",
+      "tags": [
+        "form",
+        "credit",
+        "lead",
+        "fcra",
+        "4-step"
+      ],
+      "use_for": [
+        "credit repair leads",
+        "FCRA-compliant intake"
+      ]
+    },
+    {
+      "id": "funding-qualify",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Funding Qualify.html",
+      "purpose": "5-step business funding qualification.",
+      "tags": [
+        "form",
+        "funding",
+        "business",
+        "lead",
+        "5-step"
+      ],
+      "use_for": [
+        "business funding leads",
+        "soft-pull intake"
+      ]
+    },
+    {
+      "id": "universal-funnel",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Universal Funnel.html",
+      "purpose": "Smart-router universal lead funnel.",
+      "tags": [
+        "form",
+        "funnel",
+        "router",
+        "lead"
+      ],
+      "use_for": [
+        "main entry funnel",
+        "top-of-funnel"
+      ]
+    },
+    {
+      "id": "service-intake",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Service Intake.html",
+      "purpose": "Post-signup day 1 client intake.",
+      "tags": [
+        "form",
+        "client",
+        "intake",
+        "onboarding"
+      ],
+      "use_for": [
+        "post-purchase intake",
+        "client-only day 1"
+      ]
+    },
+    {
+      "id": "growth-audit",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Growth Audit.html",
+      "purpose": "4-step growth engine audit.",
+      "tags": [
+        "form",
+        "audit",
+        "growth",
+        "warm"
+      ],
+      "use_for": [
+        "warm-lead qualification",
+        "growth diagnostic"
+      ]
+    },
+    {
+      "id": "whitelabel-application",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Whitelabel Application.html",
+      "purpose": "5-step enterprise white-label fleet application.",
+      "tags": [
+        "form",
+        "enterprise",
+        "whitelabel",
+        "application"
+      ],
+      "use_for": [
+        "enterprise deals",
+        "fleet applications"
+      ]
+    },
+    {
+      "id": "partnership-application",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Partnership Application.html",
+      "purpose": "4-step affiliate/referral partner application.",
+      "tags": [
+        "form",
+        "partner",
+        "affiliate",
+        "application"
+      ],
+      "use_for": [
+        "affiliate signups",
+        "partner intake"
+      ]
+    },
+    {
+      "id": "podcast-guest",
+      "category": "forms",
+      "path": "RJ Complete Brand Library/14 · Forms & Intake/Podcast Guest.html",
+      "purpose": "3-step podcast guest / media request.",
+      "tags": [
+        "form",
+        "media",
+        "podcast",
+        "press"
+      ],
+      "use_for": [
+        "media requests",
+        "podcast bookings"
+      ]
+    },
+    {
+      "id": "foundry-blueprint",
+      "category": "engineering",
+      "path": "RJ Complete Brand Library/15 · Engineering Blueprints/Foundry Blueprint.html",
+      "purpose": "Interactive Form Foundry v1.0 system blueprint — 13 agents, 13 blocking rules, 14 compiler gates.",
+      "tags": [
+        "engineering",
+        "blueprint",
+        "system",
+        "architecture",
+        "foundry"
+      ],
+      "use_for": [
+        "Form Foundry build",
+        "system reference",
+        "technical spec"
+      ]
+    },
+    {
+      "id": "credit-suite-hub",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Credit Suite Hub.html",
+      "purpose": "Master hub of every credit technology tool.",
+      "tags": [
+        "credit",
+        "hub",
+        "index",
+        "navigation"
+      ],
+      "use_for": [
+        "credit tools navigation",
+        "suite overview"
+      ]
+    },
+    {
+      "id": "credit-analysis",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Credit Analysis.html",
+      "purpose": "Deep-dive 3-bureau analysis dashboard with scores, factors, forecasts, alerts.",
+      "tags": [
+        "credit",
+        "analysis",
+        "dashboard",
+        "3-bureau",
+        "fico"
+      ],
+      "use_for": [
+        "client credit deep-dive",
+        "analyst view",
+        "score analysis"
+      ]
+    },
+    {
+      "id": "score-simulator",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Score Simulator.html",
+      "purpose": "Interactive FICO 8 score simulator with sliders and scenario toggles.",
+      "tags": [
+        "credit",
+        "simulator",
+        "interactive",
+        "fico",
+        "projection"
+      ],
+      "use_for": [
+        "what-if scenarios",
+        "score projections",
+        "client engagement"
+      ]
+    },
+    {
+      "id": "utilization-optimizer",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Utilization Optimizer.html",
+      "purpose": "Card-by-card utilization view with optimal pay-down plan.",
+      "tags": [
+        "credit",
+        "utilization",
+        "optimizer",
+        "fico",
+        "pay-down"
+      ],
+      "use_for": [
+        "utilization strategy",
+        "pre-statement close",
+        "score lift planning"
+      ]
+    },
+    {
+      "id": "dispute-center",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Dispute Center.html",
+      "purpose": "Kanban-style dispute command center with 4-column workflow.",
+      "tags": [
+        "credit",
+        "dispute",
+        "kanban",
+        "workflow",
+        "fcra"
+      ],
+      "use_for": [
+        "dispute round management",
+        "letter tracking",
+        "bureau response tracking"
+      ]
+    },
+    {
+      "id": "tradeline-manager",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Tradeline Manager.html",
+      "purpose": "Master account table with filtering by bureau, type, status, and health.",
+      "tags": [
+        "credit",
+        "tradelines",
+        "accounts",
+        "manager",
+        "table"
+      ],
+      "use_for": [
+        "account management",
+        "health tracking",
+        "dispute targeting"
+      ]
+    },
+    {
+      "id": "credit-timeline",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Credit Timeline.html",
+      "purpose": "Chronological credit event timeline with score impacts and projections.",
+      "tags": [
+        "credit",
+        "timeline",
+        "history",
+        "chronological",
+        "events"
+      ],
+      "use_for": [
+        "credit history storytelling",
+        "milestone tracking",
+        "client education"
+      ]
+    },
+    {
+      "id": "bureau-comparison",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Bureau Comparison.html",
+      "purpose": "TU/EQ/EX side-by-side with discrepancy detection and coverage matrix.",
+      "tags": [
+        "credit",
+        "bureau",
+        "comparison",
+        "discrepancy",
+        "fcra"
+      ],
+      "use_for": [
+        "file comparison",
+        "dispute opportunity detection",
+        "coverage analysis"
+      ]
+    },
+    {
+      "id": "progress-report",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Progress Report.html",
+      "purpose": "Monthly client progress report with wins, KPIs, and next steps.",
+      "tags": [
+        "credit",
+        "report",
+        "monthly",
+        "client",
+        "progress"
+      ],
+      "use_for": [
+        "monthly client reporting",
+        "milestone reviews",
+        "retention"
+      ]
+    },
+    {
+      "id": "icon-system",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Icon System.html",
+      "purpose": "Complete SVG icon library — 90+ icons across 11 categories.",
+      "tags": [
+        "icons",
+        "svg",
+        "design-system",
+        "sprite",
+        "foundation"
+      ],
+      "use_for": [
+        "icon reference",
+        "design foundation",
+        "new UI builds"
+      ]
+    },
+    {
+      "id": "credit-report",
+      "category": "credit_tech",
+      "path": "RJ Complete Brand Library/11 · Credit Technology/Credit Report.html",
+      "purpose": "Standard bureau summary credit report layout (legacy).",
+      "tags": [
+        "credit",
+        "report",
+        "bureau",
+        "fcra",
+        "legacy"
+      ],
+      "use_for": [
+        "credit summaries",
+        "client reports",
+        "standard layout"
+      ]
+    },
+    {
+      "id": "mobile-client-app",
+      "category": "mobile",
+      "path": "RJ Complete Brand Library/16 · Mobile & Client Portal/Mobile Client App.html",
+      "purpose": "Complete mobile client portal — 5 core screens rendered in iPhone frames.",
+      "tags": [
+        "mobile",
+        "pwa",
+        "client-portal",
+        "ios",
+        "android",
+        "screens"
+      ],
+      "use_for": [
+        "mobile app design",
+        "PWA prototype",
+        "client portal UI"
+      ]
+    },
+    {
+      "id": "api-backend-spec",
+      "category": "engineering",
+      "path": "RJ Complete Brand Library/15 · Engineering Blueprints/API Backend Spec.html",
+      "purpose": "Complete API backend architecture — Cloudflare stack, 32 REST endpoints, data flow diagrams, security, compliance, D1 schema.",
+      "tags": [
+        "engineering",
+        "api",
+        "backend",
+        "cloudflare",
+        "architecture",
+        "technical"
+      ],
+      "use_for": [
+        "backend development",
+        "technical handoff",
+        "architecture reference"
+      ]
+    },
+    {
+      "id": "admin-dashboard",
+      "category": "admin",
+      "path": "RJ Complete Brand Library/17 · Admin Console/Admin Dashboard.html",
+      "purpose": "Operator home — fleet overview, action queue, team status, system health.",
+      "tags": [
+        "admin",
+        "dashboard",
+        "operator",
+        "internal",
+        "fleet"
+      ],
+      "use_for": [
+        "team dashboard",
+        "ops overview",
+        "internal tools"
+      ]
+    },
+    {
+      "id": "client-roster",
+      "category": "admin",
+      "path": "RJ Complete Brand Library/17 · Admin Console/Client Roster.html",
+      "purpose": "Full client CRM list with filters, program status, score deltas, quick actions.",
+      "tags": [
+        "admin",
+        "crm",
+        "clients",
+        "roster",
+        "internal"
+      ],
+      "use_for": [
+        "client list",
+        "CRM view",
+        "bulk ops"
+      ]
+    },
+    {
+      "id": "revenue-analytics",
+      "category": "admin",
+      "path": "RJ Complete Brand Library/17 · Admin Console/Revenue Analytics.html",
+      "purpose": "Financial dashboard — MRR, LTV, CAC, cohort retention, unit economics.",
+      "tags": [
+        "admin",
+        "finance",
+        "revenue",
+        "analytics",
+        "mrr",
+        "ltv",
+        "cac"
+      ],
+      "use_for": [
+        "financial reporting",
+        "investor prep",
+        "board decks"
+      ]
+    },
+    {
+      "id": "ai-agent-console",
+      "category": "admin",
+      "path": "RJ Complete Brand Library/17 · Admin Console/AI Agent Console.html",
+      "purpose": "Internal console for the 13-agent AI system — runs, logs, outputs, spend tracking.",
+      "tags": [
+        "admin",
+        "ai",
+        "agents",
+        "monitoring",
+        "observability"
+      ],
+      "use_for": [
+        "AI ops",
+        "agent monitoring",
+        "LLM cost tracking",
+        "fleet debugging"
+      ]
+    },
+    {
+      "id": "onboarding-flow",
+      "category": "mobile",
+      "path": "RJ Complete Brand Library/16 · Mobile & Client Portal/Onboarding Flow.html",
+      "purpose": "Complete 7-screen mobile signup journey — welcome, verify, plan, intake, FCRA auth, payment, activation.",
+      "tags": [
+        "mobile",
+        "onboarding",
+        "signup",
+        "funnel",
+        "conversion"
+      ],
+      "use_for": [
+        "signup flow design",
+        "conversion funnel",
+        "fcra-compliant intake"
+      ]
+    },
+    {
+      "id": "marketing-site",
+      "category": "product",
+      "path": "RJ Complete Brand Library/07 · Product & Web/Marketing Site.html",
+      "purpose": "Full multi-section marketing site — hero, platform pillars, stats, pricing, about, case studies, contact, footer.",
+      "tags": [
+        "web",
+        "marketing",
+        "landing",
+        "site",
+        "conversion",
+        "pricing"
+      ],
+      "use_for": [
+        "main marketing site",
+        "launch site",
+        "full-page conversion"
+      ]
+    },
+    {
+      "id": "compliance-toolkit",
+      "category": "compliance",
+      "path": "RJ Complete Brand Library/18 · Compliance/Compliance Toolkit.html",
+      "purpose": "Complete compliance toolkit — regulatory mapping, 50-state licensing tracker, required disclosures, audit trail.",
+      "tags": [
+        "compliance",
+        "legal",
+        "fcra",
+        "croa",
+        "glba",
+        "tcpa",
+        "audit"
+      ],
+      "use_for": [
+        "compliance reference",
+        "regulator handoff",
+        "state license tracking",
+        "audit prep"
+      ]
+    },
+    {
+      "id": "partner-portal",
+      "category": "admin",
+      "path": "RJ Complete Brand Library/17 · Admin Console/Partner Portal.html",
+      "purpose": "Affiliate + white-label partner dashboard — commissions, sub-clients, referral links, co-branded assets.",
+      "tags": [
+        "admin",
+        "partner",
+        "affiliate",
+        "white-label",
+        "commissions"
+      ],
+      "use_for": [
+        "partner dashboards",
+        "affiliate portals",
+        "white-label reseller ops"
+      ]
+    },
+    {
+      "id": "roadmap",
+      "category": "public_pages",
+      "path": "RJ Complete Brand Library/19 · Public Pages/Roadmap.html",
+      "purpose": "Public roadmap + changelog — shipped, in progress, planned columns with release history.",
+      "tags": [
+        "public",
+        "roadmap",
+        "changelog",
+        "transparency"
+      ],
+      "use_for": [
+        "public roadmap",
+        "changelog",
+        "transparency reports"
+      ]
+    },
+    {
+      "id": "trust-center",
+      "category": "public_pages",
+      "path": "RJ Complete Brand Library/19 · Public Pages/Trust Center.html",
+      "purpose": "Public security + compliance page — encryption pillars, sub-processors, downloadable reports.",
+      "tags": [
+        "public",
+        "security",
+        "trust",
+        "compliance",
+        "subprocessors"
+      ],
+      "use_for": [
+        "trust center",
+        "security page",
+        "enterprise sales assets"
+      ]
+    },
+    {
+      "id": "status-page",
+      "category": "public_pages",
+      "path": "RJ Complete Brand Library/19 · Public Pages/Status Page.html",
+      "purpose": "Real-time system status — 10 components, uptime history, incident postmortems.",
+      "tags": [
+        "public",
+        "status",
+        "uptime",
+        "incidents",
+        "observability"
+      ],
+      "use_for": [
+        "status page",
+        "uptime disclosure",
+        "incident communication"
+      ]
+    },
+    {
+      "id": "credit-intelligence-blueprint",
+      "category": "engineering",
+      "path": "assets/Credit Intelligence Blueprint.html",
+      "purpose": "Master blueprint for the Next-Gen Credit Intelligence + Monitoring Platform. 7 pillars, 100 directives, 15 signature features, 16 build phases, 10 agents, hard boundaries, and complete page inventory.",
+      "tags": [
+        "engineering",
+        "blueprint",
+        "credit-intelligence",
+        "platform",
+        "architecture",
+        "master-doc"
+      ],
+      "use_for": [
+        "platform spec reference",
+        "engineering handoff",
+        "investor architecture doc",
+        "product vision"
+      ]
+    },
+    {
+      "id": "credit-command-center",
+      "category": "credit_tech",
+      "path": "assets/Credit Command Center.html",
+      "purpose": "Signature 01 · The unified home. Health Index ring, 3-bureau strip, What Changed, Priority Actions, Monitoring, Goals, Progress Journal, Upcoming windows. Hierarchy over grid.",
+      "tags": [
+        "credit",
+        "signature",
+        "command-center",
+        "dashboard",
+        "home",
+        "health-index"
+      ],
+      "use_for": [
+        "main product home",
+        "dashboard reference",
+        "hierarchy layout example"
+      ]
+    },
+    {
+      "id": "change-explainer",
+      "category": "credit_tech",
+      "path": "assets/Change Explainer.html",
+      "purpose": "Signature 02 · The signature feature. When score moves, correlate nearby events, rank contributors by confidence, show recommended next step, attach did-it-work tracker.",
+      "tags": [
+        "credit",
+        "signature",
+        "explainer",
+        "score",
+        "correlation",
+        "confidence"
+      ],
+      "use_for": [
+        "score change UX",
+        "explainability example",
+        "closed-loop tracking"
+      ]
+    },
+    {
+      "id": "scenario-lab",
+      "category": "credit_tech",
+      "path": "assets/Scenario Lab.html",
+      "purpose": "Signature 06 · Multi-variable simulation. Baseline vs 3 scenarios · confidence bands · impact ledger · 12-month projection. Every value labeled 'estimate' — never guarantee.",
+      "tags": [
+        "credit",
+        "signature",
+        "simulator",
+        "scenario",
+        "what-if",
+        "projection"
+      ],
+      "use_for": [
+        "what-if UX",
+        "projection visualization",
+        "estimate disclosure patterns"
+      ]
+    },
+    {
+      "id": "identity-watch",
+      "category": "credit_tech",
+      "path": "assets/Identity Watch.html",
+      "purpose": "Signature 09 · Identity monitoring center. 6 channels (SSN · dark web · credit file · data broker · credentials · address) with actual provider attribution. Findings feed + protected info vault + recommendations.",
+      "tags": [
+        "credit",
+        "signature",
+        "identity",
+        "monitoring",
+        "protection",
+        "security"
+      ],
+      "use_for": [
+        "identity protection UX",
+        "monitoring center reference",
+        "provider attribution pattern"
+      ]
+    },
+    {
+      "id": "reporting-calendar",
+      "category": "credit_tech",
+      "path": "assets/Reporting Calendar.html",
+      "purpose": "Signature 07 · Statement close dates + reporting windows + projected balances. The intelligence that answers 'when will the bureaus see this?' Full month grid + per-card windows table.",
+      "tags": [
+        "credit",
+        "signature",
+        "calendar",
+        "reporting",
+        "statement-close",
+        "utilization"
+      ],
+      "use_for": [
+        "reporting timing UX",
+        "statement close intelligence",
+        "pre-close pay-down planning"
+      ]
+    },
+    {
+      "id": "bureau-diff-engine",
+      "category": "credit_tech",
+      "path": "assets/Bureau Diff Engine.html",
+      "purpose": "Signature 03 · TU/EQ/EX diff surface with MATCH/DIFFERENCE/MISSING/REVIEW labels.",
+      "tags": [
+        "credit",
+        "signature",
+        "bureau-diff",
+        "comparison"
+      ],
+      "use_for": [
+        "3-bureau comparison UX",
+        "discrepancy detection",
+        "dispute opportunity surfacing"
+      ]
+    },
+    {
+      "id": "action-center",
+      "category": "credit_tech",
+      "path": "assets/Action Center.html",
+      "purpose": "Signature 04 · Priority engine · Impact × Effort 2×2 · 6-column kanban.",
+      "tags": [
+        "credit",
+        "signature",
+        "actions",
+        "kanban",
+        "priority"
+      ],
+      "use_for": [
+        "action prioritization UX",
+        "closed-loop tracking"
+      ]
+    },
+    {
+      "id": "dispute-workspace",
+      "category": "credit_tech",
+      "path": "assets/Dispute Workspace.html",
+      "purpose": "Consumer dispute workflow · draft editor + evidence vault + timeline · never-auto-sends.",
+      "tags": [
+        "credit",
+        "dispute",
+        "workspace",
+        "consumer",
+        "evidence"
+      ],
+      "use_for": [
+        "consumer dispute UX",
+        "authorization patterns",
+        "CROA-compliant flow"
+      ]
+    },
+    {
+      "id": "cip-onboarding",
+      "category": "credit_tech",
+      "path": "assets/CIP Onboarding.html",
+      "purpose": "7-phase consent-first signup · granular per-consent switches with provider attribution.",
+      "tags": [
+        "credit",
+        "onboarding",
+        "consent",
+        "fcra",
+        "provider-attribution"
+      ],
+      "use_for": [
+        "consent-first onboarding",
+        "FCRA-compliant signup"
+      ]
+    },
+    {
+      "id": "learning-center",
+      "category": "credit_tech",
+      "path": "assets/Learning Center.html",
+      "purpose": "Credit education library · contextual + structured · simple vs advanced reading modes.",
+      "tags": [
+        "credit",
+        "education",
+        "learning",
+        "reading-modes"
+      ],
+      "use_for": [
+        "credit education UX",
+        "contextual learning",
+        "dual-mode content"
+      ]
+    },
+    {
+      "id": "cip-admin",
+      "category": "admin",
+      "path": "assets/CIP Admin.html",
+      "purpose": "Internal admin home for Credit Intelligence Platform · masked-by-default view · elevated session · fleet health.",
+      "tags": [
+        "admin",
+        "cip",
+        "operator",
+        "masked",
+        "fleet-health"
+      ],
+      "use_for": [
+        "CIP internal ops",
+        "masked view pattern"
+      ]
+    },
+    {
+      "id": "cip-provider-health",
+      "category": "admin",
+      "path": "assets/CIP Provider Health.html",
+      "purpose": "Real-time provider integration monitoring · 14 integrations · auto-failover · graceful states.",
+      "tags": [
+        "admin",
+        "cip",
+        "monitoring",
+        "provider",
+        "failover"
+      ],
+      "use_for": [
+        "provider ops",
+        "observability UX",
+        "graceful state design"
+      ]
+    },
+    {
+      "id": "cip-support-workspace",
+      "category": "admin",
+      "path": "assets/CIP Support Workspace.html",
+      "purpose": "Support console with masked-by-default PII · L3 elevation gated · full audit trail per ticket.",
+      "tags": [
+        "admin",
+        "cip",
+        "support",
+        "masked",
+        "elevation",
+        "audit"
+      ],
+      "use_for": [
+        "support console",
+        "masked PII UX",
+        "elevation workflows"
+      ]
+    },
+    {
+      "id": "mobile-cip",
+      "category": "mobile",
+      "path": "assets/Mobile CIP.html",
+      "purpose": "Mobile-native Credit Intelligence · 3 signature screens in iPhone frames · biometric · offline-first.",
+      "tags": [
+        "mobile",
+        "cip",
+        "pwa",
+        "signature",
+        "native"
+      ],
+      "use_for": [
+        "mobile CIP design",
+        "biometric UX",
+        "offline patterns"
+      ]
+    },
+    {
+      "id": "design-tokens-json",
+      "category": "brand_system",
+      "path": "assets/tokens.json",
+      "purpose": "Machine-readable brand tokens (colors · type · space · radius · shadow · motion · breakpoints · z-index). Any product surface inherits directly.",
+      "tags": [
+        "foundation",
+        "tokens",
+        "json",
+        "design-system"
+      ],
+      "use_for": [
+        "consuming brand in code",
+        "token references",
+        "cross-platform brand contract"
+      ]
+    },
+    {
+      "id": "design-tokens-css",
+      "category": "brand_system",
+      "path": "assets/tokens.css",
+      "purpose": "CSS custom-property version of the brand tokens · imported before brand.css or standalone.",
+      "tags": [
+        "foundation",
+        "tokens",
+        "css",
+        "design-system"
+      ],
+      "use_for": [
+        "web brand contract",
+        "reduced-motion handling",
+        "runtime theming"
+      ]
+    },
+    {
+      "id": "crm-contact-360",
+      "category": "product",
+      "path": "assets/CRM Contact 360.html",
+      "purpose": "Anchor of the CRM system · 360° customer view combining profile · timeline · deals · NBA · lifecycle pipeline · compliance flags.",
+      "tags": [
+        "crm",
+        "contact-360",
+        "product",
+        "flagship"
+      ],
+      "use_for": [
+        "CRM UX",
+        "customer-view patterns",
+        "lead scoring UX"
+      ]
+    },
+    {
+      "id": "executive-analytics",
+      "category": "product",
+      "path": "assets/Executive Analytics.html",
+      "purpose": "Executive analytics dashboard · MRR movement · funnel · cohort retention · segments · forecast · KPI hero.",
+      "tags": [
+        "analytics",
+        "bi",
+        "dashboard",
+        "executive"
+      ],
+      "use_for": [
+        "analytics dashboards",
+        "MRR reporting",
+        "cohort visualization"
+      ]
+    },
+    {
+      "id": "motion-system-states",
+      "category": "brand_system",
+      "path": "assets/Motion & System States.html",
+      "purpose": "Motion tokens (duration + easing) · micro-interactions · 12 canonical system states (loading · empty · error · offline · locked · stale · partial · 404 · maintenance).",
+      "tags": [
+        "motion",
+        "states",
+        "design-system",
+        "animation"
+      ],
+      "use_for": [
+        "motion language",
+        "non-happy-path states",
+        "reduced-motion patterns"
+      ]
+    },
+    {
+      "id": "data-viz-library",
+      "category": "brand_system",
+      "path": "assets/Data Viz Library.html",
+      "purpose": "Chart primitive library · series palette · KPI cards · line/area/bar/funnel/donut/cohort/sparkline · chart rules.",
+      "tags": [
+        "data-viz",
+        "charts",
+        "design-system"
+      ],
+      "use_for": [
+        "dashboard charts",
+        "branded visualization",
+        "accessibility posture for charts"
+      ]
+    },
+    {
+      "id": "notifications-system",
+      "category": "brand_system",
+      "path": "assets/Notifications System.html",
+      "purpose": "Toast variants · notification center · category preferences · quiet hours · 5-level priority system.",
+      "tags": [
+        "notifications",
+        "toasts",
+        "design-system"
+      ],
+      "use_for": [
+        "notification UX",
+        "preference controls",
+        "priority routing"
+      ]
+    },
+    {
+      "id": "auth-system",
+      "category": "brand_system",
+      "path": "assets/Auth System.html",
+      "purpose": "Sign in · sign up · MFA · password recovery · 8 session states (success · expired · locked · new device · MFA required · invite · passkey created).",
+      "tags": [
+        "auth",
+        "security",
+        "design-system"
+      ],
+      "use_for": [
+        "auth flows",
+        "MFA UX",
+        "passkey-first patterns",
+        "session state UX"
+      ]
+    },
+    {
+      "id": "brand-universe-coverage",
+      "category": "brand_system",
+      "path": "assets/Brand Universe Coverage.html",
+      "purpose": "Master audit dashboard · coverage matrix across 60-directive framework · priority queue · lifecycle completeness test.",
+      "tags": [
+        "audit",
+        "coverage",
+        "meta",
+        "design-system"
+      ],
+      "use_for": [
+        "library audit",
+        "gap detection",
+        "production prioritization"
+      ]
+    },
+    {
+      "id": "billing-dashboard",
+      "category": "product",
+      "path": "assets/Billing Dashboard.html",
+      "purpose": "Finance home · MRR · payouts · invoices · subscriptions · refunds · reconciliation · failed-payment dunning · segment mix.",
+      "tags": [
+        "billing",
+        "finance",
+        "dashboard",
+        "product"
+      ],
+      "use_for": [
+        "finance ops",
+        "billing UX",
+        "Stripe operator view"
+      ]
+    },
+    {
+      "id": "support-help-center",
+      "category": "public_pages",
+      "path": "assets/Support Help Center.html",
+      "purpose": "Public help center · hero search · 8 categories · popular articles · contact channels · self-serve first.",
+      "tags": [
+        "support",
+        "help",
+        "docs",
+        "public"
+      ],
+      "use_for": [
+        "help center",
+        "public docs",
+        "self-serve deflection"
+      ]
+    },
+    {
+      "id": "crm-pipeline",
+      "category": "product",
+      "path": "assets/CRM Pipeline.html",
+      "purpose": "Sales pipeline · 5-stage kanban · deal cards · weighted forecast · velocity tracking · Section 20 expansion.",
+      "tags": [
+        "crm",
+        "pipeline",
+        "sales",
+        "kanban"
+      ],
+      "use_for": [
+        "sales UX",
+        "pipeline management",
+        "forecast reporting"
+      ]
+    },
+    {
+      "id": "content-system",
+      "category": "public_pages",
+      "path": "assets/Content System.html",
+      "purpose": "Editorial content system · article template with drop-cap · TOC rail · reading progress · resource center · related.",
+      "tags": [
+        "content",
+        "editorial",
+        "article",
+        "blog"
+      ],
+      "use_for": [
+        "blog articles",
+        "long-form content",
+        "editorial system"
+      ]
+    },
+    {
+      "id": "transactional-email-family",
+      "category": "email",
+      "path": "assets/Transactional Email Family.html",
+      "purpose": "6 transactional email templates (receipt · security · MFA · dispute · appointment · welcome) + trigger manifest.",
+      "tags": [
+        "email",
+        "transactional",
+        "templates",
+        "system"
+      ],
+      "use_for": [
+        "transactional email",
+        "email family",
+        "trigger routing"
+      ]
+    },
+    {
+      "id": "crm-workflow-builder",
+      "category": "product",
+      "path": "assets/CRM Workflow Builder.html",
+      "purpose": "Visual automation editor · trigger + condition + action + AI + human approval nodes · idempotent · retry policies · live debugger.",
+      "tags": [
+        "crm",
+        "workflow",
+        "automation",
+        "builder",
+        "product"
+      ],
+      "use_for": [
+        "workflow UX",
+        "automation builder",
+        "human-in-loop patterns"
+      ]
+    },
+    {
+      "id": "crm-deal-detail",
+      "category": "product",
+      "path": "assets/CRM Deal Detail.html",
+      "purpose": "Per-deal 360 view · hero + pipeline strip + timeline + stakeholders + close playbook + documents. Section 20 completion.",
+      "tags": [
+        "crm",
+        "deal",
+        "sales",
+        "product"
+      ],
+      "use_for": [
+        "deal UX",
+        "sales close tracking",
+        "stakeholder mapping"
+      ]
+    },
+    {
+      "id": "governance-manual",
+      "category": "brand_system",
+      "path": "assets/Governance Manual.html",
+      "purpose": "Brand OS governance · 4 principles · roles · approval matrix · versioning states · quality gate · deprecation protocol.",
+      "tags": [
+        "governance",
+        "brand",
+        "versioning",
+        "approval"
+      ],
+      "use_for": [
+        "design-system governance",
+        "approval flows",
+        "versioning contract"
+      ]
+    },
+    {
+      "id": "ai-style-guide",
+      "category": "brand_system",
+      "path": "assets/AI Style Guide.html",
+      "purpose": "AI generation rules · anti-generic test · style pillars · positive + negative prompt library · 10-point QA checklist.",
+      "tags": [
+        "ai",
+        "style-guide",
+        "prompts",
+        "governance"
+      ],
+      "use_for": [
+        "AI-generated asset control",
+        "prompt reuse",
+        "negative-prompt library"
+      ]
+    },
+    {
+      "id": "component-library",
+      "category": "brand_system",
+      "path": "assets/Component Library.html",
+      "purpose": "Live component reference · buttons · inputs · badges · chips · cards · tabs · alerts · avatars · progress · tables.",
+      "tags": [
+        "components",
+        "design-system",
+        "reference"
+      ],
+      "use_for": [
+        "component reference",
+        "dev handoff",
+        "design consistency"
+      ]
+    },
+    {
+      "id": "campaign-system",
+      "category": "brand_system",
+      "path": "assets/Campaign System.html",
+      "purpose": "Unified campaign package · message architecture · 8-channel matrix · 6-week sequencing · 4 primary KPIs · win/par/loss thresholds.",
+      "tags": [
+        "campaigns",
+        "marketing",
+        "launch",
+        "system"
+      ],
+      "use_for": [
+        "campaign planning",
+        "multi-channel launches",
+        "measurement contracts"
+      ]
+    }
+  ],
+  "decision_tree": {
+    "user_wants_lead_form": "Use category=forms. Pick specific form based on lead type: credit → credit-qualify · funding → funding-qualify · unknown → universal-funnel · partner → partnership-application · media → podcast-guest.",
+    "user_wants_landing_page": "Start from product/landing-page. Customize sections. Import assets/brand.css.",
+    "user_wants_client_onboarding": "Use client_ops/onboarding-welcome + service-intake form + email/email-drip 7-day.",
+    "user_wants_pitch": "product/meet-rick for founder + sales/pitch-deck for investors, sales/sales-deck for buyers, sales/proposal for scoped clients.",
+    "user_wants_social_content": "Pick platform from social/ folder. Reuse photos from photos/ category.",
+    "user_wants_credit_industry_asset": "Combine credit_tech/credit-report + legal/dispute-letter + forms/credit-qualify.",
+    "user_wants_new_asset_type": "1. Copy the most similar existing asset. 2. Import assets/brand.css. 3. Use only --rj-* color tokens. 4. Follow the section header + hero + content pattern of neighbors.",
+    "user_wants_mobile_app": "Use mobile/mobile-client-app for the design. Reference api-backend-spec for the wiring.",
+    "user_wants_api_spec": "Use engineering/api-backend-spec — full Cloudflare stack, 32 endpoints, data flow, security, compliance.",
+    "user_wants_admin_dashboard": "Use admin/admin-dashboard for overview · admin/client-roster for CRM · admin/revenue-analytics for financials · admin/ai-agent-console for AI ops.",
+    "user_wants_onboarding": "Use mobile/onboarding-flow — 7-screen FCRA-compliant signup journey.",
+    "user_wants_marketing_site": "Use product/marketing-site — full multi-section conversion-focused site.",
+    "user_wants_compliance": "Use compliance/compliance-toolkit — full regulatory + state licensing + audit trail toolkit.",
+    "user_wants_partner_portal": "Use admin/partner-portal — full white-label + affiliate dashboard with commission tracking.",
+    "user_wants_public_pages": "Use public_pages/roadmap for transparency · public_pages/trust-center for security · public_pages/status-page for uptime.",
+    "user_wants_credit_intelligence_platform": "Use engineering/credit-intelligence-blueprint as the master spec. The 5 signature screens (credit-command-center · change-explainer · scenario-lab · identity-watch · reporting-calendar) are the flagship experiences.",
+    "user_wants_signature_dashboard": "Use credit-command-center — the hierarchy-over-grid home with Health Index, 3-bureau, What Changed, Priority Actions.",
+    "user_wants_bureau_diff": "Use credit_tech/bureau-diff-engine — TU/EQ/EX diff with MATCH/DIFFERENCE/MISSING/REVIEW labels.",
+    "user_wants_action_engine": "Use credit_tech/action-center — Impact × Effort matrix + 6-column kanban.",
+    "user_wants_consumer_dispute_ux": "Use credit_tech/dispute-workspace — draft + evidence + authorize · never auto-sends.",
+    "user_wants_cip_admin": "Use admin/cip-admin for home · admin/cip-provider-health for observability · admin/cip-support-workspace for masked support.",
+    "user_wants_mobile_credit_intelligence": "Use mobile/mobile-cip — 3 signature screens in iPhone frames.",
+    "user_wants_design_tokens": "Use brand_system/design-tokens-css + design-tokens-json — machine-readable brand contract.",
+    "user_wants_crm": "Use product/crm-contact-360 as the CRM anchor. Expand to pipelines/deals in next wave.",
+    "user_wants_analytics_dashboard": "Use product/executive-analytics — MRR + funnel + cohort + forecast.",
+    "user_wants_motion": "Use brand_system/motion-system-states — 5 easing curves · 6 duration tokens · 12 canonical states.",
+    "user_wants_data_viz": "Use brand_system/data-viz-library — palette + primitives + chart rules.",
+    "user_wants_notifications": "Use brand_system/notifications-system — toasts + center + preferences.",
+    "user_wants_auth": "Use brand_system/auth-system — passkey-first + MFA + 8 session states.",
+    "user_wants_universe_audit": "Use brand_system/brand-universe-coverage — coverage matrix + gap detection + lifecycle test.",
+    "user_wants_billing_ops": "Use product/billing-dashboard — MRR + invoices + subscriptions + reconciliation.",
+    "user_wants_help_center": "Use public_pages/support-help-center — hero search + categories + contact.",
+    "user_wants_sales_pipeline": "Use product/crm-pipeline — 5-stage kanban + weighted forecast.",
+    "user_wants_article_template": "Use public_pages/content-system — article + TOC + resource center.",
+    "user_wants_transactional_emails": "Use email/transactional-email-family — 6 templates + trigger manifest.",
+    "user_wants_workflow_builder": "Use product/crm-workflow-builder — trigger + condition + action + human approval + AI nodes.",
+    "user_wants_deal_detail": "Use product/crm-deal-detail — 360 view + stakeholders + close playbook.",
+    "user_wants_governance": "Use brand_system/governance-manual — 4 principles + approval matrix + quality gate.",
+    "user_wants_ai_style_rules": "Use brand_system/ai-style-guide — anti-generic test + prompt library + QA checklist.",
+    "user_wants_component_reference": "Use brand_system/component-library — every primitive with live code.",
+    "user_wants_campaign_launch": "Use brand_system/campaign-system — message arch + channel matrix + sequencing + KPIs."
+  },
+  "wave": "P3 Systems Maturity"
+}

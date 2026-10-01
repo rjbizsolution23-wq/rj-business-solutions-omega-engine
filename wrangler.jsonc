@@ -1,0 +1,20 @@
+{
+  "name": "rj-agency-omega",
+  "main": "src/server/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "GHL_AGENCY_PIT": "pit-defef847-98c6-4d10-937b-b42038ecd494",
+    "GHL_SUB_RJ_LOCATION": "DvKRMVD9YudoS6xRyBfb",
+    "GHL_SUB_FCRA_LOCATION": "aBL9bEdg3LoPKJ9RhPzE",
+    "GHL_SUB_EUGENE_LOCATION": "1J5ooApb6gIuDiOen20e",
+    "GHL_SUB_PREACHER_LOCATION": "wBPmIpkN5dcwCCSc2kwz"
+  },
+  "r2_buckets": [
+    {
+      "binding": "RJ_ASSETS",
+      "bucket_name": "rj-brand-assets"
+    }
+  ]
+}

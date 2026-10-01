@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Mobile Client App · RJ Business Solutions</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+  body{background:var(--rj-soft);font-size:14px}
+  .doc{max-width:1280px;margin:0 auto;padding:40px 32px}
+  header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:2px solid var(--rj-line)}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{width:44px;height:44px;border-radius:10px}
+  .brand .n{font-family:var(--font-head);font-weight:600;color:var(--rj-navy);font-size:16px}
+  .brand .t{font-family:var(--font-mono);font-size:10px;color:var(--rj-blue);letter-spacing:0.14em;text-transform:uppercase;margin-top:2px;font-weight:600}
+  .breadcrumb{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);text-align:right;font-weight:600}
+  .breadcrumb b{color:var(--rj-navy);font-family:var(--font-head);font-size:14px;letter-spacing:-0.01em;text-transform:none;font-weight:600;display:block;margin-top:2px}
+
+  .hero{background:var(--grad-dark);color:#fff;padding:48px 56px;border-radius:24px;margin-bottom:32px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.35) 0%,transparent 60%);filter:blur(60px)}
+  .hero .kicker{display:inline-block;padding:6px 16px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.3);border-radius:999px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);margin-bottom:16px;font-weight:600;position:relative;z-index:1}
+  .hero h1{font-family:var(--font-head);font-size:52px;font-weight:700;letter-spacing:-0.03em;line-height:1;margin:0;position:relative;z-index:1}
+  .hero h1 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{font-family:var(--font-head);font-size:17px;color:#cbd5e1;margin-top:16px;font-weight:500;line-height:1.5;max-width:800px;position:relative;z-index:1}
+
+  /* Phone frame */
+  .phone-row{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-bottom:40px}
+  .phone-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .phone-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;text-align:center}
+  .phone-label b{color:var(--rj-navy);font-family:var(--font-head);font-size:14px;letter-spacing:-0.01em;text-transform:none;font-weight:600;display:block;margin-top:2px}
+
+  .phone{width:220px;height:475px;background:var(--rj-navy);border-radius:36px;padding:8px;box-shadow:0 25px 50px rgba(15,23,42,0.25);position:relative;flex-shrink:0}
+  .phone::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:20px;background:var(--rj-navy);border-radius:0 0 12px 12px;z-index:10}
+  .phone .screen{width:100%;height:100%;background:#fff;border-radius:28px;overflow:hidden;position:relative}
+  .status-bar{display:flex;justify-content:space-between;padding:8px 22px 4px;font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--rj-navy)}
+  .status-bar .right{display:flex;gap:4px;align-items:center}
+  .status-bar .right svg{width:12px;height:12px}
+
+  .content-scroll{padding:12px 14px 60px;height:calc(100% - 24px);overflow:hidden;position:relative}
+
+  /* Tab bar (bottom) */
+  .tab-bar{position:absolute;bottom:0;left:0;right:0;height:56px;background:#fff;border-top:1px solid var(--rj-line);display:grid;grid-template-columns:repeat(5,1fr);align-items:center;padding-bottom:6px}
+  .tab-bar .tab{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--rj-muted-text)}
+  .tab-bar .tab svg{width:20px;height:20px}
+  .tab-bar .tab .lbl{font-family:var(--font-mono);font-size:8px;font-weight:700;letter-spacing:0.06em}
+  .tab-bar .tab.active{color:var(--rj-blue)}
+
+  /* Common mobile blocks */
+  .mob-header{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 12px}
+  .mob-header .greeting{font-family:var(--font-head);font-weight:600;font-size:13px;color:var(--rj-navy);line-height:1.1}
+  .mob-header .greeting b{font-family:var(--font-head);font-weight:700;color:var(--rj-navy)}
+  .mob-header .greeting .sub{font-family:var(--font-mono);font-size:8px;letter-spacing:0.08em;color:var(--rj-muted-text);text-transform:uppercase;font-weight:600;margin-top:1px}
+  .mob-header .avatar{width:32px;height:32px;border-radius:50%;background:var(--grad-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:12px}
+
+  .mob-title{font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--rj-navy);letter-spacing:-0.01em;line-height:1;margin:0 4px 8px}
+
+  /* ─── Screen 1: HOME ─── */
+  .score-card{background:linear-gradient(135deg,var(--rj-navy),var(--rj-deep));color:#fff;border-radius:16px;padding:16px 18px;margin-bottom:10px;position:relative;overflow:hidden}
+  .score-card::after{content:"";position:absolute;right:-30px;top:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(14,165,233,0.4),transparent 60%);filter:blur(20px)}
+  .score-card .k-sc{font-family:var(--font-mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;position:relative;z-index:1}
+  .score-card .n-sc{font-family:var(--font-head);font-weight:700;font-size:44px;color:#fff;letter-spacing:-0.03em;line-height:1;margin-top:4px;position:relative;z-index:1}
+  .score-card .delta-sc{font-family:var(--font-head);font-weight:700;font-size:11px;color:#6ee7b7;margin-top:2px;position:relative;z-index:1}
+  .bureau-mini-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px;position:relative;z-index:1}
+  .bmr{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 4px;text-align:center}
+  .bmr .b{font-family:var(--font-mono);font-size:7px;letter-spacing:0.14em;color:var(--rj-sky);font-weight:700;text-transform:uppercase}
+  .bmr .v{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;margin-top:1px;letter-spacing:-0.01em}
+
+  .quick-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+  .qa{background:#fff;border:1px solid var(--rj-line);border-radius:10px;padding:8px 4px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px}
+  .qa svg{width:16px;height:16px;color:var(--rj-blue)}
+  .qa .lbl-q{font-family:var(--font-mono);font-size:7px;letter-spacing:0.05em;color:var(--rj-navy);font-weight:700;text-transform:uppercase}
+
+  .activity-list{background:#fff;border:1px solid var(--rj-line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  .activity-list .head-a{display:flex;justify-content:space-between;align-items:center;padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--rj-line)}
+  .activity-list .head-a .t{font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--rj-navy);letter-spacing:-0.01em}
+  .activity-list .head-a .m{font-family:var(--font-mono);font-size:8px;color:var(--rj-blue);letter-spacing:0.08em;font-weight:700;text-transform:uppercase}
+  .act-item{display:flex;align-items:center;gap:8px;padding:4px 0}
+  .act-item .ic-a{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .act-item .ic-a svg{width:12px;height:12px}
+  .act-item.good .ic-a{background:#dcfce7;color:#166534}
+  .act-item.info .ic-a{background:var(--rj-light);color:var(--rj-blue)}
+  .act-item.warn .ic-a{background:#fef3c7;color:#92400e}
+  .act-item .msg-a{font-family:var(--font-body);font-size:9px;color:var(--rj-navy);line-height:1.2;flex:1}
+  .act-item .msg-a b{font-family:var(--font-head);font-weight:600}
+
+  /* ─── Screen 2: SCORE ─── */
+  .arc-big-wrap{padding:14px 0;text-align:center}
+  .arc-big-wrap svg{width:180px;height:100px}
+  .arc-big{position:relative}
+  .arc-big .center-arc{position:absolute;left:0;right:0;bottom:16px;text-align:center}
+  .arc-big .num-a{font-family:var(--font-head);font-weight:700;font-size:38px;color:var(--rj-navy);letter-spacing:-0.03em;line-height:1}
+  .arc-big .lbl-a{font-family:var(--font-mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin-top:2px}
+
+  .bureau-card-mob{background:#fff;border:1px solid var(--rj-line);border-radius:10px;padding:10px 12px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+  .bureau-card-mob .info-bm .b-n{font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--rj-navy);letter-spacing:-0.01em}
+  .bureau-card-mob .info-bm .b-m{font-family:var(--font-mono);font-size:8px;letter-spacing:0.08em;color:var(--rj-muted-text);font-weight:600;margin-top:1px}
+  .bureau-card-mob .right-bm{text-align:right}
+  .bureau-card-mob .right-bm .n{font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--rj-navy);letter-spacing:-0.02em;line-height:1}
+  .bureau-card-mob .right-bm .d{font-family:var(--font-mono);font-size:8px;color:var(--rj-success);font-weight:700;margin-top:1px;letter-spacing:0.05em}
+
+  .factors-mob{background:#fff;border:1px solid var(--rj-line);border-radius:10px;padding:10px 12px;margin-top:6px}
+  .factors-mob .head-fm{font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--rj-navy);letter-spacing:-0.01em;padding-bottom:6px;border-bottom:1px solid var(--rj-line);margin-bottom:6px}
+  .f-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0}
+  .f-row .f-n{font-family:var(--font-body);font-size:9px;color:var(--rj-navy);font-weight:500}
+  .f-row .f-b{width:70px;height:4px;background:var(--rj-line);border-radius:2px;overflow:hidden}
+  .f-row .f-b .fill{height:100%;border-radius:2px}
+  .f-row .f-b .fill.g{background:var(--rj-success)}
+  .f-row .f-b .fill.w{background:var(--rj-warning)}
+  .f-row .f-b .fill.b{background:var(--rj-danger)}
+
+  /* ─── Screen 3: DISPUTES ─── */
+  .dispute-tabs{display:flex;background:var(--rj-light);border-radius:8px;padding:2px;margin-bottom:8px}
+  .dispute-tabs .dt{flex:1;padding:5px;font-family:var(--font-mono);font-size:8px;font-weight:700;letter-spacing:0.06em;color:var(--rj-muted-text);text-transform:uppercase;text-align:center;border-radius:6px}
+  .dispute-tabs .dt.active{background:#fff;color:var(--rj-blue);box-shadow:0 1px 3px rgba(15,23,42,0.1)}
+
+  .disp-item{background:#fff;border:1px solid var(--rj-line);border-left:3px solid var(--rj-blue);border-radius:10px;padding:10px 12px;margin-bottom:6px}
+  .disp-item.warn{border-left-color:var(--rj-warning)}
+  .disp-item.good{border-left-color:var(--rj-success)}
+  .disp-item .top-di{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}
+  .disp-item .top-di h4{font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--rj-navy);margin:0;letter-spacing:-0.01em;line-height:1.1}
+  .disp-item .b-tag{font-family:var(--font-mono);font-size:7px;font-weight:700;letter-spacing:0.1em;padding:1px 5px;border-radius:3px;text-transform:uppercase;background:var(--rj-light);color:var(--rj-blue);flex-shrink:0}
+  .disp-item .amt-di{font-family:var(--font-mono);font-size:9px;color:var(--rj-navy);font-weight:700;letter-spacing:0.03em}
+  .disp-item .foot-di{display:flex;justify-content:space-between;align-items:center;margin-top:4px;padding-top:4px;border-top:1px solid var(--rj-line)}
+  .disp-item .status-di{font-family:var(--font-mono);font-size:7px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700}
+  .disp-item.warn .status-di{color:var(--rj-warning)}
+  .disp-item.good .status-di{color:var(--rj-success)}
+  .disp-item .days-di{font-family:var(--font-mono);font-size:7px;color:var(--rj-muted-text);letter-spacing:0.06em;font-weight:600}
+
+  /* ─── Screen 4: UPLOADS ─── */
+  .upload-dropzone{background:linear-gradient(180deg,var(--rj-light),#fff);border:2px dashed var(--rj-border);border-radius:12px;padding:20px 16px;text-align:center;margin-bottom:10px}
+  .upload-dropzone .ic-u{width:36px;height:36px;background:var(--grad-primary);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;box-shadow:0 4px 10px rgba(37,99,235,0.35)}
+  .upload-dropzone .ic-u svg{width:18px;height:18px}
+  .upload-dropzone h3{font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--rj-navy);margin:0 0 3px 0;letter-spacing:-0.01em}
+  .upload-dropzone p{font-family:var(--font-mono);font-size:8px;letter-spacing:0.08em;color:var(--rj-muted-text);margin:0;font-weight:600;text-transform:uppercase}
+  .upload-dropzone .btn-up{margin-top:8px;background:var(--rj-blue);color:#fff;padding:6px 14px;border-radius:6px;font-family:var(--font-body);font-size:10px;font-weight:700;display:inline-block}
+
+  .file-item{background:#fff;border:1px solid var(--rj-line);border-radius:10px;padding:8px 10px;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+  .file-item .ic-f{width:26px;height:26px;background:var(--rj-light);color:var(--rj-blue);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .file-item .ic-f svg{width:14px;height:14px}
+  .file-item .info-f{flex:1}
+  .file-item .info-f .n-f{font-family:var(--font-head);font-weight:600;font-size:10px;color:var(--rj-navy);line-height:1.1;letter-spacing:-0.01em}
+  .file-item .info-f .m-f{font-family:var(--font-mono);font-size:7px;color:var(--rj-muted-text);letter-spacing:0.05em;font-weight:600;margin-top:1px}
+  .file-item .status-f{font-family:var(--font-mono);font-size:7px;font-weight:700;letter-spacing:0.08em;padding:2px 5px;border-radius:3px;text-transform:uppercase}
+  .file-item .status-f.done{background:#dcfce7;color:#166534}
+  .file-item .status-f.pend{background:#fef3c7;color:#92400e}
+
+  /* ─── Screen 5: CHAT ─── */
+  .chat-header{display:flex;align-items:center;gap:8px;padding:6px 4px 10px;border-bottom:1px solid var(--rj-line);margin-bottom:8px}
+  .chat-header .avatar-c{width:34px;height:34px;border-radius:50%;background:#c7d2fe;background-image:url('photos/rick-portrait.jpg');background-size:cover;background-position:center;flex-shrink:0;position:relative}
+  .chat-header .avatar-c::after{content:"";position:absolute;bottom:0;right:0;width:8px;height:8px;background:var(--rj-success);border:2px solid #fff;border-radius:50%}
+  .chat-header .info-c .n-c{font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--rj-navy);letter-spacing:-0.01em;line-height:1}
+  .chat-header .info-c .s-c{font-family:var(--font-mono);font-size:8px;letter-spacing:0.08em;color:var(--rj-success);font-weight:700;text-transform:uppercase;margin-top:2px}
+
+  .msg{max-width:78%;padding:7px 10px;border-radius:12px;margin-bottom:5px;font-size:10px;line-height:1.35;font-family:var(--font-body)}
+  .msg.them{background:var(--rj-light);color:var(--rj-navy);border-bottom-left-radius:4px}
+  .msg.me{background:var(--grad-primary);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+  .msg-time{font-family:var(--font-mono);font-size:7px;letter-spacing:0.08em;color:var(--rj-muted-text);text-align:center;margin:6px 0 4px;font-weight:600}
+
+  .chat-input{position:absolute;bottom:56px;left:0;right:0;background:#fff;border-top:1px solid var(--rj-line);padding:8px 12px;display:flex;gap:6px;align-items:center}
+  .chat-input .field{flex:1;background:var(--rj-light);border-radius:14px;padding:6px 10px;font-family:var(--font-body);font-size:9px;color:var(--rj-muted-text)}
+  .chat-input .send{width:24px;height:24px;background:var(--rj-blue);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center}
+  .chat-input .send svg{width:12px;height:12px}
+
+  /* Feature callouts */
+  .features{background:#fff;border:1px solid var(--rj-line);border-radius:20px;padding:32px 40px;margin-top:32px}
+  .features h2{font-family:var(--font-head);font-weight:600;font-size:24px;color:var(--rj-navy);letter-spacing:-0.02em;margin:0 0 6px 0}
+  .features h2 span{color:var(--rj-blue)}
+  .features .lead-f{font-size:14px;color:var(--rj-muted-text);margin:0 0 24px 0}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .feat{padding:20px 22px;border:1px solid var(--rj-line);border-radius:14px}
+  .feat .ic-fe{width:36px;height:36px;background:var(--rj-light);color:var(--rj-blue);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .feat .ic-fe svg{width:18px;height:18px}
+  .feat h4{font-family:var(--font-head);font-weight:600;font-size:14px;color:var(--rj-navy);margin:0 0 6px 0;letter-spacing:-0.01em}
+  .feat p{font-size:12px;color:var(--rj-muted-text);line-height:1.5;margin:0}
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+<header>
+  <div class="brand">
+    <img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/>
+    <div>
+      <div class="n">RJ Credit Suite · Mobile</div>
+      <div class="t">Client Portal · iOS + Android · PWA-Ready</div>
+    </div>
+  </div>
+  <div class="breadcrumb">Mobile App v1.0<b>5 core screens</b></div>
+</header>
+
+<section class="hero">
+  <div class="kicker">● Mobile-Native · Client-Facing</div>
+  <h1>Your credit in <span>your pocket.</span></h1>
+  <div class="sub">The client-side mobile experience — home dashboard, live score view, dispute tracker, document upload, and direct chat with Rick's team. Built as a PWA. Installs from the browser. Works offline.</div>
+</section>
+
+<div class="phone-row">
+
+  <!-- ── SCREEN 1: HOME ── -->
+  <div class="phone-wrap">
+    <div class="phone-label">Screen 01<b>Home</b></div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12l2-2v4zM6 8l2-2v12l-2-2zM10 4l2-2v20l-2-2zM14 8l2-2v12l-2-2zM18 12l2-2v4z"/></svg><svg viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="8" width="14" height="8" fill="currentColor"/></svg></span>
+        </div>
+        <div class="content-scroll">
+          <div class="mob-header">
+            <div class="greeting">Good morning, <b>Marcus</b><div class="sub">Sept 5, 2026</div></div>
+            <div class="avatar">MJ</div>
+          </div>
+
+          <div class="score-card">
+            <div class="k-sc">Your average score</div>
+            <div class="n-sc">711</div>
+            <div class="delta-sc">↑ +58 since enrollment</div>
+            <div class="bureau-mini-row">
+              <div class="bmr"><div class="b">TU</div><div class="v">712</div></div>
+              <div class="bmr"><div class="b">EQ</div><div class="v">698</div></div>
+              <div class="bmr"><div class="b">EX</div><div class="v">724</div></div>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <div class="qa"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg><div class="lbl-q">Disputes</div></div>
+            <div class="qa"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg><div class="lbl-q">Upload</div></div>
+            <div class="qa"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg><div class="lbl-q">Chat</div></div>
+            <div class="qa"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-doc"/></svg><div class="lbl-q">Reports</div></div>
+          </div>
+
+          <div class="activity-list">
+            <div class="head-a"><div class="t">Latest activity</div><div class="m">View all</div></div>
+            <div class="act-item good"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div><div class="msg-a"><b>Chase collection</b> removed · +18 pts</div></div>
+            <div class="act-item info"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-send"/></svg></div><div class="msg-a">Round 2 letters sent · <b>3 items</b></div></div>
+            <div class="act-item warn"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-utilization"/></svg></div><div class="msg-a">Pay Chase $2,200 by <b>Sept 22</b></div></div>
+            <div class="act-item good"><div class="ic-a"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div><div class="msg-a">Medical debt <b>deleted</b> · +12 pts</div></div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab active"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg><div class="lbl">Home</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-score"/></svg><div class="lbl">Score</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg><div class="lbl">Disputes</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg><div class="lbl">Upload</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg><div class="lbl">Chat</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN 2: SCORE ── -->
+  <div class="phone-wrap">
+    <div class="phone-label">Screen 02<b>Score</b></div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12l2-2v4zM6 8l2-2v12l-2-2zM10 4l2-2v20l-2-2zM14 8l2-2v12l-2-2zM18 12l2-2v4z"/></svg><svg viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="8" width="14" height="8" fill="currentColor"/></svg></span>
+        </div>
+        <div class="content-scroll">
+          <h1 class="mob-title">Your Scores</h1>
+          <div class="arc-big-wrap arc-big">
+            <svg viewBox="0 0 180 100">
+              <path d="M 15 90 A 75 75 0 0 1 165 90" stroke="#e2e8f0" stroke-width="10" fill="none" stroke-linecap="round"/>
+              <path d="M 15 90 A 75 75 0 0 1 140 34" stroke="url(#g-mob)" stroke-width="10" fill="none" stroke-linecap="round"/>
+              <defs><linearGradient id="g-mob" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+            </svg>
+            <div class="center-arc">
+              <div class="num-a">711</div>
+              <div class="lbl-a">Average · Good</div>
+            </div>
+          </div>
+
+          <div class="bureau-card-mob">
+            <div class="info-bm"><div class="b-n">TransUnion</div><div class="b-m">Sept 3, 2026</div></div>
+            <div class="right-bm"><div class="n">712</div><div class="d">+62</div></div>
+          </div>
+          <div class="bureau-card-mob">
+            <div class="info-bm"><div class="b-n">Equifax</div><div class="b-m">Sept 3, 2026</div></div>
+            <div class="right-bm"><div class="n">698</div><div class="d">+54</div></div>
+          </div>
+          <div class="bureau-card-mob">
+            <div class="info-bm"><div class="b-n">Experian</div><div class="b-m">Sept 3, 2026</div></div>
+            <div class="right-bm"><div class="n">724</div><div class="d">+58</div></div>
+          </div>
+
+          <div class="factors-mob">
+            <div class="head-fm">Score factors</div>
+            <div class="f-row"><div class="f-n">Payment history</div><div class="f-b"><div class="fill g" style="width:100%"></div></div></div>
+            <div class="f-row"><div class="f-n">Utilization</div><div class="f-b"><div class="fill w" style="width:68%"></div></div></div>
+            <div class="f-row"><div class="f-n">Credit age</div><div class="f-b"><div class="fill g" style="width:85%"></div></div></div>
+            <div class="f-row"><div class="f-n">Mix</div><div class="f-b"><div class="fill g" style="width:78%"></div></div></div>
+            <div class="f-row"><div class="f-n">Inquiries</div><div class="f-b"><div class="fill b" style="width:40%"></div></div></div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg><div class="lbl">Home</div></div>
+          <div class="tab active"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-score"/></svg><div class="lbl">Score</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg><div class="lbl">Disputes</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg><div class="lbl">Upload</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg><div class="lbl">Chat</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN 3: DISPUTES ── -->
+  <div class="phone-wrap">
+    <div class="phone-label">Screen 03<b>Disputes</b></div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12l2-2v4zM6 8l2-2v12l-2-2zM10 4l2-2v20l-2-2zM14 8l2-2v12l-2-2zM18 12l2-2v4z"/></svg><svg viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="8" width="14" height="8" fill="currentColor"/></svg></span>
+        </div>
+        <div class="content-scroll">
+          <h1 class="mob-title">Disputes</h1>
+
+          <div class="dispute-tabs">
+            <div class="dt active">Active <span style="opacity:0.6">·6</span></div>
+            <div class="dt">Pending <span style="opacity:0.6">·3</span></div>
+            <div class="dt">Done <span style="opacity:0.6">·7</span></div>
+          </div>
+
+          <div class="disp-item">
+            <div class="top-di"><h4>Chase Collection</h4><div class="b-tag">TU</div></div>
+            <div class="amt-di">$2,847.00</div>
+            <div class="foot-di"><div class="status-di" style="color:var(--rj-blue)">Ready to send</div><div class="days-di">Drafted 2d ago</div></div>
+          </div>
+          <div class="disp-item warn">
+            <div class="top-di"><h4>LVNV Collection</h4><div class="b-tag">TU</div></div>
+            <div class="amt-di">$1,890.00</div>
+            <div class="foot-di"><div class="status-di">Day 18/30</div><div class="days-di">Response by 9/23</div></div>
+          </div>
+          <div class="disp-item warn">
+            <div class="top-di"><h4>Discover Charge-Off</h4><div class="b-tag">EX</div></div>
+            <div class="amt-di">$540.00</div>
+            <div class="foot-di"><div class="status-di">Day 14/30</div><div class="days-di">Response by 9/27</div></div>
+          </div>
+          <div class="disp-item good">
+            <div class="top-di"><h4>Chase Coll · REMOVED</h4><div class="b-tag">TU</div></div>
+            <div class="amt-di">$2,400.00</div>
+            <div class="foot-di"><div class="status-di">✓ Deleted</div><div class="days-di">Sept 2 · +18 pts</div></div>
+          </div>
+          <div class="disp-item good">
+            <div class="top-di"><h4>Medical debt · REMOVED</h4><div class="b-tag">TU</div></div>
+            <div class="amt-di">$840.00</div>
+            <div class="foot-di"><div class="status-di">✓ Deleted</div><div class="days-di">Aug 24 · +12 pts</div></div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg><div class="lbl">Home</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-score"/></svg><div class="lbl">Score</div></div>
+          <div class="tab active"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg><div class="lbl">Disputes</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg><div class="lbl">Upload</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg><div class="lbl">Chat</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN 4: UPLOAD ── -->
+  <div class="phone-wrap">
+    <div class="phone-label">Screen 04<b>Upload</b></div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12l2-2v4zM6 8l2-2v12l-2-2zM10 4l2-2v20l-2-2zM14 8l2-2v12l-2-2zM18 12l2-2v4z"/></svg><svg viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="8" width="14" height="8" fill="currentColor"/></svg></span>
+        </div>
+        <div class="content-scroll">
+          <h1 class="mob-title">Documents</h1>
+
+          <div class="upload-dropzone">
+            <div class="ic-u"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg></div>
+            <h3>Upload a document</h3>
+            <p>Photo · PDF · up to 25 MB</p>
+            <div class="btn-up">Choose file</div>
+          </div>
+
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin:8px 4px 6px">Recent · 12 files</div>
+
+          <div class="file-item">
+            <div class="ic-f"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-doc"/></svg></div>
+            <div class="info-f"><div class="n-f">TransUnion Report</div><div class="m-f">PDF · 2.4 MB · Sept 3</div></div>
+            <div class="status-f done">✓ Filed</div>
+          </div>
+          <div class="file-item">
+            <div class="ic-f"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-doc"/></svg></div>
+            <div class="info-f"><div class="n-f">Chase statement</div><div class="m-f">PDF · 1.1 MB · Sept 1</div></div>
+            <div class="status-f done">✓ Filed</div>
+          </div>
+          <div class="file-item">
+            <div class="ic-f"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-letter"/></svg></div>
+            <div class="info-f"><div class="n-f">Collection notice</div><div class="m-f">JPG · 3.2 MB · Aug 28</div></div>
+            <div class="status-f pend">In review</div>
+          </div>
+          <div class="file-item">
+            <div class="ic-f"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user-check"/></svg></div>
+            <div class="info-f"><div class="n-f">Driver license</div><div class="m-f">JPG · 1.8 MB · Jul 14</div></div>
+            <div class="status-f done">✓ Filed</div>
+          </div>
+          <div class="file-item">
+            <div class="ic-f"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-invoice"/></svg></div>
+            <div class="info-f"><div class="n-f">Paystub · Aug</div><div class="m-f">PDF · 0.8 MB · Aug 30</div></div>
+            <div class="status-f done">✓ Filed</div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg><div class="lbl">Home</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-score"/></svg><div class="lbl">Score</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg><div class="lbl">Disputes</div></div>
+          <div class="tab active"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg><div class="lbl">Upload</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg><div class="lbl">Chat</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN 5: CHAT ── -->
+  <div class="phone-wrap">
+    <div class="phone-label">Screen 05<b>Chat</b></div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12l2-2v4zM6 8l2-2v12l-2-2zM10 4l2-2v20l-2-2zM14 8l2-2v12l-2-2zM18 12l2-2v4z"/></svg><svg viewBox="0 0 24 24"><rect x="2" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="8" width="14" height="8" fill="currentColor"/></svg></span>
+        </div>
+        <div class="content-scroll" style="padding-bottom:105px">
+          <div class="chat-header">
+            <div class="avatar-c"></div>
+            <div class="info-c"><div class="n-c">Rick + Team</div><div class="s-c">● Online · avg reply 4min</div></div>
+          </div>
+
+          <div class="msg-time">Today · 8:42 AM</div>
+          <div class="msg them">Morning Marcus. Round 2 letters went out yesterday — bureaus have until Sept 23 to respond. 👊</div>
+          <div class="msg me">Hey Rick, saw the removal — huge. What's next?</div>
+          <div class="msg them">Focus on the Chase pay-down. $2,200 before Sept 22 close. That drops your utilization from 82% → 8% overnight.</div>
+          <div class="msg them">Then your score jumps another 22 easy.</div>
+          <div class="msg me">On it. Payment scheduled for 9/20.</div>
+          <div class="msg them">Perfect. You're ahead of schedule 🔥</div>
+          <div class="msg-time">Now</div>
+        </div>
+        <div class="chat-input">
+          <div class="field">Type a message...</div>
+          <div class="send"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-send"/></svg></div>
+        </div>
+        <div class="tab-bar">
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg><div class="lbl">Home</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-score"/></svg><div class="lbl">Score</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg><div class="lbl">Disputes</div></div>
+          <div class="tab"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-upload"/></svg><div class="lbl">Upload</div></div>
+          <div class="tab active"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-chat"/></svg><div class="lbl">Chat</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Feature callouts -->
+<section class="features">
+  <h2>Built for <span>real client scenarios</span></h2>
+  <p class="lead-f">Every screen is designed around the actual moments clients open the app — after a bureau update, before a payment, when a document is requested, when they need to ask Rick something.</p>
+  <div class="feat-grid">
+    <div class="feat">
+      <div class="ic-fe"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-bell"/></svg></div>
+      <h4>Push notifications</h4>
+      <p>Score change · dispute removed · document requested · payment reminder.</p>
+    </div>
+    <div class="feat">
+      <div class="ic-fe"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-fingerprint"/></svg></div>
+      <h4>Biometric auth</h4>
+      <p>Face ID / Touch ID login · PIN backup · session tokens rotate every 24h.</p>
+    </div>
+    <div class="feat">
+      <div class="ic-fe"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-cloud"/></svg></div>
+      <h4>PWA install</h4>
+      <p>Installs from Safari/Chrome without app stores · works offline · syncs on reconnect.</p>
+    </div>
+    <div class="feat">
+      <div class="ic-fe"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-shield-check"/></svg></div>
+      <h4>Encrypted everything</h4>
+      <p>End-to-end for documents · GLBA compliant · zero PII stored client-side.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

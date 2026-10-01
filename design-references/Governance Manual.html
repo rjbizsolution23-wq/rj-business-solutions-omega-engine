@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>Governance Manual · RJ Brand OS</title><link rel="stylesheet" href="brand.css"><style>
+body{background:var(--rj-soft);color:var(--rj-text);font-family:var(--font-body);font-size:15px;line-height:1.6}
+.doc{max-width:1000px;margin:0 auto;padding:64px 48px}
+
+/* Cover */
+.cover{background:var(--grad-dark);color:#fff;padding:80px 64px;border-radius:24px;position:relative;overflow:hidden;margin-bottom:64px}
+.cover::after{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.35),transparent 60%);filter:blur(60px)}
+.cover .brand-c{display:flex;align-items:center;gap:14px;margin-bottom:44px;position:relative;z-index:1}
+.cover .brand-c img{width:52px;height:52px;border-radius:13px}
+.cover .brand-c .n{font-family:var(--font-head);font-weight:700;color:#fff;font-size:16px;letter-spacing:-0.01em}
+.cover .brand-c .t{font-family:var(--font-mono);font-size:10px;color:var(--rj-sky);letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-top:3px}
+.cover .k{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-bottom:16px;position:relative;z-index:1}
+.cover h1{font-family:var(--font-head);font-weight:700;font-size:76px;color:#fff;letter-spacing:-0.03em;line-height:0.95;margin:0 0 24px 0;position:relative;z-index:1}
+.cover h1 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .lead{font-family:var(--font-head);font-size:21px;color:#cbd5e1;font-weight:500;line-height:1.5;max-width:720px;position:relative;z-index:1}
+.cover .meta-c{margin-top:56px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.15);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;z-index:1}
+.cover .meta-c .k-m{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:4px}
+.cover .meta-c .v-m{font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;letter-spacing:-0.01em}
+
+/* Body */
+h2.sec{font-family:var(--font-head);font-weight:700;font-size:36px;color:var(--rj-navy);letter-spacing:-0.02em;margin:56px 0 12px 0;display:flex;align-items:center;gap:14px;line-height:1.1}
+h2.sec .num{font-family:var(--font-mono);font-size:14px;color:var(--rj-blue);letter-spacing:0.1em;font-weight:700;background:var(--rj-light);padding:6px 10px;border-radius:6px;border:1px solid var(--rj-border)}
+h2.sec span{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+p.sec-l{font-family:var(--font-head);font-size:17px;color:var(--rj-muted-text);font-weight:500;line-height:1.5;margin:0 0 28px 0;max-width:720px}
+
+/* Principle card */
+.principle{background:#fff;border:1px solid var(--rj-line);border-radius:16px;padding:32px 40px;margin-bottom:14px}
+.principle .k-p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:8px}
+.principle h3{font-family:var(--font-head);font-weight:700;font-size:22px;color:var(--rj-navy);letter-spacing:-0.02em;margin:0 0 8px 0}
+.principle p{font-family:var(--font-body);font-size:15px;color:#334155;line-height:1.6;margin:0 0 12px 0}
+.principle p b{color:var(--rj-navy);font-family:var(--font-head);font-weight:700}
+.principle p:last-child{margin:0}
+.principle .rule{margin-top:14px;padding:12px 18px;background:var(--rj-light);border:1px solid var(--rj-border);border-radius:10px;font-family:var(--font-body);font-size:14px;color:var(--rj-navy)}
+.principle .rule b{color:var(--rj-blue);font-family:var(--font-head);font-weight:700;letter-spacing:-0.01em}
+
+/* Roles table */
+.role-t{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--rj-line);border-radius:14px;overflow:hidden}
+.role-t th{padding:14px 18px;background:var(--rj-navy);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;text-align:left}
+.role-t td{padding:16px 18px;border-bottom:1px solid var(--rj-line);vertical-align:top;font-family:var(--font-body);font-size:13px;color:var(--rj-text);line-height:1.5}
+.role-t tr:last-child td{border:none}
+.role-t td.name{font-family:var(--font-head);font-weight:700;color:var(--rj-navy);letter-spacing:-0.01em;font-size:14px}
+.role-t td.name .sub-r{font-family:var(--font-mono);font-size:9px;color:var(--rj-muted-text);letter-spacing:0.05em;font-weight:600;margin-top:3px;text-transform:uppercase}
+.role-t td.owns b{color:var(--rj-navy);font-family:var(--font-head);font-weight:600}
+.role-t td.gates{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--rj-blue);font-weight:600;letter-spacing:0.02em}
+
+/* Approval matrix */
+.matrix{background:#fff;border:1px solid var(--rj-line);border-radius:14px;overflow:hidden}
+.matrix .head-m{padding:14px 20px;background:var(--rj-navy);color:#fff;font-family:var(--font-head);font-weight:700;font-size:14px;letter-spacing:-0.01em;display:flex;justify-content:space-between}
+.matrix .head-m .k{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;color:var(--rj-sky);font-weight:700;text-transform:uppercase}
+.mrow{padding:14px 20px;border-bottom:1px solid var(--rj-line);display:grid;grid-template-columns:1fr auto auto auto;gap:14px;align-items:center}
+.mrow:last-child{border:none}
+.mrow .lbl-a{font-family:var(--font-head);font-weight:600;font-size:14px;color:var(--rj-navy);letter-spacing:-0.01em}
+.mrow .lbl-a .sub{font-family:var(--font-body);font-size:12px;color:var(--rj-muted-text);font-weight:400;margin-top:2px}
+.mrow .tier{padding:4px 10px;border-radius:5px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-align:center;min-width:60px}
+.mrow .tier.g{background:rgba(16,185,129,0.15);color:#059669}
+.mrow .tier.y{background:rgba(245,158,11,0.15);color:#d97706}
+.mrow .tier.r{background:rgba(239,68,68,0.15);color:#dc2626}
+.mrow .approver{font-family:var(--font-mono);font-size:11px;color:var(--rj-blue);font-weight:700;letter-spacing:0.02em}
+
+/* Versioning states */
+.ver-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.ver{padding:20px 18px;background:#fff;border:1px solid var(--rj-line);border-radius:12px;text-align:center;position:relative}
+.ver .num{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;color:var(--rj-blue);font-weight:700;margin-bottom:8px}
+.ver .st{padding:4px 10px;border-radius:5px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;margin-bottom:10px}
+.ver .st.draft{background:rgba(148,163,184,0.15);color:#64748b}
+.ver .st.review{background:rgba(245,158,11,0.15);color:#d97706}
+.ver .st.approved{background:rgba(14,165,233,0.15);color:var(--rj-blue)}
+.ver .st.prod{background:rgba(16,185,129,0.15);color:#059669}
+.ver .st.dep{background:rgba(239,68,68,0.15);color:#dc2626}
+.ver p{font-family:var(--font-body);font-size:12px;color:var(--rj-muted-text);line-height:1.5;margin:0}
+.ver::after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--rj-blue);font-family:var(--font-head);font-weight:700;font-size:14px;z-index:2}
+.ver:last-child::after{display:none}
+
+/* Quality gate */
+.qual{background:linear-gradient(135deg,var(--rj-navy),var(--rj-deep));color:#fff;border-radius:20px;padding:44px 48px;position:relative;overflow:hidden}
+.qual::after{content:"";position:absolute;right:-80px;top:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(14,165,233,0.3),transparent 60%);filter:blur(50px)}
+.qual .k-q{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-bottom:12px;position:relative;z-index:1}
+.qual h3{font-family:var(--font-head);font-weight:700;font-size:32px;color:#fff;letter-spacing:-0.02em;margin:0 0 24px 0;position:relative;z-index:1;line-height:1.1}
+.qual h3 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qual .grid-q{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;position:relative;z-index:1}
+.qual .q-c{padding:18px 22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:11px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
+.qual .q-c .n-q{font-family:var(--font-head);font-weight:700;font-size:22px;color:var(--rj-sky);letter-spacing:-0.02em;line-height:1;min-width:34px}
+.qual .q-c h4{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;margin:0 0 3px 0;letter-spacing:-0.01em}
+.qual .q-c p{font-family:var(--font-body);font-size:12px;color:#cbd5e1;line-height:1.5;margin:0}
+.qual .q-c .min{font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700;letter-spacing:0.05em;text-align:right;white-space:nowrap}
+.qual .qthr{margin-top:20px;padding:14px 20px;background:rgba(0,0,0,0.25);border-radius:11px;font-family:var(--font-body);font-size:14px;color:#cbd5e1;line-height:1.6;position:relative;z-index:1}
+.qual .qthr b{color:var(--rj-sky);font-family:var(--font-head);font-weight:700;letter-spacing:-0.01em}
+
+/* Deprecation */
+.dep-flow{display:flex;flex-direction:column;gap:10px}
+.dep-r{padding:16px 22px;background:#fff;border:1px solid var(--rj-line);border-radius:12px;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center}
+.dep-r .n-d{font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--rj-blue);letter-spacing:-0.02em;background:var(--rj-light);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.dep-r h4{font-family:var(--font-head);font-weight:700;font-size:15px;color:var(--rj-navy);letter-spacing:-0.01em;margin:0 0 3px 0}
+.dep-r p{font-family:var(--font-body);font-size:13px;color:#334155;line-height:1.5;margin:0}
+.dep-r .t-d{font-family:var(--font-mono);font-size:10px;color:var(--rj-muted-text);letter-spacing:0.05em;font-weight:700}
+</style></head><body>
+
+<div class="doc">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="brand-c"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div><div class="n">RJ Business Solutions</div><div class="t">Brand Operating System · Section 00</div></div></div>
+  <div class="k">● Governance manual · v1.0</div>
+  <h1>How the <span>Brand OS</span> operates.</h1>
+  <p class="lead">Every design system needs a nervous system. Who decides what. Who approves what. How things move from draft to production. And — critically — how they retire when they no longer serve.</p>
+  <div class="meta-c">
+    <div><div class="k-m">Owner</div><div class="v-m">Rick Jefferson</div></div>
+    <div><div class="k-m">Version</div><div class="v-m">1.0 · Sept 2026</div></div>
+    <div><div class="k-m">Assets governed</div><div class="v-m">142 across 29 sections</div></div>
+    <div><div class="k-m">Review cadence</div><div class="v-m">Quarterly + on-demand</div></div>
+  </div>
+</div>
+
+<!-- 01 · Principles -->
+<h2 class="sec"><span class="num">01</span>The <span>4 principles.</span></h2>
+<p class="sec-l">The rules of the road for anyone touching the RJ Brand OS. If a decision doesn't fit here, escalate. When in doubt, ship the smaller change and review.</p>
+
+<div class="principle">
+  <div class="k-p">● Principle 01 · Ownership</div>
+  <h3>Every asset has one owner. Full stop.</h3>
+  <p>An asset without an owner drifts. A shared asset drifts twice as fast. Every design surface — from a token to a screen — has a single named owner accountable for its correctness, versioning, and deprecation.</p>
+  <p>Owners can delegate execution but never delegate <b>accountability</b>. If a client sees a broken chart, we know who to call.</p>
+  <div class="rule"><b>Rule ·</b> Every entry in the asset registry has an <code>owner</code> field. Missing owner = missing asset.</div>
+</div>
+
+<div class="principle">
+  <div class="k-p">● Principle 02 · Versioning by intent</div>
+  <h3>Version numbers signal user impact — not effort.</h3>
+  <p>We use semantic versioning for brand assets, adjusted for design intent. <b>Major</b> means visible change users will notice. <b>Minor</b> means additive capability. <b>Patch</b> means invisible correction.</p>
+  <p>If a change moves any pixel a user has seen, it's at least minor. Only refactoring gets called patch.</p>
+  <div class="rule"><b>Rule ·</b> Never break a public URL. Move to a new version file. Keep the old file live for one release cycle minimum.</div>
+</div>
+
+<div class="principle">
+  <div class="k-p">● Principle 03 · Approval by risk tier</div>
+  <h3>Green auto-ships. Yellow logs. Red stops.</h3>
+  <p>Not every change needs a meeting. Not every change should skip one. We tier changes by blast radius — cosmetic staging changes ship autonomously, revenue-critical production surfaces get an explicit gate.</p>
+  <p>Default posture: <b>build</b>. Approval only inserts itself where the cost of getting it wrong is high enough to earn a delay.</p>
+  <div class="rule"><b>Rule ·</b> Two tiers by default: build (autonomous) vs hard stop (owner approval). Yellow tier exists only for changes that need retroactive audit.</div>
+</div>
+
+<div class="principle">
+  <div class="k-p">● Principle 04 · Deprecation before deletion</div>
+  <h3>Assets retire gracefully — they don't disappear.</h3>
+  <p>The moment an asset is marked deprecated, three things happen: the asset registry flags it, dependent assets get review notices, and the successor is documented in the header. Nothing gets deleted for at least one release cycle.</p>
+  <p>This is how we avoid the "why doesn't this component work anymore" crisis every design system eventually has.</p>
+  <div class="rule"><b>Rule ·</b> Deprecated assets stay accessible for 90 days minimum. Deletion requires explicit owner approval + dependency check.</div>
+</div>
+
+<!-- 02 · Roles -->
+<h2 class="sec"><span class="num">02</span>Roles &amp; <span>responsibilities.</span></h2>
+<p class="sec-l">Small team, tight roles. Each role owns a slice of the system. Roles can be held by one person or split — but every column below needs a named owner.</p>
+
+<table class="role-t">
+  <thead><tr><th>Role</th><th>Owns</th><th>Approval gates</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="name">Founder · Creative Director<div class="sub-r">Rick Jefferson</div></td>
+      <td class="owns">Vision · brand voice · flagship product surfaces · public storytelling · final call on <b>Red-tier</b> disputes</td>
+      <td class="gates">All Red-tier<br/>Brand system majors<br/>Investor materials</td>
+    </tr>
+    <tr>
+      <td class="name">Design System Steward<div class="sub-r">Currently: Rick</div></td>
+      <td class="owns">Tokens · components · motion library · states · data viz · governance updates · <b>the source of truth</b></td>
+      <td class="gates">Token changes<br/>Component library<br/>Motion + states</td>
+    </tr>
+    <tr>
+      <td class="name">Product Design Lead<div class="sub-r">CIP + admin surfaces</div></td>
+      <td class="owns">Credit Intelligence Platform screens · admin console · mobile · consumer flows</td>
+      <td class="gates">CIP flagships<br/>Admin surfaces<br/>Mobile releases</td>
+    </tr>
+    <tr>
+      <td class="name">Marketing Design Lead<div class="sub-r">Growth surfaces</div></td>
+      <td class="owns">Marketing site · landing pages · social · email templates · ads · print · merch</td>
+      <td class="gates">Homepage majors<br/>Ad creative launches<br/>Print production runs</td>
+    </tr>
+    <tr>
+      <td class="name">Content &amp; Editorial<div class="sub-r">Voice + words</div></td>
+      <td class="owns">Blog · help center · learning center · educational content · brand voice application · CTA copy</td>
+      <td class="gates">Voice guide updates<br/>Featured articles<br/>Legal-adjacent copy</td>
+    </tr>
+    <tr>
+      <td class="name">Compliance &amp; Legal Liaison<div class="sub-r">Regulatory posture</div></td>
+      <td class="owns">Legal templates · consent language · disclaimer copy · trust center · CROA/FCRA/TCPA-adjacent surfaces</td>
+      <td class="gates">All legal-facing copy<br/>Consent flow changes<br/>Regulatory pages</td>
+    </tr>
+    <tr>
+      <td class="name">Engineering Liaison<div class="sub-r">Code &lt;&gt; brand handoff</div></td>
+      <td class="owns">Token export pipeline · component parity between HTML mocks and shipped code · accessibility audits</td>
+      <td class="gates">Token schema changes<br/>Breaking component APIs<br/>A11y regressions</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 03 · Approval matrix -->
+<h2 class="sec"><span class="num">03</span>Approval <span>matrix.</span></h2>
+<p class="sec-l">The specific gates. Green auto-ships. Yellow ships and gets logged. Red waits for Rick's explicit approval. When in doubt, treat as Red.</p>
+
+<div class="matrix">
+  <div class="head-m"><span>Change type</span><span class="k">Tier · Approver</span></div>
+  <div class="mrow"><div class="lbl-a">Copy edit on marketing page<div class="sub">Fixing typos, rewording headlines, refining CTA text</div></div><div class="tier g">Green</div><div class="approver">Auto</div><div class="approver">·</div></div>
+  <div class="mrow"><div class="lbl-a">New Learning Center article<div class="sub">Adding an article using approved editorial system + author</div></div><div class="tier g">Green</div><div class="approver">Auto</div><div class="approver">·</div></div>
+  <div class="mrow"><div class="lbl-a">New screen using existing tokens<div class="sub">Composing approved components into a new product surface</div></div><div class="tier g">Green</div><div class="approver">Auto</div><div class="approver">·</div></div>
+  <div class="mrow"><div class="lbl-a">Adding a new asset to the library<div class="sub">Fills a coverage gap · uses approved brand · logged to manifest</div></div><div class="tier g">Green</div><div class="approver">Auto</div><div class="approver">·</div></div>
+  <div class="mrow"><div class="lbl-a">New dependency in a shipped surface<div class="sub">Additional API · integration · third-party asset</div></div><div class="tier y">Yellow</div><div class="approver">Log + notify</div><div class="approver">DS Steward</div></div>
+  <div class="mrow"><div class="lbl-a">Motion or system-state override<div class="sub">Custom timing or state pattern outside the canonical library</div></div><div class="tier y">Yellow</div><div class="approver">Log + notify</div><div class="approver">DS Steward</div></div>
+  <div class="mrow"><div class="lbl-a">New minor tier in tokens.json<div class="sub">Adding a color · space step · new radius that isn't a breaking change</div></div><div class="tier y">Yellow</div><div class="approver">Log + review</div><div class="approver">DS Steward</div></div>
+  <div class="mrow"><div class="lbl-a">Brand color palette change<div class="sub">Changing an approved brand color or introducing a new primary</div></div><div class="tier r">Red</div><div class="approver">STOP</div><div class="approver">Rick</div></div>
+  <div class="mrow"><div class="lbl-a">Logo, tagline, or company-name change<div class="sub">Any modification to the core brand mark or naming</div></div><div class="tier r">Red</div><div class="approver">STOP</div><div class="approver">Rick</div></div>
+  <div class="mrow"><div class="lbl-a">Legal-adjacent copy on live surfaces<div class="sub">Consent language · dispute language · disclaimers · privacy · TCPA copy</div></div><div class="tier r">Red</div><div class="approver">STOP</div><div class="approver">Legal + Rick</div></div>
+  <div class="mrow"><div class="lbl-a">Pricing page changes<div class="sub">Tier structure · price points · anything customer-visible in commercial terms</div></div><div class="tier r">Red</div><div class="approver">STOP</div><div class="approver">Rick</div></div>
+  <div class="mrow"><div class="lbl-a">Deleting any asset from the library<div class="sub">Regardless of tier · deletion always requires review</div></div><div class="tier r">Red</div><div class="approver">STOP</div><div class="approver">DS Steward + Rick</div></div>
+</div>
+
+<!-- 04 · Versioning -->
+<h2 class="sec"><span class="num">04</span>Versioning &amp; <span>lifecycle.</span></h2>
+<p class="sec-l">Every asset moves through five states. The state is stored in the asset registry alongside the semver version. Never deploy anything that isn't at least <b>Approved</b>.</p>
+
+<div class="ver-flow">
+  <div class="ver"><div class="num">01</div><div class="st draft">Draft</div><p>Being built. Not linked from anywhere public. Owner iterating.</p></div>
+  <div class="ver"><div class="num">02</div><div class="st review">In review</div><p>Ready for owner + steward sign-off. Approval gate active.</p></div>
+  <div class="ver"><div class="num">03</div><div class="st approved">Approved</div><p>Cleared to ship. Linked from index. Registry entry created.</p></div>
+  <div class="ver"><div class="num">04</div><div class="st prod">Production</div><p>Live. In use by clients or team. Changes require versioning.</p></div>
+  <div class="ver"><div class="num">05</div><div class="st dep">Deprecated</div><p>Successor documented. 90-day grace period before deletion review.</p></div>
+</div>
+
+<div class="principle">
+  <div class="k-p">● Versioning rules · always</div>
+  <h3>Semver, adjusted for design.</h3>
+  <p><b>MAJOR (1.x.x → 2.0.0)</b> — any visible change users will notice. Breaking a public URL. Changing a token users have consumed downstream. New signature on a component. Requires full lifecycle: draft → review → approved.</p>
+  <p><b>MINOR (1.0.x → 1.1.0)</b> — additive capability. New variant of a component. New state added to system-states library. New chart type in data-viz library. Backward compatible.</p>
+  <p><b>PATCH (1.0.0 → 1.0.1)</b> — invisible correction. Fixing a spacing typo. Correcting a color hex that was off from the token. No user-facing change.</p>
+</div>
+
+<!-- 05 · Quality gate -->
+<h2 class="sec"><span class="num">05</span>Quality <span>gate.</span></h2>
+<p class="sec-l">Every asset scored against ten criteria before it earns Production status. Minimum score to ship: 85/100. Nothing below threshold reaches the library.</p>
+
+<div class="qual">
+  <div class="k-q">● 10-point quality gate · minimum 85/100 to ship</div>
+  <h3>How we <span>score every asset.</span></h3>
+  <div class="grid-q">
+    <div class="q-c"><div class="n-q">01</div><div><h4>Brand fit</h4><p>Uses design tokens · matches voice · reads as RJ</p></div><div class="min">8.5/10</div></div>
+    <div class="q-c"><div class="n-q">02</div><div><h4>Originality</h4><p>Not a template · not a Canva clone · earned its aesthetic</p></div><div class="min">8.5/10</div></div>
+    <div class="q-c"><div class="n-q">03</div><div><h4>Composition</h4><p>Hierarchy · rhythm · scannable · visually structured</p></div><div class="min">8.5/10</div></div>
+    <div class="q-c"><div class="n-q">04</div><div><h4>Clarity</h4><p>Purpose obvious in 3 seconds · no ambiguity</p></div><div class="min">8.5/10</div></div>
+    <div class="q-c"><div class="n-q">05</div><div><h4>Craft</h4><p>Alignment · spacing · type · edge quality · pixel accuracy</p></div><div class="min">9/10</div></div>
+    <div class="q-c"><div class="n-q">06</div><div><h4>Scalability</h4><p>Works at multiple sizes · responsive · usable across contexts</p></div><div class="min">8/10</div></div>
+    <div class="q-c"><div class="n-q">07</div><div><h4>Accessibility</h4><p>WCAG 2.1 AA · contrast · focus · keyboard · reduced-motion</p></div><div class="min">9/10</div></div>
+    <div class="q-c"><div class="n-q">08</div><div><h4>Production ready</h4><p>Exports · formats · file naming · manifest entry</p></div><div class="min">9/10</div></div>
+    <div class="q-c"><div class="n-q">09</div><div><h4>Cross-channel</h4><p>Related to sibling assets · doesn't fragment the system</p></div><div class="min">8/10</div></div>
+    <div class="q-c"><div class="n-q">10</div><div><h4>Anti-generic test</h4><p>If the logo disappeared · would it still look like RJ?</p></div><div class="min">Pass/fail</div></div>
+  </div>
+  <div class="qthr"><b>Threshold ·</b> Any asset below 85/100 aggregate score is returned to draft with specific critique. Asset owner has 5 business days to revise or archive. No exceptions on Anti-generic — a failing score there is an automatic hold regardless of aggregate.</div>
+</div>
+
+<!-- 06 · Deprecation -->
+<h2 class="sec"><span class="num">06</span>Deprecation <span>protocol.</span></h2>
+<p class="sec-l">The retirement pipeline. Assets don't get deleted — they get gracefully retired with successors documented and dependencies flagged for update.</p>
+
+<div class="dep-flow">
+  <div class="dep-r"><div class="n-d">01</div><div><h4>Mark deprecated in registry</h4><p>Owner flags the asset as <code>deprecated</code> in manifest.json. Timestamp logged. Successor URL required if one exists.</p></div><div class="t-d">Day 0</div></div>
+  <div class="dep-r"><div class="n-d">02</div><div><h4>Dependency scan runs</h4><p>Every asset that references the deprecated one is auto-flagged for owner review. Reviewers see "uses deprecated · action needed by Day 30".</p></div><div class="t-d">Day 0</div></div>
+  <div class="dep-r"><div class="n-d">03</div><div><h4>Deprecated banner surfaces</h4><p>Any user viewing the deprecated asset sees a soft banner: "This is superseded by <b>[successor]</b>. Retiring in 90 days."</p></div><div class="t-d">Day 0-90</div></div>
+  <div class="dep-r"><div class="n-d">04</div><div><h4>Dependencies migrated</h4><p>All dependent assets updated to new successor. Registry entries updated. Old references become soft aliases.</p></div><div class="t-d">Day 1-30</div></div>
+  <div class="dep-r"><div class="n-d">05</div><div><h4>Grace period</h4><p>90 days minimum. Deprecated file remains accessible. Analytics track usage to confirm safe to retire.</p></div><div class="t-d">Day 0-90</div></div>
+  <div class="dep-r"><div class="n-d">06</div><div><h4>Retirement review</h4><p>Owner + Steward review usage data. If &lt;5 hits/month over grace period, retire. Otherwise extend for another cycle.</p></div><div class="t-d">Day 90</div></div>
+  <div class="dep-r"><div class="n-d">07</div><div><h4>Archive · never delete</h4><p>Retired files move to <code>/archive/</code> with metadata preserved. Registry marks status <code>archived</code>. Rick approval required to permanently delete.</p></div><div class="t-d">Day 90+</div></div>
+</div>
+
+<!-- Sign-off -->
+<h2 class="sec"><span class="num">07</span>Sign-off &amp; <span>next review.</span></h2>
+<p class="sec-l">This governance manual is itself a governed asset. Owned by Rick. Reviewed quarterly. Any change follows the approval matrix above.</p>
+
+<div style="background:#fff;border:1px solid var(--rj-line);border-radius:16px;padding:36px 44px;display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:center">
+  <div>
+    <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:6px">● Approved &amp; in effect</div>
+    <h3 style="font-family:var(--font-head);font-weight:700;font-size:22px;color:var(--rj-navy);letter-spacing:-0.02em;margin:0 0 4px 0">Governance Manual v1.0</h3>
+    <p style="font-family:var(--font-body);font-size:14px;color:var(--rj-muted-text);margin:0;line-height:1.6">All existing 142 assets across 29 sections are now governed under this manual. All new assets must comply on creation.</p>
+  </div>
+  <div style="text-align:right">
+    <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin-bottom:4px">Signed</div>
+    <div style="font-family:'Space Grotesk',cursive;font-style:italic;font-size:28px;color:var(--rj-blue);letter-spacing:-0.02em;font-weight:600">Rick Jefferson</div>
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--rj-muted-text);letter-spacing:0.05em;font-weight:700;margin-top:4px">Founder · Sept 7, 2026 · Next review Dec 7, 2026</div>
+  </div>
+</div>
+
+</div>
+</body></html>

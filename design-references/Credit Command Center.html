@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>Credit Command Center · RJ Credit Intelligence</title><link rel="stylesheet" href="brand.css"><style>
+body{background:#0b1220;color:#e2e8f0;font-size:14px;font-family:var(--font-body)}
+.app{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+/* Sidebar */
+.sb{background:#0f172a;border-right:1px solid rgba(255,255,255,0.05);padding:24px 20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb .brand{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:18px}
+.sb .brand img{width:34px;height:34px;border-radius:8px}
+.sb .brand .n{font-family:var(--font-head);font-weight:700;color:#fff;font-size:13px;line-height:1.1}
+.sb .brand .t{font-family:var(--font-mono);font-size:9px;color:var(--rj-sky);letter-spacing:0.14em;text-transform:uppercase;margin-top:2px}
+.sec-l{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;font-weight:700;padding:14px 12px 6px}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:#cbd5e1;text-decoration:none;font-family:var(--font-body);font-size:13px;font-weight:500}
+.nav a svg{width:16px;height:16px;flex-shrink:0}
+.nav a:hover{background:rgba(255,255,255,0.04);color:#fff}
+.nav a.active{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;box-shadow:0 6px 14px rgba(37,99,235,0.4)}
+.nav a .badge{margin-left:auto;background:var(--rj-danger);color:#fff;font-family:var(--font-mono);font-size:9px;padding:1px 6px;border-radius:4px;font-weight:700;letter-spacing:0.05em}
+.nav a .badge.info{background:var(--rj-blue)}
+.member-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;margin-top:20px;display:flex;align-items:center;gap:10px}
+.member-card .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:12px}
+.member-card .info .n{font-family:var(--font-head);font-weight:600;color:#fff;font-size:12px;line-height:1}
+.member-card .info .r{font-family:var(--font-mono);font-size:9px;color:var(--rj-sky);font-weight:700;text-transform:uppercase;margin-top:2px;letter-spacing:0.08em}
+
+/* Main */
+.main{padding:28px 40px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.topbar .greet{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:4px}
+.topbar h1{font-family:var(--font-head);font-weight:700;font-size:32px;color:#fff;letter-spacing:-0.02em;margin:0}
+.topbar h1 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top-actions{display:flex;gap:8px;align-items:center}
+.btn-t{padding:9px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#e2e8f0;border-radius:8px;font-family:var(--font-body);font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer}
+.btn-t svg{width:14px;height:14px}
+.btn-t.primary{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));border-color:transparent;box-shadow:0 6px 14px rgba(37,99,235,0.4)}
+.notif-dot{position:relative}
+.notif-dot::after{content:"";position:absolute;top:6px;right:6px;width:6px;height:6px;background:var(--rj-danger);border-radius:50%;border:2px solid #0f172a}
+
+/* HERO — Health Index */
+.hero-cmd{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#2563eb 100%);border:1px solid rgba(14,165,233,0.3);border-radius:24px;padding:36px 44px;margin-bottom:20px;position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr auto;gap:44px;align-items:center}
+.hero-cmd::after{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.4),transparent 60%);filter:blur(60px)}
+.hero-cmd::before{content:"";position:absolute;left:-50px;bottom:-50px;width:300px;height:300px;background:radial-gradient(circle,rgba(37,99,235,0.35),transparent 60%);filter:blur(40px)}
+
+/* Health Ring */
+.hr-ring{position:relative;width:200px;height:200px;z-index:1}
+.hr-ring svg{transform:rotate(-90deg)}
+.hr-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.hr-center .lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-bottom:4px}
+.hr-center .n{font-family:var(--font-head);font-weight:700;font-size:56px;color:#fff;letter-spacing:-0.03em;line-height:1}
+.hr-center .g{font-family:var(--font-head);font-weight:600;font-size:15px;color:#6ee7b7;letter-spacing:-0.01em;margin-top:4px}
+
+.hero-mid{position:relative;z-index:1}
+.hero-mid .kicker{display:inline-block;padding:5px 12px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.3);border-radius:999px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);margin-bottom:12px;font-weight:700}
+.hero-mid h2{font-family:var(--font-head);font-weight:700;font-size:34px;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin:0 0 8px 0}
+.hero-mid h2 span{color:#6ee7b7}
+.hero-mid .desc{font-family:var(--font-head);font-size:15px;color:#cbd5e1;font-weight:500;line-height:1.4;max-width:520px}
+.hero-mid .footnote{font-family:var(--font-mono);font-size:10px;letter-spacing:0.06em;color:#64748b;font-weight:600;margin-top:14px}
+
+.hero-right{position:relative;z-index:1;text-align:right}
+.hero-right .k{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#94a3b8;font-weight:700;margin-bottom:4px}
+.hero-right .streak{font-family:var(--font-head);font-weight:700;font-size:44px;color:#fff;letter-spacing:-0.03em;line-height:1}
+.hero-right .streak .u{font-size:16px;color:#94a3b8;font-weight:600}
+.hero-right .d{font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700;letter-spacing:0.05em;margin-top:4px}
+
+/* 3-bureau strip */
+.bureau-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.bureau-c{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px 22px;position:relative;overflow:hidden}
+.bureau-c::after{content:"";position:absolute;right:-30px;top:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(14,165,233,0.15),transparent 60%);filter:blur(20px)}
+.bc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;position:relative;z-index:1}
+.bc-name{font-family:var(--font-head);font-weight:700;font-size:14px;color:#fff;letter-spacing:-0.01em}
+.bc-model{font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#94a3b8;font-weight:600;margin-top:1px}
+.bc-delta{padding:3px 8px;border-radius:5px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.05em;background:rgba(16,185,129,0.15);color:#6ee7b7}
+.bc-score-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;position:relative;z-index:1}
+.bc-n{font-family:var(--font-head);font-weight:700;font-size:44px;color:#fff;letter-spacing:-0.03em;line-height:1}
+.bc-band{font-family:var(--font-head);font-size:12px;font-weight:600;color:#6ee7b7;letter-spacing:-0.01em}
+.bc-bar{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;position:relative;z-index:1}
+.bc-fill{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky));border-radius:3px}
+.bc-scale{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:9px;color:#64748b;letter-spacing:0.06em;font-weight:600;margin-top:5px;position:relative;z-index:1}
+
+/* 3-column layout: What Changed | Priority Actions | Right rail */
+.grid-main{display:grid;grid-template-columns:1.4fr 1.4fr 1fr;gap:16px;margin-bottom:20px}
+.card-c{background:#0f172a;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px 22px}
+.card-c .head-c{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.card-c h3{font-family:var(--font-head);font-weight:700;font-size:15px;color:#fff;letter-spacing:-0.01em;margin:0;display:flex;align-items:center;gap:8px}
+.card-c h3 svg{width:16px;height:16px;color:var(--rj-sky)}
+.card-c .count-c{font-family:var(--font-mono);font-size:10px;color:var(--rj-sky);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:rgba(14,165,233,0.1);padding:3px 8px;border-radius:5px}
+.card-c .link-c{font-family:var(--font-mono);font-size:10px;color:var(--rj-sky);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none}
+
+/* Change items */
+.change-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.change-item:last-child{border:none}
+.change-item .ic-ci{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.change-item .ic-ci svg{width:16px;height:16px}
+.change-item.pos .ic-ci{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.change-item.neu .ic-ci{background:rgba(14,165,233,0.15);color:var(--rj-sky)}
+.change-item.warn .ic-ci{background:rgba(245,158,11,0.15);color:#fbbf24}
+.change-item.neg .ic-ci{background:rgba(239,68,68,0.15);color:#fca5a5}
+.change-item .info-ci{min-width:0}
+.change-item h4{font-family:var(--font-head);font-weight:600;font-size:13px;color:#fff;margin:0 0 2px 0;letter-spacing:-0.01em;line-height:1.2}
+.change-item .meta-ci{font-family:var(--font-mono);font-size:10px;color:#94a3b8;letter-spacing:0.05em;font-weight:600}
+.change-item .impact-ci{font-family:var(--font-head);font-weight:700;font-size:14px;letter-spacing:-0.01em;text-align:right;flex-shrink:0}
+.change-item.pos .impact-ci{color:#6ee7b7}
+.change-item.neg .impact-ci{color:#fca5a5}
+.change-item.neu .impact-ci{color:var(--rj-sky)}
+.change-item.warn .impact-ci{color:#fbbf24}
+
+/* Priority actions */
+.action-item{padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--rj-blue);border-radius:10px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.action-item.high{border-left-color:#fca5a5}
+.action-item.med{border-left-color:#fbbf24}
+.action-item.low{border-left-color:#6ee7b7}
+.action-item h4{font-family:var(--font-head);font-weight:600;font-size:13px;color:#fff;margin:0 0 4px 0;letter-spacing:-0.01em;line-height:1.2}
+.action-item .desc-a{font-size:11px;color:#94a3b8;line-height:1.4;margin:0}
+.action-item .tags-a{display:flex;gap:6px;margin-top:6px}
+.action-item .tag-a{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:0.08em;padding:2px 6px;border-radius:3px;text-transform:uppercase}
+.action-item .tag-a.impact-h{background:rgba(239,68,68,0.15);color:#fca5a5}
+.action-item .tag-a.impact-m{background:rgba(245,158,11,0.15);color:#fbbf24}
+.action-item .tag-a.effort-l{background:rgba(16,185,129,0.15);color:#6ee7b7}
+.action-item .tag-a.effort-m{background:rgba(14,165,233,0.15);color:var(--rj-sky)}
+.action-item .go-a{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;padding:6px 14px;border-radius:6px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;flex-shrink:0}
+
+/* Right rail: Monitoring status + Identity */
+.mon-status{display:flex;flex-direction:column;gap:8px}
+.mon-row{display:flex;align-items:center;gap:10px;padding:8px 0}
+.mon-row .dot-m{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.mon-row .dot-m.ok{background:var(--rj-success);box-shadow:0 0 8px var(--rj-success)}
+.mon-row .dot-m.warn{background:var(--rj-warning)}
+.mon-row .dot-m.off{background:#334155}
+.mon-row .lbl-m{font-family:var(--font-body);font-size:12px;color:#e2e8f0;font-weight:500;flex:1}
+.mon-row .st-m{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.mon-row .st-m.ok{color:#6ee7b7}
+.mon-row .st-m.warn{color:#fbbf24}
+.mon-row .st-m.off{color:#64748b}
+
+/* Utilization mini */
+.util-mini{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px;margin-top:10px}
+.util-mini .k-u{font-family:var(--font-mono);font-size:9px;color:#94a3b8;letter-spacing:0.12em;font-weight:700;text-transform:uppercase;margin-bottom:4px}
+.util-mini .n-u{font-family:var(--font-head);font-weight:700;font-size:26px;color:#fff;letter-spacing:-0.02em;line-height:1;display:flex;align-items:baseline;gap:6px}
+.util-mini .n-u .u{font-size:12px;color:#94a3b8}
+.util-mini .n-u .d{margin-left:auto;font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700;letter-spacing:0.05em}
+.util-mini .bar-u{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;margin-top:8px;overflow:hidden}
+.util-mini .fill-u{height:100%;background:linear-gradient(90deg,var(--rj-warning),var(--rj-sky));width:32%;border-radius:3px}
+
+/* Timeline */
+.tl-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.tl-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:grid;grid-template-columns:auto 1fr;gap:12px}
+.tl-item:last-child{border:none}
+.tl-item .dot-tl{width:10px;height:10px;border-radius:50%;background:var(--rj-sky);margin-top:6px;flex-shrink:0;box-shadow:0 0 0 3px rgba(14,165,233,0.15)}
+.tl-item .dot-tl.pos{background:var(--rj-success);box-shadow:0 0 0 3px rgba(16,185,129,0.15)}
+.tl-item .dot-tl.neg{background:var(--rj-danger);box-shadow:0 0 0 3px rgba(239,68,68,0.15)}
+.tl-item .info-tl h4{font-family:var(--font-head);font-weight:600;font-size:13px;color:#fff;margin:0 0 2px 0;letter-spacing:-0.01em}
+.tl-item .info-tl .meta{font-family:var(--font-mono);font-size:10px;color:#94a3b8;letter-spacing:0.05em;font-weight:600}
+
+/* Goal card */
+.goal-card{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(14,165,233,0.1));border:1px solid rgba(14,165,233,0.25);border-radius:14px;padding:20px 22px}
+.goal-card .k-g{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-bottom:8px}
+.goal-card h3{font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff;letter-spacing:-0.01em;margin:0 0 4px 0}
+.goal-card .g-target{font-family:var(--font-mono);font-size:11px;color:#94a3b8;letter-spacing:0.05em;font-weight:600;margin-bottom:14px}
+.goal-card .g-progress{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.goal-card .g-pct{font-family:var(--font-head);font-weight:700;font-size:22px;color:#fff;letter-spacing:-0.02em}
+.goal-card .g-eta{font-family:var(--font-mono);font-size:10px;color:#6ee7b7;font-weight:700;letter-spacing:0.05em}
+.goal-card .bar-g{height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden}
+.goal-card .fill-g{height:100%;background:linear-gradient(90deg,var(--rj-blue),var(--rj-sky));width:38%;border-radius:3px}
+
+/* Disclosure footer */
+.disc{margin-top:32px;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;font-family:var(--font-mono);font-size:10px;color:#94a3b8;line-height:1.6;letter-spacing:0.04em;font-weight:500}
+.disc b{color:#e2e8f0;font-family:var(--font-head);letter-spacing:-0.01em;font-weight:600}
+</style></head><body>
+
+<div class="app">
+<!-- SIDEBAR -->
+<aside class="sb">
+  <div class="brand"><img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt=""/><div><div class="n">RJ Credit Intel</div><div class="t">Operating System · v1</div></div></div>
+
+  <div class="sec-l">Command</div>
+  <div class="nav">
+    <a class="active" href="Credit Command Center.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-grid"/></svg>Command Center</a>
+    <a href="Change Explainer.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-info"/></svg>Change Explainer<span class="badge info">3</span></a>
+    <a href="Credit Timeline.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-timeline"/></svg>Timeline</a>
+    <a href="Credit Analysis.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-gauge"/></svg>Analysis</a>
+    <a href="Bureau Comparison.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-bureau"/></svg>Bureau Diff</a>
+  </div>
+
+  <div class="sec-l">Action</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-zap"/></svg>Actions<span class="badge">4</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-flag"/></svg>Goals</a>
+    <a href="Scenario Lab.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-sparkle"/></svg>Scenario Lab</a>
+    <a href="Reporting Calendar.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-calendar"/></svg>Calendar</a>
+    <a href="Utilization Optimizer.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-donut"/></svg>Utilization</a>
+    <a href="Dispute Center.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-dispute"/></svg>Disputes</a>
+  </div>
+
+  <div class="sec-l">Protect</div>
+  <div class="nav">
+    <a href="Identity Watch.html"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-shield-check"/></svg>Identity Watch<span class="badge">1</span></a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-bell"/></svg>Alerts</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-lock"/></svg>Security</a>
+  </div>
+
+  <div class="sec-l">Account</div>
+  <div class="nav">
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-user"/></svg>Profile</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-doc"/></svg>Documents</a>
+    <a href="#"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-settings"/></svg>Settings</a>
+  </div>
+
+  <div class="member-card"><div class="av">MJ</div><div class="info"><div class="n">Marcus Johnson</div><div class="r">Premium · Since Jul 2026</div></div></div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="topbar">
+    <div><div class="greet">Good morning · Sept 7, 2026</div><h1>Command <span>Center</span></h1></div>
+    <div class="top-actions">
+      <button class="btn-t notif-dot"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-bell"/></svg>Alerts</button>
+      <button class="btn-t"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-refresh"/></svg>Refresh · 2h ago</button>
+      <button class="btn-t primary"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-download"/></svg>Full Report</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-cmd">
+    <div class="hr-ring">
+      <svg viewBox="0 0 200 200" width="200" height="200">
+        <circle cx="100" cy="100" r="82" stroke="rgba(255,255,255,0.08)" stroke-width="14" fill="none"/>
+        <circle cx="100" cy="100" r="82" stroke="url(#g-hi)" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="515.2" stroke-dashoffset="123.6"/>
+        <defs><linearGradient id="g-hi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+      </svg>
+      <div class="hr-center">
+        <div class="lbl">Credit Health Index</div>
+        <div class="n">76</div>
+        <div class="g">Strong · improving</div>
+      </div>
+    </div>
+
+    <div class="hero-mid">
+      <div class="kicker">● You're on track</div>
+      <h2>Score up <span>+18</span> this month.<br/>Utilization is your next lever.</h2>
+      <div class="desc">3 recent events explain the move. 4 priority actions are queued. No urgent identity alerts. This is a proprietary Health Index — not a lending score.</div>
+      <div class="footnote">Health Index methodology · payment behavior · utilization · age · derog · inquiries · mix · recent changes</div>
+    </div>
+
+    <div class="hero-right">
+      <div class="k">On-time streak</div>
+      <div class="streak">28 <span class="u">mo</span></div>
+      <div class="d">Perfect · every account</div>
+    </div>
+  </div>
+
+  <!-- 3-BUREAU STRIP -->
+  <div class="bureau-strip">
+    <div class="bureau-c">
+      <div class="bc-head"><div><div class="bc-name">TransUnion</div><div class="bc-model">FICO 8 · pulled Sept 3</div></div><div class="bc-delta">▲ +22</div></div>
+      <div class="bc-score-row"><div class="bc-n">712</div><div class="bc-band">Good</div></div>
+      <div class="bc-bar"><div class="bc-fill" style="width:75%"></div></div>
+      <div class="bc-scale"><span>300</span><span>580</span><span>670</span><span>740</span><span>850</span></div>
+    </div>
+    <div class="bureau-c">
+      <div class="bc-head"><div><div class="bc-name">Equifax</div><div class="bc-model">FICO 8 Bankcard · pulled Sept 3</div></div><div class="bc-delta">▲ +14</div></div>
+      <div class="bc-score-row"><div class="bc-n">698</div><div class="bc-band">Fair-Good</div></div>
+      <div class="bc-bar"><div class="bc-fill" style="width:72%"></div></div>
+      <div class="bc-scale"><span>300</span><span>580</span><span>670</span><span>740</span><span>850</span></div>
+    </div>
+    <div class="bureau-c">
+      <div class="bc-head"><div><div class="bc-name">Experian</div><div class="bc-model">FICO 8 Auto · pulled Sept 3</div></div><div class="bc-delta">▲ +18</div></div>
+      <div class="bc-score-row"><div class="bc-n">724</div><div class="bc-band">Good</div></div>
+      <div class="bc-bar"><div class="bc-fill" style="width:77%"></div></div>
+      <div class="bc-scale"><span>300</span><span>580</span><span>670</span><span>740</span><span>850</span></div>
+    </div>
+  </div>
+
+  <!-- 3-COLUMN MAIN -->
+  <div class="grid-main">
+    <!-- What Changed -->
+    <div class="card-c">
+      <div class="head-c"><h3><svg viewBox="0 0 24 24"><use href="icons.svg#ic-info"/></svg>What changed · past 7 days</h3><span class="count-c">6 events</span></div>
+      <div class="change-item pos"><div class="ic-ci"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div><div class="info-ci"><h4>Chase collection · removed all 3 bureaus</h4><div class="meta-ci">Sept 2 · Round 1 dispute · debt validation</div></div><div class="impact-ci">+18</div></div>
+      <div class="change-item pos"><div class="ic-ci"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-payment"/></svg></div><div class="info-ci"><h4>Amex payment reported on-time</h4><div class="meta-ci">Sept 4 · 28-month streak maintained</div></div><div class="impact-ci">+3</div></div>
+      <div class="change-item neu"><div class="ic-ci"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-utilization"/></svg></div><div class="info-ci"><h4>Chase Sapphire balance updated</h4><div class="meta-ci">Sept 5 · $2,460 reported · 82% util</div></div><div class="impact-ci">-4</div></div>
+      <div class="change-item warn"><div class="ic-ci"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-inquiry"/></svg></div><div class="info-ci"><h4>Hard inquiry · Capital One</h4><div class="meta-ci">Sept 1 · auto loan application</div></div><div class="impact-ci">-5</div></div>
+      <div class="change-item pos"><div class="ic-ci"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-check-circle"/></svg></div><div class="info-ci"><h4>Medical debt · deleted TU only</h4><div class="meta-ci">Aug 30 · validation failure · $840</div></div><div class="impact-ci">+12</div></div>
+      <div class="change-item neu"><div class="ic-ci"><svg viewBox="0 0 24 24"><use href="icons.svg#ic-send"/></svg></div><div class="info-ci"><h4>Round 2 letters sent · 3 items</h4><div class="meta-ci">Aug 30 · certified · response by Sept 27</div></div><div class="impact-ci">—</div></div>
+    </div>
+
+    <!-- Priority Actions -->
+    <div class="card-c">
+      <div class="head-c"><h3><svg viewBox="0 0 24 24"><use href="icons.svg#ic-zap"/></svg>Priority Actions · today</h3><a href="#" class="link-c">View all →</a></div>
+      <div class="action-item high">
+        <div>
+          <h4>Pay $2,200 to Chase Sapphire</h4>
+          <p class="desc-a">Before Sept 22 statement close · drops util 82% → 8% · projected +22 pts</p>
+          <div class="tags-a"><span class="tag-a impact-h">High Impact</span><span class="tag-a effort-l">Low Effort</span></div>
+        </div>
+        <a href="#" class="go-a">Go →</a>
+      </div>
+      <div class="action-item high">
+        <div>
+          <h4>Review 3 Round 2 dispute responses</h4>
+          <p class="desc-a">LVNV · Discover · Cap One late · bureaus have until Sept 27</p>
+          <div class="tags-a"><span class="tag-a impact-h">High Impact</span><span class="tag-a effort-m">Med Effort</span></div>
+        </div>
+        <a href="#" class="go-a">Review</a>
+      </div>
+      <div class="action-item med">
+        <div>
+          <h4>Pay $2,240 to Cap One Venture</h4>
+          <p class="desc-a">Before Sept 28 close · drops util 38% → 10% · projected +14 pts</p>
+          <div class="tags-a"><span class="tag-a impact-h">High Impact</span><span class="tag-a effort-l">Low Effort</span></div>
+        </div>
+        <a href="#" class="go-a">Go →</a>
+      </div>
+      <div class="action-item low">
+        <div>
+          <h4>Hold on new applications · 60 days</h4>
+          <p class="desc-a">Let 2 recent inquiries age out of 12-month weighting</p>
+          <div class="tags-a"><span class="tag-a impact-h">Med Impact</span><span class="tag-a effort-l">Passive</span></div>
+        </div>
+        <a href="#" class="go-a">Track</a>
+      </div>
+    </div>
+
+    <!-- Right rail -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="card-c">
+        <div class="head-c"><h3><svg viewBox="0 0 24 24"><use href="icons.svg#ic-shield-check"/></svg>Monitoring</h3><span class="count-c" style="background:rgba(16,185,129,0.1);color:#6ee7b7">Active</span></div>
+        <div class="mon-status">
+          <div class="mon-row"><div class="dot-m ok"></div><div class="lbl-m">3-Bureau Credit</div><div class="st-m ok">Active</div></div>
+          <div class="mon-row"><div class="dot-m ok"></div><div class="lbl-m">SSN Watch</div><div class="st-m ok">Active</div></div>
+          <div class="mon-row"><div class="dot-m ok"></div><div class="lbl-m">Dark Web Scan</div><div class="st-m ok">Active</div></div>
+          <div class="mon-row"><div class="dot-m warn"></div><div class="lbl-m">Address Alerts</div><div class="st-m warn">Setup</div></div>
+          <div class="mon-row"><div class="dot-m ok"></div><div class="lbl-m">Data Broker Scan</div><div class="st-m ok">Active</div></div>
+        </div>
+        <div class="util-mini">
+          <div class="k-u">Overall Utilization</div>
+          <div class="n-u">32<span class="u">%</span><span class="d">▼ from 50%</span></div>
+          <div class="bar-u"><div class="fill-u"></div></div>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="k-g">Active Goal</div>
+        <h3>Mortgage Readiness</h3>
+        <div class="g-target">Target: 740+ FICO by Mar 2027</div>
+        <div class="g-progress"><div class="g-pct">38%</div><div class="g-eta">On track · ETA Feb 2027</div></div>
+        <div class="bar-g"><div class="fill-g"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline + upcoming -->
+  <div class="tl-row">
+    <div class="card-c">
+      <div class="head-c"><h3><svg viewBox="0 0 24 24"><use href="icons.svg#ic-timeline"/></svg>Progress Journal</h3><a href="#" class="link-c">Full →</a></div>
+      <div class="tl-item"><div class="dot-tl pos"></div><div class="info-tl"><h4>Chase collection removed · +18 pts avg</h4><div class="meta">Sept 2 · Round 1 dispute closed loop confirmed</div></div></div>
+      <div class="tl-item"><div class="dot-tl"></div><div class="info-tl"><h4>Round 2 dispute letters sent · 3 items</h4><div class="meta">Aug 30 · certified mail · bureau clock started</div></div></div>
+      <div class="tl-item"><div class="dot-tl pos"></div><div class="info-tl"><h4>Medical debt deleted TU · +12 pts</h4><div class="meta">Aug 24 · debt validation failure</div></div></div>
+      <div class="tl-item"><div class="dot-tl"></div><div class="info-tl"><h4>28th consecutive on-time month · maintained</h4><div class="meta">Aug 15 · payment history factor strengthened</div></div></div>
+    </div>
+
+    <div class="card-c">
+      <div class="head-c"><h3><svg viewBox="0 0 24 24"><use href="icons.svg#ic-calendar"/></svg>Upcoming reporting windows</h3><a href="Reporting Calendar.html" class="link-c">Calendar →</a></div>
+      <div class="tl-item"><div class="dot-tl"></div><div class="info-tl"><h4>Chase Sapphire · statement close</h4><div class="meta">Sept 22 · pay $2,200 before this date</div></div></div>
+      <div class="tl-item"><div class="dot-tl"></div><div class="info-tl"><h4>Bureau response · Round 2 disputes</h4><div class="meta">Sept 23-27 · LVNV · Discover · Cap One</div></div></div>
+      <div class="tl-item"><div class="dot-tl"></div><div class="info-tl"><h4>Cap One Venture · statement close</h4><div class="meta">Sept 28 · pay $2,240 before this date</div></div></div>
+      <div class="tl-item"><div class="dot-tl"></div><div class="info-tl"><h4>Next 3-bureau pull · scheduled</h4><div class="meta">Oct 5 · Month 3 progress report follows</div></div></div>
+    </div>
+  </div>
+
+  <div class="disc"><b>Disclosure:</b> The Credit Health Index is a proprietary summary from RJ Business Solutions — <b>not a FICO score, not a bureau-issued lending score</b>, and does not guarantee loan approval or specific credit outcomes. Scores displayed from TU / EQ / EX are FICO 8 model scores licensed through our providers as of the pull date. Estimated impacts are educational simulations — not guarantees. See Methodology for details.</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,205 @@
+/* ==============================================================================
+   🏛️ RJ BUSINESS SOLUTIONS — GOHIGHLEVEL AGENCY & SUBACCOUNT BRAND THEME
+   Engineered for Rick Jefferson | RJ Business Solutions
+   Colors: Navy (#0f172a) · Brand Blue (#2563eb) · Sky (#0ea5e9) · Soft (#f8fafc)
+   Typography: Space Grotesk (Headings/Monospace) · Inter (Body)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --rj-blue: #2563eb;
+  --rj-sky: #0ea5e9;
+  --rj-deep: #1e3a8a;
+  --rj-navy: #0f172a;
+  --rj-navy-dark: #0b1220;
+  --rj-white: #ffffff;
+  --rj-soft: #f8fafc;
+  --rj-light: #eff6ff;
+  --rj-border: #bfdbfe;
+  --rj-line: #e2e8f0;
+  --rj-text: #0f172a;
+  --rj-muted-text: #475569;
+  
+  --font-head: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, monospace;
+
+  --grad-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+  --grad-dark: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+  --grad-light: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
+  
+  --rj-shadow-primary: 0 8px 18px rgba(37, 99, 235, 0.35);
+  --rj-shadow-ambient: 0 6px 14px rgba(15, 23, 42, 0.08);
+  --rj-radius-card: 14px;
+  --rj-radius-btn: 8px;
+}
+
+/* --- GLOBAL TYPOGRAPHY --- */
+body, .hl-app, .app-layout, #app {
+  font-family: var(--font-body) !important;
+  color: var(--rj-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hl-title, .page-title, .card-title,
+.font-heading, .nav-title, .modal-title {
+  font-family: var(--font-head) !important;
+  letter-spacing: -0.02em;
+}
+
+/* --- SIDEBAR & NAVIGATION --- */
+#sidebar-v2, .sidebar-v2-container, .hl_wrapper--sidebar, .sidebar {
+  background: var(--rj-navy) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#sidebar-v2 .nav-item a,
+.sidebar-v2-container a,
+.hl_wrapper--sidebar .nav-item a {
+  color: #94a3b8 !important;
+  font-family: var(--font-body) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin: 2px 8px !important;
+}
+
+#sidebar-v2 .nav-item a:hover,
+.sidebar-v2-container a:hover,
+.hl_wrapper--sidebar .nav-item a:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+
+#sidebar-v2 .nav-item.active a,
+#sidebar-v2 .nav-item.router-link-active a,
+.sidebar-v2-container .active a,
+.hl_wrapper--sidebar .nav-item.active a {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+  font-weight: 600 !important;
+}
+
+/* Agency / Location Switcher */
+.location-switcher, .agency-switcher, .location-selector {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+}
+
+/* --- TOPBAR & HEADER --- */
+#header-v2, .header-v2-container, .hl_header, .app-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--rj-line) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+}
+
+/* --- BUTTONS & CTAs --- */
+.btn-primary, button.btn-primary,
+.hl-btn-primary, button[type="submit"]:not(.btn-secondary):not(.btn-danger),
+.n-button--primary-type {
+  background: var(--grad-primary) !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-family: var(--font-head) !important;
+  font-weight: 600 !important;
+  border-radius: var(--rj-radius-btn) !important;
+  box-shadow: var(--rj-shadow-primary) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  letter-spacing: 0.02em !important;
+}
+
+.btn-primary:hover, button.btn-primary:hover,
+.hl-btn-primary:hover, .n-button--primary-type:hover {
+  filter: brightness(1.1) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.45) !important;
+}
+
+.btn-secondary, button.btn-secondary {
+  background: #ffffff !important;
+  border: 1px solid var(--rj-line) !important;
+  color: var(--rj-text) !important;
+  font-family: var(--font-body) !important;
+  border-radius: var(--rj-radius-btn) !important;
+  font-weight: 500 !important;
+}
+
+.btn-secondary:hover {
+  background: var(--rj-light) !important;
+  border-color: var(--rj-border) !important;
+  color: var(--rj-blue) !important;
+}
+
+/* --- CARDS & SURFACES --- */
+.hl-card, .card, .dashboard-card, .panel, .n-card {
+  border-radius: var(--rj-radius-card) !important;
+  border: 1px solid var(--rj-line) !important;
+  box-shadow: var(--rj-shadow-ambient) !important;
+  background: #ffffff !important;
+}
+
+/* --- BADGES & PILLS --- */
+.badge-primary, .hl-badge, .tag-pill, .badge-blue {
+  background: var(--rj-light) !important;
+  color: var(--rj-blue) !important;
+  border: 1px solid var(--rj-border) !important;
+  font-family: var(--font-head) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: 9999px !important;
+}
+
+/* --- INPUTS & FORMS --- */
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus,
+input[type="password"]:focus, select:focus, textarea:focus,
+.hl-input:focus, .form-control:focus {
+  border-color: var(--rj-blue) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+  outline: none !important;
+}
+
+/* --- CONVERSATIONS & CRM CHAT --- */
+.hl-chat-bubble--outbound, .message-outbound, .chat-message-right {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  border-radius: 14px 14px 2px 14px !important;
+}
+
+.hl-chat-bubble--inbound, .message-inbound, .chat-message-left {
+  background: #f1f5f9 !important;
+  color: var(--rj-navy) !important;
+  border-radius: 14px 14px 14px 2px !important;
+}
+
+/* --- CUSTOM SCROLLBARS --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rj-blue);
+}
+
+/* --- BRAND FOOTER INJECTION --- */
+#rj-brand-badge-footer {
+  text-align: center;
+  padding: 12px;
+  font-family: var(--font-head);
+  font-size: 11px;
+  color: #64748b;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

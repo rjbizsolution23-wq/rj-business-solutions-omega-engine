@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Learning · RJ Business Solutions</title>
+<meta name="description" content="Long-form frameworks from Rick Jefferson on credit intelligence, business growth, and homebuyer readiness. 20 articles. No hype. All estimates labeled."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="RJ Business Solutions"/>
+<meta property="og:title" content="RJ Business Solutions · Learning · Rick Jefferson's frameworks"/>
+<meta property="og:description" content="Credit intelligence, business growth, and homebuyer readiness — from Rick Jefferson, Credit Technology Architect."/>
+<meta property="og:image" content="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg"/>
+<link rel="canonical" href="https://rjbusinesssolutions.org/blog"/>
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="blog.css">
+<style>
+/* Hub-specific */
+.hub-hero{padding:80px 48px 60px;max-width:1200px;margin:0 auto;text-align:center}
+.hub-hero .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-blue);font-weight:700;margin-bottom:14px}
+.hub-hero h1{font-family:var(--font-head);font-weight:700;font-size:72px;color:var(--rj-navy);letter-spacing:-0.03em;line-height:0.95;margin:0 0 20px 0}
+.hub-hero h1 span{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hub-hero .lead{font-family:var(--font-head);font-size:20px;color:var(--rj-muted-text);font-weight:500;line-height:1.5;max-width:720px;margin:0 auto 36px}
+
+.search-b{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--rj-line);border-radius:14px;padding:6px;display:flex;align-items:center;gap:0;box-shadow:0 15px 30px rgba(15,23,42,0.08)}
+.search-b .ic-s{padding:0 16px;color:var(--rj-blue);font-size:20px}
+.search-b input{flex:1;background:none;border:none;outline:none;padding:14px 4px;font-family:var(--font-body);font-size:15px;color:var(--rj-text)}
+.search-b button{padding:12px 22px;background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;border:none;border-radius:10px;font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:-0.01em;cursor:pointer}
+
+/* Filter tabs */
+.filters{max-width:1200px;margin:0 auto 40px;padding:0 48px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.f{padding:10px 18px;background:#fff;border:1px solid var(--rj-line);border-radius:10px;font-family:var(--font-head);font-weight:600;font-size:13px;color:var(--rj-muted-text);letter-spacing:-0.01em;cursor:pointer;text-decoration:none;transition:all 200ms}
+.f:hover{border-color:var(--rj-blue);color:var(--rj-blue)}
+.f.on{background:linear-gradient(135deg,var(--rj-blue),var(--rj-sky));color:#fff;border-color:transparent}
+.f .n-f{opacity:0.65;margin-left:6px;font-weight:400}
+
+/* Featured article */
+.featured{max-width:1200px;margin:0 auto 40px;padding:0 48px}
+.f-card{background:linear-gradient(135deg,var(--rj-navy),var(--rj-deep));color:#fff;border-radius:24px;padding:0;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:400px}
+.f-card::after{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,0.3),transparent 60%);filter:blur(60px);pointer-events:none}
+.f-card .l-f{padding:48px 52px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.f-card .k-f{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-sky);font-weight:700;margin-bottom:12px}
+.f-card h2{font-family:var(--font-head);font-weight:700;font-size:36px;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin:0 0 14px 0}
+.f-card h2 span{background:linear-gradient(135deg,#0ea5e9,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.f-card .dek-f{font-family:var(--font-head);font-size:16px;color:#cbd5e1;font-weight:500;line-height:1.5;margin:0 0 24px 0}
+.f-card .meta-f{display:flex;gap:12px;font-family:var(--font-mono);font-size:11px;color:#94a3b8;letter-spacing:0.05em;font-weight:700;margin-bottom:24px}
+.f-card .btn-f{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--rj-navy);padding:14px 24px;border-radius:11px;font-family:var(--font-head);font-weight:700;font-size:14px;text-decoration:none;letter-spacing:-0.01em;align-self:flex-start}
+.f-card .r-f{position:relative;overflow:hidden}
+.f-card .r-f img{width:100%;height:100%;object-fit:cover}
+
+/* Article grid */
+.grid{max-width:1200px;margin:0 auto;padding:0 48px 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card-a{background:#fff;border:1px solid var(--rj-line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:all 200ms cubic-bezier(0.16,1,0.3,1);display:flex;flex-direction:column}
+.card-a:hover{border-color:var(--rj-blue);transform:translateY(-4px);box-shadow:0 20px 40px rgba(37,99,235,0.15)}
+.card-a .img-a{aspect-ratio:16/10;background:linear-gradient(135deg,var(--rj-navy),var(--rj-deep));overflow:hidden;position:relative}
+.card-a .img-a img{width:100%;height:100%;object-fit:cover}
+.card-a .img-a .cat-badge{position:absolute;top:14px;left:14px;padding:4px 10px;background:rgba(255,255,255,0.95);color:var(--rj-blue);border-radius:5px;font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;backdrop-filter:blur(10px)}
+.card-a .body-a{padding:22px 24px 24px;flex:1;display:flex;flex-direction:column}
+.card-a .n-a{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rj-muted-text);font-weight:700;margin-bottom:6px}
+.card-a h3{font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--rj-navy);letter-spacing:-0.02em;line-height:1.25;margin:0 0 8px 0}
+.card-a .dek-a{font-family:var(--font-body);font-size:13.5px;color:var(--rj-muted-text);line-height:1.55;margin:0 0 16px 0;flex:1}
+.card-a .foot-a{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--rj-line);font-family:var(--font-mono);font-size:10px;color:var(--rj-muted-text);letter-spacing:0.05em;font-weight:700}
+.card-a .foot-a .rt-a{color:var(--rj-blue)}
+</style>
+</head><body>
+
+<nav class="nav-t">
+  <a href="#" class="brand">
+    <img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt="RJ Business Solutions logo"/>
+    <div><div class="n">RJ Business Solutions</div><div class="t">Learning · Insight</div></div>
+  </a>
+  <div class="links">
+    <a href="#" class="active">Blog</a>
+    <a href="Support Help Center.html">Help</a>
+    <a href="Trust Center.html">Trust</a>
+    <a href="Roadmap.html">Roadmap</a>
+    <a href="#" class="cta">Sign in</a>
+  </div>
+</nav>
+
+<section class="hub-hero">
+  <div class="k">● Rick Jefferson · Credit Technology Architect</div>
+  <h1>Frameworks · playbooks · <span>honest math.</span></h1>
+  <p class="lead">Long-form content from Rick on credit intelligence, business growth, and homebuyer readiness. Every article is 8-10 minutes. Every estimate is labeled. No hype. No AI slop.</p>
+  <div class="search-b">
+    <span class="ic-s">🔍</span>
+    <input id="search" placeholder="Search: utilization, disputes, DTI, automation..."/>
+    <button onclick="doSearch()">Search →</button>
+  </div>
+</section>
+
+<div class="filters" id="filters">
+  <a class="f on" data-cat="all" onclick="filterCat('all')">All <span class="n-f">20</span></a>
+  <a class="f" data-cat="Credit Intelligence" onclick="filterCat('Credit Intelligence')">Credit Intelligence <span class="n-f">8</span></a>
+  <a class="f" data-cat="Business Growth" onclick="filterCat('Business Growth')">Business Growth <span class="n-f">8</span></a>
+  <a class="f" data-cat="Homebuyer Readiness" onclick="filterCat('Homebuyer Readiness')">Homebuyer Readiness <span class="n-f">4</span></a>
+</div>
+
+<!-- Featured -->
+<div class="featured">
+  <div class="f-card">
+    <div class="l-f">
+      <div class="k-f">● Featured this week</div>
+      <h2>The utilization playbook that beats a <span>$2,000 payment on the wrong day.</span></h2>
+      <p class="dek-f">Payment history is 35% of your FICO. Utilization is 30% — and unlike payment history, it can move overnight. Here's the timing framework we use with mortgage-track clients.</p>
+      <div class="meta-f">
+        <span>● 8 min read</span>
+        <span>· Credit Intelligence</span>
+        <span>· Rick Jefferson</span>
+      </div>
+      <a href="Article 01 - utilization-reset.html" class="btn-f">Read the framework →</a>
+    </div>
+    <div class="r-f">
+      <img src="01 · Photos of Rick/rick-vault.jpg" alt="Rick Jefferson"/>
+    </div>
+  </div>
+</div>
+
+<!-- Article grid -->
+<div class="grid" id="grid">
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 01 - utilization-reset.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vault.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 01</div><h3>The utilization playbook that beats a $2,000 payment on the wrong day</h3><p class="dek-a">Payment history is 35% of your FICO. Utilization is 30%. Here's the timing framework.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 02 - 6-fico-factors.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vision.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 02</div><h3>The 6 factors that actually move your FICO score</h3><p class="dek-a">The honest weight of each factor — and why one gets 3× the marketing attention it deserves.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">9 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 03 - dispute-timeline.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-signing.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 03</div><h3>How long does a credit dispute actually take?</h3><p class="dek-a">FCRA §611 says 30 days. What actually happens in that 30 days determines success or failure.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 04 - collections-decision.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-portrait.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 04</div><h3>Collections on your credit report: pay, settle, dispute, or wait?</h3><p class="dek-a">Four paths, four questions that determine which is right. Not every collection deserves the same treatment.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">9 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 05 - fcra-rights.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-signing.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 05</div><h3>Your rights under the FCRA, translated into plain English</h3><p class="dek-a">Ten enforceable rights most people never use because the law is written for lawyers.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">10 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 06 - identity-monitoring.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vault.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 06</div><h3>Identity monitoring: what works vs security theater</h3><p class="dek-a">Six distinct services often bundled together. Which are useful and which are marketing.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 07 - authorized-user-tradelines.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-circuit.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 07</div><h3>Authorized user tradelines: the legal, powerful, misunderstood credit lever</h3><p class="dek-a">Done right, one of the fastest legitimate credit-building tools. Done wrong, it hurts both parties.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Credit Intelligence" href="Article 08 - credit-freezes-vs-locks.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vault.jpg" alt=""/><span class="cat-badge">Credit Intelligence</span></div>
+    <div class="body-a"><div class="n-a">Article 08</div><h3>Credit freezes vs locks vs fraud alerts</h3><p class="dek-a">Three tools, three protection levels, three price points. Most people use the wrong one.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">7 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 09 - automation-before-scale.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vision.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 09</div><h3>Automation before scale: why most agencies try to grow at the wrong time</h3><p class="dek-a">You can't automate chaos. The 4-stage sequence that actually works.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">9 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 10 - dm-automation-followup.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-circuit.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 10</div><h3>Your DMs are your CRM. Your CRM is broken.</h3><p class="dek-a">The 5-touch follow-up cadence that converts DMs into booked calls.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 11 - ai-agent-strategy.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vision.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 11</div><h3>AI agents aren't magic — they're really disciplined interns</h3><p class="dek-a">What separates a useful AI agent from a demo, and what you should be building.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">10 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 12 - white-label-fintech.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vault.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 12</div><h3>White-label fintech: the operator's guide to launching without building</h3><p class="dek-a">18 months of build vs 30 days of white-label. The honest tradeoffs.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">9 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 13 - lead-follow-up-systems.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-hero.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 13</div><h3>The lead follow-up system that turns 40% of ghosts into bookings</h3><p class="dek-a">Ghosted leads didn't die because they weren't interested. They died because nobody followed up on the right day.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 14 - funnels-vs-content.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-portrait.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 14</div><h3>Funnels vs content: the false choice every founder keeps making</h3><p class="dek-a">The connective tissue most businesses are missing between their content and their funnel.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 15 - client-portal-retention.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vault.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 15</div><h3>Client portals are retention tools, not delivery tools</h3><p class="dek-a">The best portals reduce churn 40%+ because they change how clients experience your work.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Business Growth" href="Article 16 - stripe-subscription-ops.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-circuit.jpg" alt=""/><span class="cat-badge">Business Growth</span></div>
+    <div class="body-a"><div class="n-a">Article 16</div><h3>Stripe subscription ops: the checklist most SaaS businesses skip</h3><p class="dek-a">The 10-item production checklist RJ runs before any subscription business goes live.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">9 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Homebuyer Readiness" href="Article 17 - mortgage-readiness-plan.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-signing.jpg" alt=""/><span class="cat-badge">Homebuyer Readiness</span></div>
+    <div class="body-a"><div class="n-a">Article 17</div><h3>The 12-month mortgage readiness plan (start at 620, target 740)</h3><p class="dek-a">Month-by-month framework from 620 to 740. Credit prep + documentation + lender selection.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">10 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Homebuyer Readiness" href="Article 18 - dti-and-mortgage.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-portrait.jpg" alt=""/><span class="cat-badge">Homebuyer Readiness</span></div>
+    <div class="body-a"><div class="n-a">Article 18</div><h3>DTI matters more than your credit score for mortgage approval</h3><p class="dek-a">You can have 800 credit and get denied. You can have 680 and get approved. DTI is why.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Homebuyer Readiness" href="Article 19 - pre-approval-timing.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-vision.jpg" alt=""/><span class="cat-badge">Homebuyer Readiness</span></div>
+    <div class="body-a"><div class="n-a">Article 19</div><h3>When to get pre-approved for a mortgage</h3><p class="dek-a">Not 6 months out. Not the week you're shopping. Here's the specific window that works.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">7 min →</span></div></div>
+  </a>
+  <a class="card-a" data-cat="Homebuyer Readiness" href="Article 20 - post-close-credit.html">
+    <div class="img-a"><img src="01 · Photos of Rick/rick-hero.jpg" alt=""/><span class="cat-badge">Homebuyer Readiness</span></div>
+    <div class="body-a"><div class="n-a">Article 20</div><h3>What happens to your credit after you close on a house</h3><p class="dek-a">The 90 days after closing — and the 3 mistakes that hurt new homeowners the most.</p><div class="foot-a"><span>Rick Jefferson</span><span class="rt-a">8 min →</span></div></div>
+  </a>
+</div>
+
+<footer class="foot">
+  <div class="fb">
+    <img src="https://storage.googleapis.com/msgsndr/qQnxRHDtyx0uydPd5sRl/media/67eb83c5e519ed689430646b.jpeg" alt="RJ Business Solutions"/>
+    <div class="n">RJ Business Solutions</div>
+  </div>
+  <div>AI-powered systems, automation, and growth infrastructure.</div>
+  <div>1342 NM 333, Tijeras, New Mexico 87059 · <a href="mailto:support@rjbusinesssolutions.org">support@rjbusinesssolutions.org</a></div>
+  <div class="fmt-mono">© 2026 RJ Business Solutions · <a href="Trust Center.html">Trust</a> · <a href="Support Help Center.html">Help</a></div>
+</footer>
+
+<script>
+function filterCat(cat){
+  document.querySelectorAll('.f').forEach(f=>f.classList.toggle('on', f.dataset.cat===cat));
+  document.querySelectorAll('.card-a').forEach(c=>{
+    c.style.display = (cat==='all' || c.dataset.cat===cat) ? '' : 'none';
+  });
+}
+function doSearch(){
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  if (!q) { filterCat('all'); return; }
+  document.querySelectorAll('.card-a').forEach(c=>{
+    c.style.display = c.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+document.getElementById('search').addEventListener('input',doSearch);
+</script>
+
+</body></html>
