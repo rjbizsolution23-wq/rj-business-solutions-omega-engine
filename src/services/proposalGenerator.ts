@@ -122,8 +122,8 @@ export function generateTastyLickaProposal(req: ProposalRequest): ProposalOutput
       balanceDue7DaysPrior
     },
     menuSpecifications: {
-      cocktailLineup: req.cocktailsSelected.length > 0 ? req.cocktailsSelected : ['Wakanda Juice', 'Midnight Train to Georgia'],
-      wingFlightLineup: req.wingsSelected.length > 0 ? req.wingsSelected : ['Hennessy Glazed Wings', 'Lemon Pepper Patron Wings'],
+      cocktailLineup: (req.cocktailsSelected && req.cocktailsSelected.length > 0) ? req.cocktailsSelected : ['Wakanda Juice', 'Midnight Train to Georgia'],
+      wingFlightLineup: (req.wingsSelected && req.wingsSelected.length > 0) ? req.wingsSelected : ['Hennessy Glazed Wings', 'Lemon Pepper Patron Wings'],
       barServiceSummary: `Full Mobile Bar Station with Crystal Glassware, Fresh Purees, Organic Herbs, Ice Programs, and Custom LED Illumination.`,
       tabcCertifiedStaff: totalBartenders,
       insuranceCoverage: `$2,000,000 Commercial General & Liquor Liability Insurance (COI issued for venue).`
