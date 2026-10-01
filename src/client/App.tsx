@@ -14,10 +14,11 @@ import { IntegrationsSuiteHub } from './components/IntegrationsSuiteHub';
 import { SocialOmniSalesHub } from './components/SocialOmniSalesHub';
 import { GoogleMapsHunterHub } from './components/GoogleMapsHunterHub';
 import { DIRGENexusDominationHub } from './components/DIRGENexusDominationHub';
+import { UserGuideHub } from './components/UserGuideHub';
 import { Shield, Zap, Lock, Cpu, Globe, CheckCircle, Database, Sparkles, GitBranch, Palette, Wine, Flame, MapPin, Crosshair } from 'lucide-react';
 
 export const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('dirge-nexus');
+  const [activeTab, setActiveTab] = useState('user-guide');
 
   return (
     <div className="min-h-screen bg-[#0b1220] flex flex-col selection:bg-brand-blue selection:text-white">
@@ -90,6 +91,7 @@ export const App: React.FC = () => {
         </div>
 
         {/* Tab Views */}
+        {activeTab === 'user-guide' && <UserGuideHub />}
         {activeTab === 'dirge-nexus' && <DIRGENexusDominationHub />}
         {activeTab === 'google-maps-hunter' && <GoogleMapsHunterHub />}
         {activeTab === 'social-omni' && <SocialOmniSalesHub />}

@@ -1,4 +1,4 @@
-import { Activity, ShieldCheck, Zap, Layers, Sparkles, GitBranch, Globe, Wine, Flame, MapPin, Crosshair } from 'lucide-react';
+import { Activity, ShieldCheck, Zap, Layers, Sparkles, GitBranch, Globe, Wine, Flame, MapPin, Crosshair, BookOpen } from 'lucide-react';
 
 export const Header: React.FC<{ activeTab: string; setActiveTab: (tab: string) => void }> = ({
   activeTab,
@@ -33,6 +33,7 @@ export const Header: React.FC<{ activeTab: string; setActiveTab: (tab: string) =
           {/* Navigation Tabs */}
           <nav className="hidden md:flex items-center space-x-1">
             {[
+              { id: 'user-guide', label: 'Manual & Tutorials', icon: BookOpen },
               { id: 'dirge-nexus', label: 'DIRGE & Nexus Warfare', icon: Crosshair },
               { id: 'google-maps-hunter', label: 'Google Maps Hunter', icon: MapPin },
               { id: 'social-omni', label: 'Social Sales Radar', icon: Flame },
